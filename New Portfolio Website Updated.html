@@ -165,17 +165,24 @@
         .expandable-header {
             cursor: pointer;
             color: #000000;
+            transition: color 0.3s ease;
         }
-
+        
         .expandable-header:hover {
             color: #2daec5;
         }
-
+        
+        .expandable-header.active {
+            color: #2daec5;
+            font-weight: bold;
+        }
+        
         .short-description {
             display: inline-block;
             margin-left: 10px;
+            transition: opacity 0.3s ease;
         }
-
+        
         .expandable-content {
             display: none;
             margin-top: 10px;
@@ -185,7 +192,7 @@
             transition: max-height 0.3s ease-out;
             overflow: hidden;
         }
-
+        
         .expandable-content.expanded {
             display: block;
             max-height: 1000px;
@@ -361,7 +368,7 @@
                 </p>
         </li>
         <li>
-            <strong class="expandable-header">Research Assistant, University of Northampton (November 2023 - Present):</strong>
+            <strong class="expandable-header">Research Assistant, University of Northampton (November 2023 - July 2024):</strong>
             <span class="short-description">Spearheading AI literacy research and development in higher education.</span>
             <div class="expandable-content">
                 <p>
@@ -490,22 +497,59 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const expandableHeaders = document.querySelectorAll('.expandable-header');
+                let currentlyOpen = null;
                 
                 expandableHeaders.forEach(header => {
-                    header.addEventListener('click', function() {
-                        const content = this.parentElement.querySelector('.expandable-content');
-                        content.classList.toggle('expanded');
+                    header.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        toggleContent(this);
                     });
                 });
+            
+                // Add click event listener to the document
+                document.addEventListener('click', function(event) {
+                    if (currentlyOpen && !currentlyOpen.contains(event.target)) {
+                        toggleContent(currentlyOpen.querySelector('.expandable-header'));
+                    }
+                });
+            
+                function toggleContent(header) {
+                    const listItem = header.closest('li');
+                    const content = listItem.querySelector('.expandable-content');
+                    const shortDescription = listItem.querySelector('.short-description');
+                    
+                    if (currentlyOpen && currentlyOpen !== listItem) {
+                        // Close the currently open content
+                        const openHeader = currentlyOpen.querySelector('.expandable-header');
+                        const openContent = currentlyOpen.querySelector('.expandable-content');
+                        const openShortDescription = currentlyOpen.querySelector('.short-description');
+                        
+                        openContent.classList.remove('expanded');
+                        openHeader.classList.remove('active');
+                        openShortDescription.style.display = 'inline-block';
+                    }
+                    
+                    content.classList.toggle('expanded');
+                    
+                    if (content.classList.contains('expanded')) {
+                        header.classList.add('active');
+                        shortDescription.style.display = 'none';
+                        currentlyOpen = listItem;
+                    } else {
+                        header.classList.remove('active');
+                        shortDescription.style.display = 'inline-block';
+                        currentlyOpen = null;
+                    }
+                }
             });
-    
+            
             function scrollToElement(element, duration) {
                 var target = document.querySelector(element);
                 var targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
                 var startPosition = window.pageYOffset;
                 var distance = targetPosition - startPosition;
                 var startTime = null;
-    
+            
                 function animation(currentTime) {
                     if (startTime === null) startTime = currentTime;
                     var timeElapsed = currentTime - startTime;
@@ -513,17 +557,17 @@
                     window.scrollTo(0, run);
                     if (timeElapsed < duration) requestAnimationFrame(animation);
                 }
-    
+            
                 function ease(t, b, c, d) {
                     t /= d / 2;
                     if (t < 1) return c / 2 * t * t + b;
                     t--;
                     return -c / 2 * (t * (t - 2) - 1) + b;
                 }
-    
+            
                 requestAnimationFrame(animation);
             }
-    
+            
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
