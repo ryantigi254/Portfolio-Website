@@ -52,7 +52,8 @@
         }
 
         .links-container a:hover {
-            color: #000080;
+            color: #C5322E;
+            text-decoration: underline;
         }
 
         .separator {
@@ -82,13 +83,14 @@
         }
 
         a {
-            color: #0000FF;
+            color: #C5322E;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
         a:hover {
-            color: #000080;
+            color: #C5322E;
+            text-decoration: underline;
         }
 
         .contact-container {
@@ -108,8 +110,8 @@
             align-items: center;
             padding: 5px 10px;
             background-color: rgba(225, 111, 0, 0.2);
-            color: #E16F00;
-            border: 2px solid #E16F00;
+            color: #C5322E;;
+            border: 2px solid #C5322E;;
             border-radius: 25px;
             font-size: 14px;
             transition: all 0.3s ease;
@@ -123,8 +125,8 @@
 
         .cv-button:hover {
             color: #000;
-            background-color: rgba(225, 111, 0, 0.5);
-            box-shadow: 0 0 20px rgba(225, 111, 0, 0.7);
+            background-color: #e16f0080;
+            box-shadow: 0 0 20px #e16f00b3;
         }
 
         .cv-button:hover::before {
@@ -169,34 +171,69 @@
         }
         
         .expandable-header:hover {
-            color: #2daec5;
+            color: #C5322E;
         }
         
         .expandable-header.active {
-            color: #2daec5;
+            color: #C5322E;
+            font-weight: bold;
+        }
+        
+        .expandable-header {
+            cursor: pointer;
+            color: #000000;
+            transition: color 0.5s ease;
+        }
+        
+        .expandable-header:hover {
+            color: #C5322E;
+        }
+        
+        .expandable-header.active {
+            color: #C5322E;
             font-weight: bold;
         }
         
         .short-description {
             display: inline-block;
             margin-left: 10px;
-            transition: opacity 0.3s ease;
-        }
-        
-        .expandable-content {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            transition: max-height 0.3s ease-out;
+            transition: opacity 0.5s ease, max-height 0.5s ease;
+            max-height: 50px; /* Adjust this value based on your content */
+            opacity: 1;
             overflow: hidden;
         }
         
-        .expandable-content.expanded {
-            display: block;
-            max-height: 1000px;
+        .short-description.hidden {
+            max-height: 0;
+            opacity: 0;
         }
+        
+        .expandable-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, padding 0.8s ease-in-out;
+            padding: 0 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .expandable-content.expanded {
+            max-height: 2000px; /* Increased to accommodate larger content */
+            opacity: 1;
+            padding: 10px;
+        }
+        
+        .blog-list a {
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .blog-list a:hover {
+            color: #C5322E;
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -449,7 +486,7 @@
     <ul class="blog-list">
         <h2 id="blog">Blog</h2>
         <ul class="blog-list">
-            <li><a href="https://github.com/urban-research/urban_project" style="text-decoration: none">AI for Independent Learning: A Glimpse into Our Research</a> <span>- July 05, 2024</span></li>
+            <li><a href="https://github.com/ryantigi254/URBAN-AI-for-Independent-Learning-and-AI-Assisted-Learning-Revision">AI for Independent Learning: A Glimpse into Our Research</a> <span>- July 05, 2024</span></li>
         </ul>
     
         <hr>
@@ -512,7 +549,7 @@
                         toggleContent(currentlyOpen.querySelector('.expandable-header'));
                     }
                 });
-            
+                        
                 function toggleContent(header) {
                     const listItem = header.closest('li');
                     const content = listItem.querySelector('.expandable-content');
@@ -526,18 +563,23 @@
                         
                         openContent.classList.remove('expanded');
                         openHeader.classList.remove('active');
-                        openShortDescription.style.display = 'inline-block';
+                        openShortDescription.classList.remove('hidden');
                     }
                     
                     content.classList.toggle('expanded');
                     
                     if (content.classList.contains('expanded')) {
                         header.classList.add('active');
-                        shortDescription.style.display = 'none';
+                        shortDescription.classList.add('hidden');
                         currentlyOpen = listItem;
+                        
+                        // Smooth scroll to the expanded content
+                        setTimeout(() => {
+                            content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+                        }, 300); // Delay to allow animation to start
                     } else {
                         header.classList.remove('active');
-                        shortDescription.style.display = 'inline-block';
+                        shortDescription.classList.remove('hidden');
                         currentlyOpen = null;
                     }
                 }
