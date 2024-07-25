@@ -1,5 +1,6 @@
 [build]
   publish = "."
+  # No build command is needed for static sites
 
 [[redirects]]
   from = "/*"

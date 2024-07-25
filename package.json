@@ -1,7 +1,12 @@
 {
+    "name": "my-static-site",
+    "version": "1.0.0",
+    "description": "A simple static site",
+    "main": "index.html",
     "scripts": {
-      "build": "next build",
-      "export": "next export"
-    }
+      "start": "echo 'No build needed for static site'"
+    },
+    "author": "Ryan M. Gichuru",
+    "license": "MIT"
   }
   
