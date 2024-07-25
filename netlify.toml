@@ -1,6 +1,5 @@
 [build]
-  publish = "."
-  # No build command is needed for static sites
+  publish = ".next"
 
 [[redirects]]
   from = "/*"
