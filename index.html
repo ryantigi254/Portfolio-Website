@@ -4,237 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ryan M. Gichuru</title>
-    <style>
-        body {
-            font-family: 'Lucida Console', monospace;
-            font-size: 18px;
-            color: #000;
-            background-color: #fff;
-            max-width: 70%;
-            margin: 0 auto;
-            padding: 0 50px;
-            box-sizing: border-box;
-            line-height: 1.6;
-        }
-
-        .landing {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-
-        .svg-container {
-            width: 100%;
-            max-width: 650px;
-            display: inline-block;
-            padding-left: 25px;
-        }
-
-        svg {
-            width: 100%;
-            height: auto;
-        }
-
-        .links-container {
-            font-size: 24px;
-            margin: 20px;
-        }
-
-        .links-container a {
-            color: #000000;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: all 0.2s ease;
-            font-weight: bold;
-        }
-
-        .links-container a:hover {
-            color: #C5322E;
-            text-decoration: underline;
-        }
-
-        .separator {
-            letter-spacing: -9px;
-            color: #000;
-        }
-
-        h2 {
-            margin-top: 60px;
-        }
-
-        hr {
-            border: none;
-            height: 2px;
-            background-color: #2C2C2C;
-            width: 100%;
-            margin: 50px auto;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        li {
-            margin-bottom: 30px;
-        }
-
-        a {
-            color: #C5322E;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        a:hover {
-            color: #C5322E;
-            text-decoration: underline;
-        }
-
-        .contact-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-top: 20px;
-        }
-        
-        .contact-list {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .cv-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 5px 10px;
-            background-color: rgba(225, 111, 0, 0.2);
-            color: #C5322E;;
-            border: 2px solid #C5322E;;
-            border-radius: 25px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        
-        .cv-button svg {
-            width: 20px;
-            height: 20px;
-            margin-right: 5px;
-        }
-
-        .cv-button:hover {
-            color: #000;
-            background-color: #e16f0080;
-            box-shadow: 0 0 20px #e16f00b3;
-        }
-
-        .cv-button:hover::before {
-            opacity: 1;
-            animation: glowing 20s linear infinite;
-        }
-
-        @keyframes glowing {
-            0% { background-position: 0 0; }
-            50% { background-position: 400% 0; }
-            100% { background-position: 0 0; }
-        }
-
-        .contact-list svg {
-            width: 40px;
-            height: 40px;
-            fill: #000000;
-            transition: all 0.2s ease;
-        }
-
-        .contact-list a:hover svg {
-            fill: #333333;
-        }
-
-        .expandable-list li {
-            margin-bottom: 15px;
-        }
-
-        .expandable-list li ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-        
-        .expandable-list li ul li {
-            margin-bottom: 5px;
-        }
-
-        .expandable-header {
-            cursor: pointer;
-            color: #000000;
-            transition: color 0.3s ease;
-        }
-        
-        .expandable-header:hover {
-            color: #C5322E;
-        }
-        
-        .expandable-header.active {
-            color: #C5322E;
-            font-weight: bold;
-        }
-        
-        .expandable-header {
-            cursor: pointer;
-            color: #000000;
-            transition: color 0.5s ease;
-        }
-        
-        .expandable-header:hover {
-            color: #C5322E;
-        }
-        
-        .expandable-header.active {
-            color: #C5322E;
-            font-weight: bold;
-        }
-        
-        .short-description {
-            display: inline-block;
-            margin-left: 10px;
-            transition: opacity 0.5s ease, max-height 0.5s ease;
-            max-height: 50px; /* Adjust this value based on your content */
-            opacity: 1;
-            overflow: hidden;
-        }
-        
-        .short-description.hidden {
-            max-height: 0;
-            opacity: 0;
-        }
-        
-        .expandable-content {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.8s ease-in-out, opacity 0.8s ease-in-out, padding 0.8s ease-in-out;
-            padding: 0 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        
-        .expandable-content.expanded {
-            max-height: 2000px; /* Increased to accommodate larger content */
-            opacity: 1;
-            padding: 10px;
-        }
-        
-        .blog-list a {
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-        
-        .blog-list a:hover {
-            color: #C5322E;
-            text-decoration: underline;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -272,14 +42,37 @@
 
     <h2 id="about-me">About me</h2>
     <p>
-        Hello, I'm Ryan, a 1st year AI and Data Science student at the University of Northampton. My interest in artificial intelligence comes from its profound implications and potential to address complex challenges. While I appreciate AI's practical applications, I'm particularly drawn to exploring its more advanced and theoretical aspects.
+        Hey there! I'm Ryan, a first-year AI and Data Science student at the University of Northampton. I've always been interested in tech, but it wasn't until I stumbled upon AI that I truly found my passion. There's something incredibly exciting about the potential of AI to reshape our world, and make ouir lives easier and more efficient. 
     </p>
     <p>
-        I'm particularly interested by the far-reaching, almost sci-fi-like aspects of AI. My research aspirations revolve around complex topics such as machine sentience, the potential for superintelligence, the development of Artificial General Intelligence (AGI), and the implications of technological singularity. These concepts, which push the boundaries of current technology and scientific understanding, are what drive my passion for AI and fuel my academic pursuits.
+        When I'm not buried in textbooks or coding away on my latest projects, I'm usually trying out my own mini AI experiments. I love how AI challenges us to think differently about intelligence, creativity, and what it means to be human.
+    </p>
+    
+    <div class="interests-section">
+        <strong class="interests-header">What really gets me excited</strong>
+        <div class="interests-content">
+            <p>
+                I'm fascinated by the more speculative, almost sci-fi aspects of AI. Some of the mind-bending concepts that keep me up at night include:
+            </p>
+            <ul>
+                <li>The possibility of machine sentience - could AI one day truly be conscious?</li>
+                <li>The potential for superintelligence - what happens when AI surpasses human intelligence in every way?</li>
+                <li>The development of Artificial General Intelligence (AGI) - can we create AI that's as versatile as the human mind?</li>
+                <li>The implications of technological singularity - how might society change if AI progress becomes exponential?</li>
+            </ul>
+            <p>
+                These ideas might sound like science fiction, but they're increasingly becoming topics of serious academic and ethical debate and research. They're what drive my passion for AI and keep me eager to learn more every day.
+            </p>
+        </div>
+    </div>
+    
+    <p>
+        Through my various roles - as a Research Assistant, AI Engineer at BARBAH Games, and President of the UON AI Society - I'm constantly looking for ways to explore these advanced concepts while also making AI more accessible to others. Whether I'm working on AI literacy projects, developing chatbots, or evaluating AI-generated content, I'm always thinking about how we can harness AI's potential responsibly and ethically.
     </p>
     <p>
-        Through my roles as a Research Assistant, AI Engineer at BARBAH Games, and President of the UON AI Society, I'm constantly seeking ways to explore these advanced concepts while also making AI more accessible and understandable to others. Whether I'm working on AI literacy projects, developing chatbots, or evaluating AI content quality, I'm always considering how these efforts might contribute to our understanding of AI's ultimate potential and its impact on humanity's future.
+        It's an exciting time to be in this field, and I can't wait to see where this AI journey takes me. Who knows? Maybe one day I'll be part of the team that creates the first AGI/Super Intelligence - or at least, I'll have some great stories to tell about trying!
     </p>
+
 
     <hr>
 
@@ -337,126 +130,180 @@
 
     <h2 id="experience">Experience</h2>
     <ul class="expandable-list">
-        <li>
-            <strong class="expandable-header">Research Assistant, Knowledge Exchange and Enterprise Programme (May 2024 - Present):</strong>
-            <span class="short-description">Enhancing warehouse efficiency through AI-assisted consolidation techniques with GXO.</span>
-            <div class="expandable-content">
-                As a Research Assistant funded by the Knowledge Exchange and Enterprise Programme, I collaborate with GXO on cutting-edge AI projects aimed at optimizing warehouse operations. My role involves leveraging advanced algorithms such as k-means clustering and decision trees to analyze vast datasets and uncover trends and opportunities for operational improvements. 
-            </p>
-            <p>
-                I conduct in-depth research and produce comprehensive reports that assess the logistics industry's current landscape, explore various AI implementations, and propose innovative applications. By employing techniques like reinforcement learning and neural networks, I evaluate the potential of different AI systems to enhance efficiency. 
-            </p>
-            <p>
-                Utilizing open datasets, I develop AI-driven optimization models tailored to meet both general and specific needs within the logistics sector. Our findings were presented to the Artificial Intelligence Lead Engineer at GXO and have been featured in a blog post on the <a href="https://uonai.blog/" target="_blank">course website</a>, highlighting our contributions to the field.
-            </p>            </div>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">Research Assistant, Knowledge Exchange and Enterprise Programme (May 2024 - Present):</strong>
+                <span class="short-description">Enhancing warehouse efficiency through AI-assisted consolidation techniques with GXO.</span>
+                <div class="expandable-content">
+                    <p>As a Research Assistant funded by the Knowledge Exchange and Enterprise Programme, I collaborate with GXO on cutting-edge AI projects aimed at optimizing warehouse operations. My role involves leveraging advanced algorithms such as k-means clustering and decision trees to analyze vast datasets and uncover trends and opportunities for operational improvements.</p>
+                    <p>I conduct in-depth research and produce comprehensive reports that assess the logistics industry's current landscape, explore various AI implementations, and propose innovative applications. By employing techniques like reinforcement learning and neural networks, I evaluate the potential of different AI systems to enhance efficiency.</p>
+                    <p>Utilizing open datasets, I develop AI-driven optimization models tailored to meet both general and specific needs within the logistics sector. Our findings were presented to the Artificial Intelligence Lead Engineer at GXO and have been featured in a blog post on the <a href="https://uonai.blog/" target="_blank">course website</a>, highlighting our contributions to the field.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.gxo.com/logistics/" target="_blank">
+                    <img src="1631324050767.jpg" alt="University of Northampton Logo">
+                </a>
+            </div>
         </li>
-        <li>
-            <strong class="expandable-header">Founding AI Engineer, BARBAH Games (May 2024 - Present):</strong>
-            <span class="short-description">Driving AI innovation across gaming and educational applications.</span>
-            <div class="expandable-content">
-                <p>
-                    Leading AI integration in the company, focusing on AI assisted learning for our users, working on creating personalized assistants using LLM techniques and custom AI avatars, lastly, enhancing language translation for local dialects. 
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">Founding AI Engineer, BARBAH Games (May 2024 - Present):</strong>
+                <span class="short-description">Driving AI innovation across gaming and educational applications.</span>
+                <div class="expandable-content">
+                    <p>Leading AI integration in the company, focusing on AI assisted learning for our users, working on creating personalized assistants using LLM techniques and custom AI avatars, lastly, enhancing language translation for local dialects.</p>
+                    <p>Additionally, I conduct research on developing digital twins, generative AI for UI/UX for interfaces and large action models (agentic systems) to improve gaming experiences.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.barbahgames.com/" target="_blank">
+                    <img src="New logo enhanced.jpg" alt="BARBAH Games Logo">
+                </a>
+            </div>
+        </li>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">Student Ambassador, Intel Corporation (June 2024 - Present):</strong>
+                <span class="short-description">Promoting learning and collaboration within developer communities.</span>
+                <div class="expandable-content">
+                    <p>As a Student Ambassador for Intel, I'm actively involved in fostering learning and collaboration within our university's developer communities. My focus is on promoting Intel's oneAPI and cutting-edge hardware and software products. This role has been instrumental in enhancing my AI and oneAPI skills, expanding my professional network, and gaining early access to Intel's latest tech developments.</p>
+                    <p>I organize and deliver hands-on training sessions and workshops centered on AI, high-performance computing (HPC), and visualization for fellow students. A key part of my role involves showcasing Intel's software development tools and resources, as well as developing and sharing projects that inspire and educate my peers. I also contribute by writing blogs and articles to disseminate new insights and best practices within our community.</p>
+                    <p>Additionally, I take the lead in organizing local events like watch parties and workshops to strengthen our campus tech community. The role grants me extended access to the Intel® Developer Cloud and allows me to participate in exclusive Intel events and training sessions. There's also the exciting possibility of internship opportunities at Intel and reimbursement for participating in approved conferences and events.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.intel.com/content/www/us/en/developer/overview.html" target="_blank">
+                    <img src="intel_corporation_logo.jpg" alt="Intel Corporation Logo">
+                </a>
+            </div>
+        </li>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">Campus Ambassador, Facia (May 2024 - Present):</strong>
+                <span class="short-description">Raising cybersecurity awareness within academia through innovative campaigns and events.</span>
+                <div class="expandable-content">
+                    <p>As a Campus Ambassador for Facia, I'm leading efforts to raise cybersecurity awareness within our academic community. Facia, the world's fastest liveness detection platform, is at the forefront of combating cybercrime and identity theft. With 5.7 million cases reported in 2023 alone, our work is more crucial than ever.</p>
+                    <p>My role involves creating impactful campaigns, organizing events, and producing engaging content to promote Facia's vision on campus. I regularly share insights through blogs and social media stories, collaborating on ideas that shape global initiatives. I've had the opportunity to engage with students and professionals worldwide, building a network and representing Facia at various campus events.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.facia.ai/" target="_blank">
+                    <img src="faciaai_logo.jpg" alt="Facia Logo">
+                </a>
+            </div>
+        </li>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">AI Content Quality Evaluator, Outlier (June 2024 - Present):</strong>
+                <span class="short-description">Enhancing AI-generated content through meticulous evaluation and feedback.</span>
+                <div class="expandable-content">
+                    <p>In my role as an AI Content Quality Evaluator at Outlier, I'm directly contributing to the improvement of AI models for some of the world's most innovative companies. My work involves providing detailed human feedback on AI-generated content, focusing on ensuring high standards of factuality, completeness, brevity, and grammatical correctness.</p>
+                    <p>A key aspect of my role is reviewing the work of fellow writing evaluators. I provide constructive feedback to help enhance the overall quality of AI responses, which I find both challenging and rewarding. Additionally, I craft original, detailed answers to prompts and questions, demonstrating what excellent writing looks like to train and refine the AI model.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.outlier.ai/" target="_blank">
+                    <img src="1684958729104.jpg" alt="Outlier Logo">
+                </a>
+            </div>
+        </li>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">Research Assistant, University of Northampton (November 2023 - July 2024):</strong>
+                <span class="short-description">Spearheading AI literacy research and development in higher education.</span>
+                <div class="expandable-content">
+                    <p>As a key member of the Study Smart project, funded by the UON Learning Enhancement and Innovation Fund, I'm deeply involved in groundbreaking research on AI applications in education. Our focus is on enhancing independent learning and revision among students through innovative AI-driven solutions.</p>
+                    <p>My role involves conducting in-depth research, data collection, cleaning, analysis, and visualization using tools like Pandas, Numpy, Seaborn, and Matplotlib. This work is crucial in identifying trends that contribute to current and future educational strategies within the university.</p>
+                    <p>A significant part of my work centers on AI literacy enhancement. I deliver comprehensive workshops and presentations to both faculty and students, facilitating effective knowledge sharing about AI in education. Our project's impact was recognized when we presented at three conferences, highlighting our outstanding contribution to AI in education.</p>
+                    <p>I'm also heavily involved in the technical aspects of our research, including prompt engineering and fine-tuning a customized GPT model. Through data analysis and output testing, I ensure accurate and desired results, leveraging my expertise in AI and machine learning.</p>
+                    <p>Most recently, I co-authored and presented our research, "Study Smart: Staff and students co-constructing AI literacy at UON," at the Merged Futures 6 conference on June 14, 2024. This county-level presentation showcased our team's collaborative efforts in advancing AI literacy within our academic community.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://www.northampton.ac.uk/research/research-explorer/study-smart-staff-and-students-co-constructing-ai-literacy-at-uon/" target="_blank">
+                    <img src="1631324050767.jpg" alt="University of Northampton Logo">
+                </a>
+            </div>
+        </li>
+        <li class="experience-item">
+            <div class="experience-content">
+                <strong class="expandable-header">President & former Treasurer, UON AI Society (September 2023 - Present):</strong>
+                <span class="short-description">Leading and managing the AI Society.</span>
+                <div class="expandable-content">
+                    <p>As President of the UON AI Society, I'm spearheading initiatives to foster a vibrant community of AI enthusiasts and future innovators. My role involves strategic leadership, partnership development, and event organization to expand our society's reach and impact.</p>
+                    <p>Key Achievements:
+                        • As Treasurer, I significantly boosting the society's budget by 52%, and enabling the execution of key projects and events and the expansion of our digital presence.
+                        • Grew our community to over 100 LinkedIn followers, 70+ Discord members, and 60+ Instagram followers.
+                        • Established partnerships with industry leaders like Erictron AI, Takara AI, and NN1 Dev Club, as well as academic collaborations with CUoL Robotics Society and The National Museum of Computing.
+                        • Organized our first hackathon, "Hack the Museum," in collaboration with The National Museum of Computing, where we developed an innovative IoT-based motion detection system.
+                        • Implemented a mentorship program and facilitated workshops on securing internships and advancing AI literacy.</p>
+                    <p>Ongoing Initiatives:
+                        • Planning monthly events, hackathons, and workshops for the upcoming academic year.
+                        • Coordinating speaker sessions and panel events with industry professionals.
+                        • Developing support sessions led by senior students to foster knowledge sharing within our community.</p>
+                </div>
+            </div>
+            <div class="company-logo">
+                <a href="https://linktr.ee/uon_aisociety" target="_blank">
+                    <img src="New logo enhanced.jpg" alt="UON AI Society Logo">
+                </a>
+            </div>
+        </li>
+    </ul>
+    
+    <hr>
 
-                </p>
-                <p>
-                    Additionally, I conduct research on developing digital twins, generative AI for UI/UX for interfaces and large action models (agentic systems) to improve gaming experiences.
 
-                </p>
+        <h2 id="education">Education</h2>
+    <ul class="expandable-list">
+        <li class="education-item">
+            <div class="education-content">
+                <strong class="expandable-header">Bachelor's in Artificial Intelligence and Data Science (Expected Graduation Year 2026)</strong>
+                <span class="short-description">University of Northampton, Northampton, United Kingdom</span>
+                <div class="expandable-content">
+                    <p>Year 1 modules and grades:</p>
+                    <ul>
+                        <li>Problem Solving and Programming: A+</li>
+                        <li>Software Engineering Fundamentals: A+</li>
+                        <li>Computer Systems: B+</li>
+                        <li>Mathematics for Computer Science: B</li>
+                        <li>Computer Communications: B</li>
+                        <li>Web Development: A+</li>
+                    </ul>
+                </div>
             </div>
-        </li>        
-        <li>
-        <li>
-            <strong class="expandable-header">Student Ambassador, Intel Corporation (June 2024 - Present):</strong>
-            <span class="short-description">Promoting learning and collaboration within developer communities.</span>
-            <div class="expandable-content">
-                <p>
-                    As a Student Ambassador for Intel, I'm actively involved in fostering learning and collaboration within our university's developer communities. My focus is on promoting Intel's oneAPI and cutting-edge hardware and software products. This role has been instrumental in enhancing my AI and oneAPI skills, expanding my professional network, and gaining early access to Intel's latest tech developments.
-                </p>
-                <p>
-                    I organize and deliver hands-on training sessions and workshops centered on AI, high-performance computing (HPC), and visualization for fellow students. A key part of my role involves showcasing Intel's software development tools and resources, as well as developing and sharing projects that inspire and educate my peers. I also contribute by writing blogs and articles to disseminate new insights and best practices within our community.
-                </p>
-                <p>
-                    Additionally, I take the lead in organizing local events like watch parties and workshops to strengthen our campus tech community. The role grants me extended access to the Intel® Developer Cloud and allows me to participate in exclusive Intel events and training sessions. There's also the exciting possibility of internship opportunities at Intel and reimbursement for participating in approved conferences and events.
-                </p>
-            </div>
-        </li>
-        
-    <li>
-        <strong class="expandable-header">Campus Ambassador, Facia (May 2024 - Present):</strong>
-        <span class="short-description">Raising cybersecurity awareness within academia through innovative campaigns and events.</span>
-        <div class="expandable-content">
-            <p>
-                As a Campus Ambassador for Facia, I'm leading efforts to raise cybersecurity awareness within our academic community. Facia, the world's fastest liveness detection platform, is at the forefront of combating cybercrime and identity theft. With 5.7 million cases reported in 2023 alone, our work is more crucial than ever.
-            </p>
-            <p>
-                My role involves creating impactful campaigns, organizing events, and producing engaging content to promote Facia's vision on campus. I regularly share insights through blogs and social media stories, collaborating on ideas that shape global initiatives. I've had the opportunity to engage with students and professionals worldwide, building a network and representing Facia at various campus events.
-            </p>
-        </div>
-        </li>
-        <li>
-            <strong class="expandable-header">AI Content Quality Evaluator, Outlier (June 2024 - Present):</strong>
-            <span class="short-description">Enhancing AI-generated content through meticulous evaluation and feedback.</span>
-            <div class="expandable-content">
-                <p>
-                    In my role as an AI Content Quality Evaluator at Outlier, I'm directly contributing to the improvement of AI models for some of the world's most innovative companies. My work involves providing detailed human feedback on AI-generated content, focusing on ensuring high standards of factuality, completeness, brevity, and grammatical correctness.
-                </p>
-                <p>
-                    A key aspect of my role is reviewing the work of fellow writing evaluators. I provide constructive feedback to help enhance the overall quality of AI responses, which I find both challenging and rewarding. Additionally, I craft original, detailed answers to prompts and questions, demonstrating what excellent writing looks like to train and refine the AI model.
-                </p>
-        </li>
-        <li>
-            <strong class="expandable-header">Research Assistant, University of Northampton (November 2023 - July 2024):</strong>
-            <span class="short-description">Spearheading AI literacy research and development in higher education.</span>
-            <div class="expandable-content">
-                <p>
-                    As a key member of the Study Smart project, funded by the UON Learning Enhancement and Innovation Fund, I'm deeply involved in groundbreaking research on AI applications in education. Our focus is on enhancing independent learning and revision among students through innovative AI-driven solutions.
-                </p>
-                <p>
-                    My role involves conducting in-depth research, data collection, cleaning, analysis, and visualization using tools like Pandas, Numpy, Seaborn, and Matplotlib. This work is crucial in identifying trends that contribute to current and future educational strategies within the university.
-                </p>
-                <p>
-                    A significant part of my work centers on AI literacy enhancement. I deliver comprehensive workshops and presentations to both faculty and students, facilitating effective knowledge sharing about AI in education. Our project's impact was recognized when we presented at three conferences, highlighting our outstanding contribution to AI in education.
-                </p>
-                <p>
-                    I'm also heavily involved in the technical aspects of our research, including prompt engineering and fine-tuning a customized GPT model. Through data analysis and output testing, I ensure accurate and desired results, leveraging my expertise in AI and machine learning.
-                </p>
-                <p>
-                    Most recently, I co-authored and presented our research, "Study Smart: Staff and students co-constructing AI literacy at UON," at the Merged Futures 6 conference on June 14, 2024. This county-level presentation showcased our team's collaborative efforts in advancing AI literacy within our academic community.
-                </p>
+            <div class="institution-logo">
+                <a href="https://www.northampton.ac.uk/" target="_blank">
+                    <img src="1631324050767.jpg" alt="University of Northampton Logo">
+                </a>
             </div>
         </li>
-        <li>
-            <strong class="expandable-header">President & Treasurer, UON AI Society (September 2023 - Present):</strong>
-            <span class="short-description">Leading and managing the AI Society.</span>
-            <div class="expandable-content">
-                <p>
-                    As President of the UON AI Society, I'm spearheading initiatives to foster a vibrant community of AI enthusiasts and future innovators. My role involves strategic leadership, partnership development, and event organization to expand our society's reach and impact.
-                </p>
-                <p>
-                    Key Achievements:
-                    • Grew our community to over 100 LinkedIn followers, 70+ Discord members, and 60+ Instagram followers.
-                    • Established partnerships with industry leaders like Erictron AI, Takara AI, and NN1 Dev Club, as well as academic collaborations with CUoL Robotics Society and The National Museum of Computing.
-                    • Organized our first hackathon, "Hack the Museum," in collaboration with The National Museum of Computing, where we developed an innovative IoT-based motion detection system.
-                    • Implemented a mentorship program and facilitated workshops on securing internships and advancing AI literacy.
-                </p>
-                <p>
-                    Ongoing Initiatives:
-                    • Planning monthly events, hackathons, and workshops for the upcoming academic year.
-                    • Coordinating speaker sessions and panel events with industry professionals.
-                    • Developing support sessions led by senior students to foster knowledge sharing within our community.
-                </p>                
+        <li class="education-item">
+            <div class="education-content">
+                <strong class="expandable-header">Generative AI Bootcamp, GetSeen Ventures (July 2024 - September 2024)</strong>
+                <span class="short-description">Intensive 6-week program on cutting-edge Generative AI technologies and applications</span>
+                <div class="expandable-content">
+                    <p>Key components included:</p>
+                    <ul>
+                        <li>Weekly expert-led sessions on advanced topics such as Large Language Models (LLM) and Retrieval-Augmented Generation (RAG)</li>
+                        <li>Extensive self-learning materials for in-depth exploration of covered topics</li>
+                        <li>Team-based development of a real-world business case with potential for startup implementation</li>
+                        <li>Practical application of Generative AI concepts to solve industry-relevant problems</li>
+                        <li>Networking opportunities with industry experts and fellow entrepreneurs</li>
+                    </ul>
+                    <p>Skills developed:</p>
+                    <ul>
+                        <li>Deep understanding of Generative AI and its real-world applications</li>
+                        <li>Practical skills in building innovative AI solutions</li>
+                        <li>Collaborative project development in a startup-like environment</li>
+                        <li>Business case analysis and development in the AI sector</li>
+                    </ul>
+                </div>
             </div>
-        </li>
-        <li>
-            <strong class="expandable-header">Treasurer, UON AI Society (November 2023 - May 2024):</strong>
-            <span class="short-description">Managing finances and driving growth.</span>
-            <div class="expandable-content">
-                <p>
-                    As Treasurer, I played a crucial role in the financial management and growth of the AI Society:
-                    • Spearheaded financial management and fundraising initiatives, significantly boosting the society's budget by 52%.
-                    • Enabled the execution of key projects and events through strategic financial planning.
-                    • Collaborated with the committee to allocate resources effectively, supporting our expansion and impact within and beyond the University.
-                </p>
+            <div class="institution-logo">
+                <a href="https://getseen.ventures/" target="_blank">
+                    <img src="1709484042725.jpg" alt="GetSeen Ventures Logo">
+                </a>
             </div>
         </li>
     </ul>
@@ -534,8 +381,10 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const expandableHeaders = document.querySelectorAll('.expandable-header');
+                const interestsHeader = document.querySelector('.interests-header');
+                const interestsContent = document.querySelector('.interests-content');
                 let currentlyOpen = null;
-                
+            
                 expandableHeaders.forEach(header => {
                     header.addEventListener('click', function(event) {
                         event.stopPropagation();
@@ -543,36 +392,45 @@
                     });
                 });
             
+                interestsHeader.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    interestsContent.classList.toggle('expanded');
+                });
+            
                 // Add click event listener to the document
                 document.addEventListener('click', function(event) {
                     if (currentlyOpen && !currentlyOpen.contains(event.target)) {
                         toggleContent(currentlyOpen.querySelector('.expandable-header'));
                     }
+                    if (interestsContent.classList.contains('expanded') && !interestsContent.contains(event.target) && event.target !== interestsHeader) {
+                        interestsHeader.classList.remove('active');
+                        interestsContent.classList.remove('expanded');
+                    }
                 });
-                        
+            
                 function toggleContent(header) {
                     const listItem = header.closest('li');
                     const content = listItem.querySelector('.expandable-content');
                     const shortDescription = listItem.querySelector('.short-description');
-                    
+            
                     if (currentlyOpen && currentlyOpen !== listItem) {
                         // Close the currently open content
                         const openHeader = currentlyOpen.querySelector('.expandable-header');
                         const openContent = currentlyOpen.querySelector('.expandable-content');
                         const openShortDescription = currentlyOpen.querySelector('.short-description');
-                        
+            
                         openContent.classList.remove('expanded');
                         openHeader.classList.remove('active');
                         openShortDescription.classList.remove('hidden');
                     }
-                    
+            
                     content.classList.toggle('expanded');
-                    
+            
                     if (content.classList.contains('expanded')) {
                         header.classList.add('active');
                         shortDescription.classList.add('hidden');
                         currentlyOpen = listItem;
-                        
+            
                         // Smooth scroll to the expanded content
                         setTimeout(() => {
                             content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
@@ -583,6 +441,7 @@
                         currentlyOpen = null;
                     }
                 }
+
             });
             
             function scrollToElement(element, duration) {
