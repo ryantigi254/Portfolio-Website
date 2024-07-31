@@ -360,6 +360,27 @@ a:hover {
     display: none;
 }
 
+.project-condensed {
+    display: none;
+}
+
+.project-details-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #C5322E;
+    color: white;
+    text-decoration: none;
+    border-radius: 45px;
+    transition: background-color 0.3s ease;
+}
+
+.project-details-button:hover {
+    color: #000;
+    background-color: #e16f00b3;
+    box-shadow: 0 0 20px  #e16f0080;
+}
+
 
 @media screen and (max-width: 768px) {
     body {
@@ -406,6 +427,13 @@ a:hover {
         display: none;
     }
     .final-paragraph-condensed {
+        display: block;
+    }
+
+    .project-full {
+        display: none;
+    }
+    .project-condensed {
         display: block;
     }
 
