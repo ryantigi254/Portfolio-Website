@@ -123,7 +123,7 @@
                 <div class="project-condensed">
                     <p>Leading the development of an AI-powered chatbot for NILE, focusing on personalized learning experiences. Key features include coursework summarization, Q&A, and content simplification, with an emphasis on data privacy and ethical AI use.</p>
                 </div>
-                <a href="urban-project.html" class="project-details-button">View Full Project Details</a>
+                <a href="https://github.com/ryantigi254/URBAN-AI-for-Independent-Learning-and-AI-Assisted-Learning-Revision" class="project-details-button">View Full Project Details</a>
             </div>
         </li>
         <li>
@@ -150,7 +150,7 @@
                 <div class="project-condensed">
                     <p>Contributing to a university-wide AI literacy project, focusing on data analysis, custom GPT model development, and AI-driven insights. The project aims to enhance AI understanding among staff and students, aligning with key university objectives.</p>
                 </div>
-                <a href="study-smart-project.html" class="project-details-button">View Full Project Details</a>
+                <a href="https://pure.northampton.ac.uk/en/activities/study-smart-staff-and-students-co-constructing-ai-literacy-at-uon" class="project-details-button">View Full Project Details</a>
             </div>
         </li>
     </ul>
@@ -167,6 +167,7 @@
                     <p>As a Research Assistant funded by the Knowledge Exchange and Enterprise Programme, I collaborate with GXO on cutting-edge AI projects aimed at optimizing warehouse operations. My role involves leveraging advanced algorithms such as k-means clustering and decision trees to analyze vast datasets and uncover trends and opportunities for operational improvements.</p>
                     <p>I conduct in-depth research and produce comprehensive reports that assess the logistics industry's current landscape, explore various AI implementations, and propose innovative applications. By employing techniques like reinforcement learning and neural networks, I evaluate the potential of different AI systems to enhance efficiency.</p>
                     <p>Utilizing open datasets, I develop AI-driven optimization models tailored to meet both general and specific needs within the logistics sector. Our findings were presented to the Artificial Intelligence Lead Engineer at GXO and have been featured in a blog post on the <a href="https://uonai.blog/" target="_blank">course website</a>, highlighting our contributions to the field.</p>
+                        <a href="https://github.com/ryantigi254/GXO-Knowledge-Transfer-Project" class="project-details-button">View Full Project Details</a>
                 </div>
             </div>
             <div class="company-logo">
@@ -182,9 +183,9 @@
                 <div class="expandable-content">
                     <p>Leading AI integration in the company, focusing on AI assisted learning for our users, working on creating personalized assistants using LLM techniques and custom AI avatars, lastly, enhancing language translation for local dialects.</p>
                     <p>Additionally, I conduct research on developing digital twins, generative AI for UI/UX for interfaces and large action models (agentic systems) to improve gaming experiences.</p>
-                        <div class="project-content"><p>Current Project</p></div>
+                    <a href="https://github.com/ryantigi254/GXO-Knowledge-Transfer-Project" class="project-details-button">View Full Project Details</a>
                 </div>
-            </div>
+                </div>
             <div class="company-logo">
                 <a href="https://www.barbahgames.com/" target="_blank">
                     <img src="qt=q_95.webp" alt="BARBAH Games Logo">
@@ -370,12 +371,12 @@
         <h2 id="contact">Contact</h2>
         <p>Don't hesitate to reach out if you want to collaborate on a project or discuss other opportunities.</p>
         <span style="font-size:18px;">Ryan M. Gichuru</span> <span class="separator">|</span> 
-        <span style="font-size:18px;">ryantig2020@gmail.com</span> <span class="separator">|</span> 
+        <span style="font-size:18px;">ryan@barbahgames.gg</span> <span class="separator">|</span> 
         <span style="font-size:18px;">+44 7396957302</span>
         <br><br>
         <div class="contact-container">
         <ul class="contact-list">
-            <li><a href="mailto:ryantig2020@gmail.com">
+            <li><a href="mailto:ryan@barbahgames.gg ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 12.713l-11.99-6.713h23.979l-11.989 6.713zm11.989-8.713h-23.979c-1.104 0-2.01.896-2.01 2v12c0 1.104.906 2 2.01 2h23.979c1.104 0 2.011-.896 2.011-2v-12c0-1.104-.907-2-2.011-2zm-11.989 10.787l-11.989-6.737v9.95h23.979v-9.95l-11.99 6.737z"/>
                 </svg>
@@ -452,6 +453,25 @@
                         shortDescription.classList.remove('hidden');
                         currentlyOpen = null;
                     }
+                }
+            });
+
+                document.addEventListener('DOMContentLoaded', function() {
+                const interestsHeader = document.querySelector('.interests-header');
+                if (interestsHeader) {
+                    interestsHeader.addEventListener('click', function() {
+                        const interestsContent = this.nextElementSibling;
+                        if (interestsContent) {
+                            interestsContent.classList.toggle('expanded');
+                            this.classList.toggle('active');
+                            
+                            if (interestsContent.classList.contains('expanded')) {
+                                setTimeout(() => {
+                                    interestsContent.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+                                }, 300);
+                            }
+                        }
+                    });
                 }
             });
             
