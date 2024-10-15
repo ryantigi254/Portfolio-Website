@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ryan M. Gichuru</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Orbitron font for a futuristic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon links -->
+    <link rel="icon" type="image/png" href="Modern_Creative_Technology_Logo_(1).png" sizes="16x16">
+    <link rel="icon" type="image/png" href="Modern_Creative_Technology_Logo_(2).png" sizes="32x32">
+    <link rel="icon" type="image/png" href="Modern_Creative_Technology_Logo_(3).png" sizes="48x48">
+    <link rel="icon" type="image/png" href="Modern_Creative_Technology_Logo_(4).png" sizes="64x64">
+    <link rel="icon" type="image/png" href="Modern_Creative_Technology_Logo_(5).png" sizes="128x128">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="landing">
+        <div class="svg-container">
+            <!-- Your existing SVG logo or text -->
+            <!-- [Existing SVG code remains unchanged] -->
+            <h1 class="main-title">Ryan M. Gichuru</h1>
+        </div>
+
+        <div class="links-container">
+            <a href="#about-me">About me</a><span class="separator">|</span>
+            <a href="#projects">Projects</a><span class="separator">|</span>
+            <a href="#experience">Experience</a><span class="separator">|</span>
+            <a href="#course-navigator">FuturePath</a><span class="separator">|</span>
+            <a href="#contact">Contact</a><span class="separator">|</span>
+            <a href="#blog">Blog</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- About me section -->
+    <h2 id="about-me">About Me</h2>
+    <p>Hello! I'm Ryan M. Gichuru, an AI and Data Science student at the University of Northampton. I'm passionate about leveraging technology to create solutions that address real-world problems.</p>
+
+    <!-- Projects section -->
+    <h2 id="projects">Projects</h2>
+    <ul>
+        <li>FuturePath Course Navigator</li>
+        <!-- Add other projects here -->
+    </ul>
+
+    <!-- Experience section -->
+    <h2 id="experience">Experience</h2>
+    <ul>
+        <li>Intern at Tech Innovations Ltd.</li>
+        <!-- Add other experiences here -->
+    </ul>
+
+    <!-- Course Navigator Section -->
+    <hr>
+
+    <h2 id="course-navigator">FuturePath Course Navigator</h2>
+    <div class="container">
+        <!-- About Section within the Interface -->
+        <div class="about-section">
+            <h3>About FuturePath</h3>
+            <p>
+                In an era where AI is rapidly transforming industries and reshaping the job market, it's crucial to align your education with future trends. FuturePath is an interactive tool designed to help you navigate this changing landscape by providing personalized course recommendations and roadmaps based on your interests and skills.
+            </p>
+            <p>
+                Whether you're a student exploring options or a professional considering a career shift, FuturePath aims to empower you with insights to make informed decisions about your educational journey.
+            </p>
+        </div>
+
+        <!-- Course Recommendation Form -->
+        <form id="courseForm">
+            <label for="interests">Your Interests or Hobbies:</label>
+            <textarea id="interests" rows="3" placeholder="e.g., astrophysics, robotics, digital art"></textarea>
+
+            <label for="skills">Your Current Skills:</label>
+            <textarea id="skills" rows="3" placeholder="e.g., Python programming, 3D modeling"></textarea>
+
+            <label for="preferredCourse">Interested Course (if any):</label>
+            <input type="text" id="preferredCourse" placeholder="e.g., Quantum Computing">
+
+            <button type="button" onclick="getRecommendations()">Discover Courses</button>
+        </form>
+
+        <div class="loading" id="loading" style="display: none;">Analyzing your profile...</div>
+        <div class="results" id="results"></div>
+    </div>
+
+    <hr>
+
+    <!-- Blog section -->
+    <h2 id="blog">Blog</h2>
+    <div class="blog-post">
+        <h3>Navigating the Future: Preparing for an AI-Driven World</h3>
+        <p><em>Posted on September 30, 2024 by Ryan M. Gichuru</em></p>
+        <p>
+            The rapid advancement of artificial intelligence (AI) is not just a technological revolution; it's a societal shift that is reshaping industries, economies, and the nature of work itself. As AI systems become increasingly capable, they are beginning to outperform humans in various tasks, leading to both unprecedented opportunities and significant challenges.
+        </p>
+        <h4>The Changing Landscape of Work</h4>
+        <p>
+            Automation is replacing routine tasks across sectors, from manufacturing and logistics to healthcare and finance. Jobs that involve repetitive, predictable activities are particularly susceptible to automation. This shift raises concerns about job displacement and economic inequality, but it also opens doors to new kinds of work that require creativity, complex problem-solving, and emotional intelligence.
+        </p>
+        <h4>Why Universal Basic Income Isn't the Complete Answer</h4>
+        <p>
+            Some have proposed Universal Basic Income (UBI) as a solution to job displacement caused by AI. While UBI could provide a safety net, it's not a sustainable long-term solution. Instead, we need to focus on empowering individuals with the skills and knowledge to thrive in an AI-augmented world. This involves rethinking education and career planning to prioritize adaptability and continuous learning.
+        </p>
+        <h4>Embracing Lifelong Learning and Adaptability</h4>
+        <p>
+            The most valuable assets in the future job market will be skills that AI cannot easily replicate. These include critical thinking, creativity, emotional intelligence, and the ability to work in interdisciplinary teams. Embracing lifelong learning and being willing to adapt are crucial strategies for staying relevant.
+        </p>
+        <h4>Introducing FuturePath</h4>
+        <p>
+            To help navigate this complex landscape, I developed <strong>FuturePath</strong>, an interactive tool that provides personalized course recommendations and roadmaps based on your interests and skills. By analyzing your inputs, FuturePath suggests educational paths that align with future industry trends and areas less likely to be overtaken by AI.
+        </p>
+        <h4>How FuturePath Works</h4>
+        <p>
+            - <strong>Personalized Input:</strong> Enter your interests, current skills, and any courses you're considering.
+            <br>
+            - <strong>AI-Powered Analysis:</strong> FuturePath uses advanced algorithms to analyze your profile.
+            <br>
+            - <strong>Course Recommendations:</strong> Receive suggestions for courses that align with your goals and the evolving job market.
+            <br>
+            - <strong>Detailed Roadmaps:</strong> Upon selecting a course, get a roadmap outlining the steps to excel in that field.
+        </p>
+        <h4>Why This Matters</h4>
+        <p>
+            As AI continues to evolve, it's essential to proactively prepare for the changes it brings. By choosing educational paths that emphasize uniquely human skills and by staying adaptable, we can not only mitigate the risks but also harness the benefits of AI advancements.
+        </p>
+        <h4>Final Thoughts</h4>
+        <p>
+            The future is not something that just happens to us; it's something we shape through our actions today. I invite you to try out FuturePath and take control of your educational journey. Together, we can navigate the challenges and opportunities of an AI-driven world.
+        </p>
+        <p>
+            Feel free to reach out if you'd like to discuss the project or share your thoughts!
+        </p>
+    </div>
+
+    <!-- Contact section -->
+    <h2 id="contact">Contact</h2>
+    <p>Email: <a href="mailto:ryan.gichuru@example.com">ryan.gichuru@example.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/ryangichuru">Ryan Gichuru</a></p>
+
+    <!-- Scripts -->
+    <script>
+        async function getRecommendations() {
+            const interests = document.getElementById('interests').value;
+            const skills = document.getElementById('skills').value;
+            const preferredCourse = document.getElementById('preferredCourse').value;
+
+            // Show loading indicator
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').innerHTML = '';
+
+            const userInput = {
+                interests: interests,
+                skills: skills,
+                preferredCourse: preferredCourse
+            };
+
+            try {
+                const response = await fetch('/.netlify/functions/course-recommender', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ userInput })
+                });
+                const data = await response.json();
+
+                // Hide loading indicator
+                document.getElementById('loading').style.display = 'none';
+
+                // Display the recommendations
+                document.getElementById('results').innerHTML = data.recommendationsHtml;
+
+                // Add event listeners to the course items for roadmap generation
+                const courseItems = document.querySelectorAll('.course-item');
+                courseItems.forEach(item => {
+                    item.addEventListener('click', function () {
+                        const selectedCourse = this.getAttribute('data-course-name');
+                        generateRoadmap(selectedCourse, userInput);
+                    });
+                });
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('results').innerHTML = `<p>There was an error processing your request.</p>`;
+                console.error(error);
+            }
+        }
+
+        async function generateRoadmap(selectedCourse, userInput) {
+            // Show loading indicator
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').innerHTML = '';
+
+            try {
+                const response = await fetch('/.netlify/functions/course-roadmap', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ selectedCourse, userInput })
+                });
+                const data = await response.json();
+
+                // Hide loading indicator
+                document.getElementById('loading').style.display = 'none';
+
+                // Display the roadmap
+                document.getElementById('results').innerHTML = data.roadmapHtml;
+            } catch (error) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('results').innerHTML = `<p>There was an error generating the roadmap.</p>`;
+                console.error(error);
+            }
+        }
+    </script>
+
+</body>
+</html>
