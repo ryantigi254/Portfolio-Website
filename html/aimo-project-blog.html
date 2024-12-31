@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIMO Math Competition Project</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="blog-post">
+        <h1>Welcome to My Project Page</h1>
+        
+        <p>Hello there! I'm excited to share a personal project I've been pouring my time into—an AI model that tackles advanced math competition questions from the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2/overview">AI Mathematical Olympiad (AIMO) Progress Prize 2</a>. I have a strong interest in bridging top-tier language models with real-world challenges, and math competitions provide an excellent testing ground.</p>
+
+        <hr>
+
+        <h2>Why I'm Doing This</h2>
+        <ul>
+            <li><strong>Practical Experience Through Competitions:</strong> Kaggle gives me a chance to test my ideas about AI and math reasoning in a direct, real-world setting. Submitting solutions and reviewing the results isn't just about the leaderboard—every submission helps me understand what's working and what isn't.</li>
+            <li><strong>Aiming for 47/50 Accuracy:</strong> There are about 50 difficult math problems in this competition, and aiming for at least 47 correct answers is a formidable target. My plan involves using recent AI innovations—particularly models built for reasoning—to handle multi-step math questions in a logical, organized way.</li>
+            <li><strong>Learning Through AI Papers and Reimplementation:</strong> I believe that reading AI research papers, and even trying to reimplement or adapt some of their methods, is incredibly valuable. It's one of the best ways to see how top researchers approach the same types of problems. By applying what I learn, I can keep refining my own workflow, stay current with cutting-edge methods, and pick up insights that might give me an edge in the competition.</li>
+        </ul>
+
+        <hr>
+
+        <h2>What I've Tried So Far</h2>
+        <ul>
+            <li><strong>Starting with an Agentic Setup:</strong> I initially used <a href="https://github.com/frdel/agent-zero">Agent Zero</a> to give my model access to tools like code execution. The idea was to let the AI "decide" if it needed to run code or look something up. In practice, math-focused LLMs and agent instructions didn't mesh well at first, so I had to rethink how they should interact.</li>
+            <li><strong>Collecting and Cleaning Data:</strong>
+                <ul>
+                    <li>Began with about 600k questions from <a href="https://huggingface.co/datasets/AI-MO/NuminaMath-CoT">NuminaMath CoT</a> and <a href="https://huggingface.co/datasets/AI-MO/NuminaMath-TIR">NuminaMath TIR</a>. Although this was a strong start, I realized it only covered certain difficulty ranges.</li>
+                    <li>Added harder items from <a href="https://omni-math.github.io/">Omni Math</a> (set at a specific difficulty filter) and more varied questions from the <a href="https://www.kaggle.com/datasets/alexryzhkov/amio-parsed-art-of-problem-solving-website/data">AoPS dataset</a>.</li>
+                </ul>
+            </li>
+            <li><strong>Generating Synthetic Solutions:</strong> I tested different open-source math models like <a href="https://github.com/AIDC-AI/Marco-o1">Macro-o1</a> and <a href="https://huggingface.co/Qwen/QwQ-32B-Preview">QwQ-32B Preview</a>. Each was asked to solve the same questions multiple times, often with partial hints or final answers provided to spark alternative approaches.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Fine-Tuning My Model</h2>
+        <ul>
+            <li><strong>Step-by-Step Reasoning:</strong> I'm preparing to train a model that lays out its thought process instead of jumping straight to the answer. This approach should make debugging easier, since I can trace where the logic might slip up.</li>
+            <li><strong>Tool Integration:</strong> Although I've moved away from a fully agentic setup for now, I'm keeping track of how a model might benefit from code execution or symbolic math libraries. If it proves useful down the line, I can revisit and incorporate these tools more formally.</li>
+            <li><strong>Quality Checks:</strong> I'm gradually expanding the dataset with additional questions and tidying up any questionable labels. Over time, these periodic updates will help me maintain better consistency and accuracy as I refine (and eventually fine-tune) the model.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Where Things Stand</h2>
+        <ul>
+            <li><strong>Data is Ready to Go:</strong> The combined sets from Numina, OmniMath, and AoPS are all merged and filtered. I've also added synthetic solutions for many of these items.</li>
+            <li><strong>Model Training Ongoing:</strong> I'm still training and testing the fine-tuned math model. Initial runs look good, but I'm aiming for more consistent accuracy before making a formal competition submission.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Future Plans</h2>
+        <ol>
+            <li><strong>Incorporating Extra Tools:</strong> I'd like to include a system that automatically checks partial steps, possibly by running code or using symbolic math libraries.</li>
+            <li><strong>Smarter Validation:</strong> Creating a small test set to quickly confirm a new idea works, so I don't waste competition submissions on unproven experiments.</li>
+        </ol>
+
+        <hr>
+
+        <h2>Relevant Links</h2>
+        <ul>
+            <li><a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2/overview">AIMO Progress Prize 2 Competition</a></li>
+            <li><a href="https://github.com/frdel/agent-zero">Agent Zero</a></li>
+            <li><a href="https://huggingface.co/datasets/AI-MO/NuminaMath-CoT">NuminaMath CoT</a></li>
+            <li><a href="https://huggingface.co/datasets/AI-MO/NuminaMath-TIR">NuminaMath TIR</a></li>
+            <li><a href="https://omni-math.github.io/">Omni Math</a></li>
+            <li><a href="https://www.kaggle.com/datasets/alexryzhkov/amio-parsed-art-of-problem-solving-website/data">AoPS Parsed Dataset</a></li>
+            <li><a href="https://github.com/AIDC-AI/Marco-o1">Macro-o1 Model</a></li>
+            <li><a href="https://huggingface.co/Qwen/QwQ-32B-Preview">QwQ-32B Preview Model</a></li>
+        </ul>
+
+        <hr>
+
+        <p>I've always believed math provides a perfect test for an AI's reasoning skills. This project is my way of pushing the limits of that idea and contributing to the open-source community.</p>
+
+        <p><strong>Thank you for visiting my page and for your interest in this project!</strong></p>
+
+
+
+    <hr>
+
+    <div style="text-align: center; margin: 40px 0;">
+        <p>For more information about this project, including code samples and detailed implementation:</p>
+        <div style="display: flex; justify-content: center; gap: 40px;">
+            <div style="text-align: center;">
+                <a href="https://github.com/ryantigi254/Aimo-Prize2-Kaggle-Competition" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #000;">
+                    <div style="width: 35px; height: 35px; margin-bottom: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 100%; height: 100%;">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.756-1.333-1.756-1.09-.744.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.107-.776.418-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.467-2.382 1.235-3.221-.124-.303-.535-1.527.116-3.176 0 0 1.007-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.292-1.552 3.298-1.23 3.298-1.23.653 1.649.242 2.873.119 3.176.77.839 1.233 1.911 1.233 3.221 0 4.609-2.806 5.624-5.478 5.921.43.371.814 1.102.814 2.222 0 1.606-.015 2.899-.015 3.293 0 .322.218.694.825.576 4.765-1.589 8.201-6.084 8.201-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <span>Project Details</span>
+                </a>
+            </div>
+            <div style="text-align: center;">
+                <a href="https://www.linkedin.com/in/ryan-gichuru-1bba671a8/" style="display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #000;">
+                    <div style="width: 35px; height: 35px; margin-bottom: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 100%; height: 100%;">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.732 0-.942.784-1.732 1.75-1.732s1.75.79 1.75 1.732c0 .942-.784 1.732-1.75 1.732zm13.5 11.268h-3v-5.339c0-3.065-3-2.831-3 0v5.339h-3v-10h3v1.601c1.396-2.586 6-2.777 6 2.476v5.923z"/>
+                        </svg>
+                    </div>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
