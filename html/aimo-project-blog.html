@@ -5,9 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIMO Math Competition Project</title>
     <link rel="stylesheet" href="../styles.css">
-</head>
-<body>
-    <div class="blog-post">
+    <head>
+
+        <style>
+            .back-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 20px;
+                background-color: #f5f5f5;
+                color: #333;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+        
+            .back-button:hover {
+                background-color: #e5e5e5;
+                border-color: #ccc;
+                text-decoration: none;
+            }
+        
+            .back-button svg {
+                width: 16px;
+                height: 16px;
+                fill: currentColor;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" class="back-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+            </svg>
+            Back
+        </a>
+    
+        <div class="blog-post">
+
         <h1>Welcome to My Project Page</h1>
         
         <p>Hello there! I'm excited to share a personal project I've been pouring my time into—an AI model that tackles advanced math competition questions from the <a href="https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-2/overview">AI Mathematical Olympiad (AIMO) Progress Prize 2</a>. I have a strong interest in bridging top-tier language models with real-world challenges, and math competitions provide an excellent testing ground.</p>
