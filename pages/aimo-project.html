@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
     <title>AIMO Project - Ryan M. Gichuru</title>
     <style>
         body {
@@ -76,16 +85,26 @@
             border-top: 1px solid #eee;
             margin-top: 40px;
         }
-        </style>
-        
-        <body>
-            <a href="#" class="back-button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
-                </svg>
-                Back
-            </a>
-       
+    </style>
+
+    <script>
+        // When page loads, store the referring URL
+        window.onload = function() {
+            if (document.referrer.includes('index.html')) {
+                localStorage.setItem('returnToBlogs', 'true');
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <a href="../index.html" class="back-button" onclick="if(localStorage.getItem('returnToBlogs')) { window.location.href='../index.html#blogs'; localStorage.removeItem('returnToBlogs'); return false; }">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back
+    </a>
+
     <h1>Welcome to My Project Page</h1>
 
     <div class="welcome">
