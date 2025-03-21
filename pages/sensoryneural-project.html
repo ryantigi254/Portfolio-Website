@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SensoryNeural Project</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+
+    <style>
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+    
+        .back-button:hover {
+            background-color: #e5e5e5;
+            border-color: #ccc;
+            text-decoration: none;
+        }
+    
+        .back-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .project-section {
+            margin-bottom: 40px;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-section {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .team-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .vision-box {
+            background-color: #f0f7ff;
+            border-left: 4px solid #4a90e2;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #357abd;
+        }
+
+        .phases-container {
+            margin: 30px 0;
+        }
+
+        .phase {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 3px solid #4CAF50;
+        }
+
+        .phase h3 {
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            if (document.referrer.includes('index.html')) {
+                localStorage.setItem('returnToProjects', 'true');
+            }
+        };
+    </script>
+</head>
+<body>
+    <a href="../index.html" class="back-button" onclick="if(localStorage.getItem('returnToProjects')) { window.location.href='../index.html#projects'; localStorage.removeItem('returnToProjects'); return false; }">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back
+    </a>
+
+    <div class="blog-post">
+        <h1>SensoryNeural: Empowering Neurodivergent Children through AI-Driven Sensory Support</h1>
+        <img src="../Images/FLUX 1.1 Prediction.webp" alt="SensoryNeural Project Image" style="width: 100%; max-width: 800px; margin: 20px auto; display: block; border-radius: 8px;">
+        <hr>
+        <p><em>A project from the Elevate Great AI Competition 2025</em></p>
+        <br>
+
+        <div class="project-section">
+            <h2>The Challenge</h2>
+            <p>
+                Neurodivergent children, particularly those with autism spectrum disorder (ASD) and sensory processing disorders (SPD), experience significant distress due to sensory dysregulation. This distress presents as sensory hyper-responsivity, hypo-responsivity, or sensory-seeking behaviors, leading to challenges in:
+            </p>
+            <ul>
+                <li>Social interaction and communication</li>
+                <li>Emotional regulation and anxiety management</li>
+                <li>Academic performance and learning</li>
+                <li>Daily functioning and independence</li>
+            </ul>
+            <p>
+                Traditional interventions like occupational therapy or static sensory tools (e.g., noise-cancelling headphones) fail to address these sensory triggers in dynamic, real-world environments, creating a critical gap in support for these children and their families.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Our Vision</h2>
+            <p>
+                SensoryNeural represents our vision for an adaptive environment that supports neurodivergent children's sensory needs. By combining artificial intelligence with everyday surroundings, we aim to create spaces that adjust to the child rather than requiring the child to adjust to rigid environments.
+            </p>
+            <p>
+                Our approach shifts from reactive interventions to proactive support, leveraging emerging technologies to predict and address sensory challenges before they lead to distress. The goal is to empower neurodivergent children with greater autonomy, inclusion, and overall well-being.
+            </p>
+            
+            <div class="vision-box">
+                <p><strong>Our ultimate vision is to shape an inclusive future where neurodivergent children have the same opportunities to thrive as their neurotypical peers.</strong></p>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Conceptual Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Predictive Sensory Support</h3>
+                    <p>Anticipating potential sensory triggers before they cause distress, allowing for timely interventions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Environmental Adaptations</h3>
+                    <p>Creating sensory-friendly spaces that can adjust in real-time to meet individual needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Personalized Approach</h3>
+                    <p>Recognizing that each child has unique sensory preferences and needs that evolve over time.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Environment Support</h3>
+                    <p>Extending sensory accommodations beyond the home to educational and community settings.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Data-Informed Insights</h3>
+                    <p>Providing parents and professionals with meaningful information to better understand and support the child.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Promoting Independence</h3>
+                    <p>Helping children develop self-regulation skills while providing necessary environmental support.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Development Approach</h2>
+            <p>
+                Our project is following a thoughtful, staged development process with an emphasis on privacy, security, and ethical considerations at every step. We're working closely with clinical experts to ensure our approach is grounded in evidence-based practice.
+            </p>
+            
+            <div class="phases-container">
+                <div class="phase">
+                    <h3>Research & Understanding</h3>
+                    <p>Exploring the needs of neurodivergent children through literature review and expert consultation</p>
+                </div>
+                <div class="phase">
+                    <h3>Concept Development</h3>
+                    <p>Creating the framework for our innovative approach to sensory support</p>
+                </div>
+                <div class="phase">
+                    <h3>Testing & Refinement</h3>
+                    <p>Iterative improvement with feedback from experts and potential users</p>
+                </div>
+                <div class="phase">
+                    <h3>Implementation</h3>
+                    <p>Bringing the solution to those who can benefit most</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>My Role</h2>
+            <div class="team-section">
+                <h3>Ryan Gichuru - AI Specialist</h3>
+                <p>
+                    As the AI specialist on this project, I bring my expertise in machine learning, data analysis, and AI systems design to help bridge the gap between technical possibilities and real human needs. My role involves:
+                </p>
+                <ul>
+                    <li>Researching appropriate AI approaches that could benefit neurodivergent children</li>
+                    <li>Collaborating with clinical experts to ensure AI systems are designed with proper ethical guidelines</li>
+                    <li>Exploring how predictive technologies can be applied to sensory support in a privacy-respecting manner</li>
+                    <li>Helping translate complex technical concepts into accessible features that improve daily life</li>
+                </ul>
+                <p>
+                    This project aligns perfectly with my passion for developing AI solutions that have meaningful human impact, especially for those who are often underserved by traditional technologies.
+                </p>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>The Team</h2>
+            <p>
+                Our interdisciplinary team brings together expertise in child psychiatry, artificial intelligence, software engineering, and hardware integration. This diverse skillset allows us to approach the challenge of sensory support from multiple perspectives, ensuring a comprehensive solution.
+            </p>
+            <p>
+                The team includes professionals with backgrounds in:
+            </p>
+            <ul>
+                <li>Child and adolescent mental health</li>
+                <li>Artificial intelligence and machine learning</li>
+                <li>Software development and user experience design</li>
+                <li>Data analytics and privacy engineering</li>
+                <li>Hardware integration and IoT systems</li>
+            </ul>
+        </div>
+
+        <div class="project-section">
+            <h2>Recognition</h2>
+            <p>
+                SensoryNeural was selected as a finalist in the first rounds of the Elevate Great AI Competition 2025, which focused on enhancing early childhood development through artificial intelligence. Our team's innovative approach to supporting neurodivergent children earned recognition from judges.
+            </p>
+            <p>
+                The competition challenged participants to envision how AI can positively influence key aspects of early childhood development, which allowed us to showcase our vision for creating adaptive environments for children with sensory processing challenges.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Impact Potential</h2>
+            <p>
+                We believe SensoryNeural has the potential to transform daily life for:
+            </p>
+            <ul>
+                <li><strong>Children with sensory processing challenges:</strong> Increasing comfort, reducing anxiety, and improving engagement in educational and social activities</li>
+                <li><strong>Families:</strong> Reducing stress and providing tools to better support their children's unique needs</li>
+                <li><strong>Educators:</strong> Enabling more inclusive classroom environments that accommodate diverse sensory profiles</li>
+                <li><strong>Healthcare providers:</strong> Offering new insights and approaches to supporting children with sensory regulation challenges</li>
+            </ul>
+            <p>
+                By addressing sensory needs proactively, we aim to help remove barriers to participation and learning, ultimately contributing to better outcomes for neurodivergent children.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <p>For more information about this project or to discuss potential collaborations:</p>
+            <a href="mailto:ryan.gichuru22@my.northampton.ac.uk" class="cta-button">Contact Me</a>
+        </div>
+    </div>
+
+    <a href="../index.html#projects" class="project-details-button" style="margin-bottom: 40px;">Back to Projects</a>
+</body>
+</html>
