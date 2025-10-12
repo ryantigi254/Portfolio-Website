@@ -309,7 +309,7 @@
         </li>        
         <li>
         <li>
-            <strong class="expandable-header">Student Ambassador, Intel Corporation (June 2024 - Present):</strong>
+            <strong class="expandable-header">Student Ambassador, Intel Corporation (June 2024 - September 2025):</strong>
             <span class="short-description">Promoting learning and collaboration within developer communities.</span>
             <div class="expandable-content">
                 <p>
