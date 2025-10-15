@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Human-Centric AI Mental Health Chatbot</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <style>
+        .back-button { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background-color: #f5f5f5; color: #333; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; font-size: 16px; transition: all 0.3s ease; }
+        .back-button:hover { background-color: #e5e5e5; border-color: #ccc; text-decoration: none; }
+        .back-button svg { width: 16px; height: 16px; fill: currentColor; }
+        .blog-post img { width: 100%; height: auto; border-radius: 6px; }
+        .figure { margin: 24px 0; background: #f7f7f7; padding: 12px; border-radius: 8px; }
+        .caption { font-size: 14px; color: #333; margin-top: 8px; }
+        .meta { color: #333; font-size: 14px; }
+        .callout { background: #fff5e6; border-left: 3px solid #e16f00; padding: 10px 12px; border-radius: 4px; }
+    </style>
+    <script>
+        window.onload = function() {
+            if (document.referrer.includes('index.html')) {
+                localStorage.setItem('returnToBlogs', 'true');
+            }
+        };
+    </script>
+</head>
+<body>
+    <a href="../index.html" class="back-button" onclick="if(localStorage.getItem('returnToBlogs')) { window.location.href='../index.html#blog'; localStorage.removeItem('returnToBlogs'); return false; }">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back
+    </a>
+
+    <div class="blog-post">
+        <h1>Building a Human-Centric AI Mental Health Chatbot</h1>
+        <p class="meta">From RASA to a multi-model system that plans, reasons, and responds with empathy</p>
+        <p class="meta">By Ryan Mutiga Gichuru — <a href="https://www.linkedin.com/in/ryan-gichuru-1bba671a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a> • <a href="https://ryangichuru.com" target="_blank" rel="noopener noreferrer">ryangichuru.com</a></p>
+        <p class="meta">Co-authors: Ryan Gichuru, <a href="https://www.linkedin.com/in/shazab-hassan-2aa8a3281/" target="_blank" rel="noopener noreferrer">Shazab Hassan</a>, <a href="https://www.linkedin.com/in/akram-careem/" target="_blank" rel="noopener noreferrer">Akram Careem</a></p>
+
+        <p>This is the story of <strong>UniMind</strong> — a student-facing mental-health chatbot we built at the University of Northampton. It began as a rule-driven RASA assistant and grew into a safety-first, multi-agent AI that <strong>plans the conversation before it speaks</strong>.</p>
+
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Multi-Agent System Overview for UON Students.png" alt="Multi-agent system overview">
+            <div class="caption">Multi-agent overview.</div>
+        </div>
+
+        <h2>Why we started: bridging the support gap</h2>
+        <p>University counselling teams work incredibly hard — and they’re also at capacity. Our goal with UniMind was not to replace clinicians but to offer safe, 24/7 first-line support that complements existing services and seamlessly routes students to real help. The final system hits those targets across multiple metrics — including <strong>layered crisis detection with ~99.99% reliability (internal)</strong> (<em>100% on our scenario set; ≥99.9% with a single-provider outage; ~99% worst-case local fallback</em>), <strong>8.2/10 satisfaction</strong>, and an <strong>~89% cost reduction</strong>.</p>
+
+        <h2>Phase 1 — The legacy RASA approach (and what it taught us)</h2>
+        <p>We began with a conventional RASA stack and built a deep intent hierarchy (200+ intents) with stories covering crisis indicators, academic stress, finances, relationships and campus services. In controlled tests we reached 100% story-level accuracy, but real-input intent classification averaged ~5.24%, a critical limitation for this domain.</p>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Mental Health Chatbot Diagram UON.png" alt="RASA architecture diagram">
+            <div class="caption">RASA architecture (legacy).</div>
+        </div>
+        <p><a href="https://github.com/ryantigi254/UniMind-Chatbot-Legacy-Approach" target="_blank" rel="noopener noreferrer">Legacy repo (archived)</a></p>
+
+        <h2>Phase 2 — From rules to reasoning: the multi-agent redesign</h2>
+        <p>We rebuilt UniMind as a three-agent therapeutic architecture:</p>
+        <ul>
+            <li><strong>PSY-OVERSEER-1 (Planner)</strong> — proposes a short plan for the next step(s) of the conversation (Initial → Assessment → Treatment).</li>
+            <li><strong>PSY-OVERSEER-2 (Guidance)</strong> — translates each plan step into micro-instructions.</li>
+            <li><strong>PSY_mini (Conversationalist)</strong> — a psychotherapy-tuned LLM that speaks in a warm, concise style, under strict safety and tone rules.</li>
+        </ul>
+
+        <h3>Agent Responsibility Matrix</h3>
+        <div class="figure" style="overflow-x:auto;">
+            <table style="width:100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background:#f0f0f0;">
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Agent</th>
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Primary Function</th>
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Technology</th>
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Input</th>
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">PSY-OVERSEER-1</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Strategic Planning</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Gemini 2.0 Flash</td>
+                        <td style="border:1px solid #ccc; padding:8px;">User conversation + context</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Therapeutic plan steps</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">PSY-OVERSEER-2</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Tactical Guidance</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Integrated</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Plan step + user state</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Response guidance</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">PSY_mini</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Conversation Execution</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Psychotherapy-LLM (8B)</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Guidance + user message</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Empathetic response</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">RESOURCES_assist</td>
+                        <td style="border:1px solid #ccc; padding:8px;">University Integration</td>
+                        <td style="border:1px solid #ccc; padding:8px;">OpenAI Assistant API</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Conversation content</td>
+                        <td style="border:1px solid #ccc; padding:8px;">UON resources</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">Table 1 — Agent Responsibility Matrix. See report p.15 (Table 1).</div>
+        </div>
+
+        <h2>Assignment principles — plan-first, referral-first, keep the conversation going</h2>
+        <ul>
+            <li><strong>Plan-first, not fix-first.</strong> First three steps focus on rapport/validation and basic emotional assessment — Stage-Based Planning Framework p.15.</li>
+            <li><strong>Referral-first.</strong> Suggest courses of action and relevant resources; immediate signposting in potential crisis — Crisis Protocol p.18 (Fig. 2).</li>
+            <li><strong>Conversation continuity.</strong> Conversation Continuity Framework with Dynamic Plan Alignment and Three-Stage Progression — pp.17–18.</li>
+        </ul>
+
+        <h2>Data foundations — Kaggle in, student-relevant out</h2>
+        <p>We curated therapist dialogues and mental-health Q&A from public datasets, cleaned for student themes. Cleaned CSVs drive prompt design, evaluation scenarios and guidance structure.</p>
+        <p><a href="https://github.com/ryantigi254/AI_project_data_cleaning" target="_blank" rel="noopener noreferrer">Data cleaning repo</a></p>
+
+        <h2>Making “helpful” feel human — style & safety by design</h2>
+        <p>A strict system prompt set a warm persona, kept replies short and added a safety override for crisis language. An action threshold delayed concrete skills/advice until sufficient understanding.</p>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Mental Health Chatbot Resources.jpeg" alt="Resources and safety UI">
+            <div class="caption">UI — Resources present in chat (Figs. 7–14, pp.39–42).</div>
+        </div>
+
+        <h2>How we measured progress — cycles, rubrics, and evidence</h2>
+        <p>Evaluation covered quantitative and qualitative signals across internal sessions, a public demo, and external participants. Reliability and performance summaries are detailed in the technical report.</p>
+
+        <h3>Prompt-design analysis (pre-evaluation)</h3>
+        <p>We first analysed Kaggle‑curated conversations and used an LLM scorer to rank micro‑elements (validation, reflection, open question, psychoeducation→application, tone, list‑avoidance). Those insights seeded our initial system prompt and micro‑structure before iterative evaluation and tuning.</p>
+        <p>We chose this <strong>quantifiable</strong> route so changes could be defended with data rather than handcrafted rules. Using base data comparisons (original therapy vs student responses) and the exported metrics (<code>results.json</code>, <code>student_results.json</code>), we targeted the upper quartile for human‑likeness and tone, then encoded the highest‑impact micro‑elements into guidance. See analysis assets in the repo’s <a href="https://github.com/ryantigi254/AI_project_data_cleaning/tree/llm-report-updates/Reports/Analysis_of_Test_Cycles" target="_blank" rel="noopener noreferrer">Analysis_of_Test_Cycles</a>.</p>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/basedata_plot_1.png" alt="Prompt-design analysis base plot 1">
+            <div class="caption">Prompt-design base analysis — features correlated with higher conversation quality.</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/basedata_plot_2.png" alt="Prompt-design analysis base plot 2">
+            <div class="caption">Additional prompt-design signals used to seed initial guidance.</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/basedata_plot_corr.png" alt="Prompt-design correlation heatmap">
+            <div class="caption">Correlation heatmap across micro‑elements; informed PSY‑OVERSEER‑2 guidance template.</div>
+        </div>
+
+        <h3>Therapy session feedback (evaluation notes)</h3>
+        <p>Short therapy‑style test sessions provided qualitative checks on warmth, brevity and progression, plus safety behaviour under crisis language. We used these logs and reports to refine style guards, the action threshold and plan transitions. Session artefacts live in <a href="https://github.com/ryantigi254/AI_project_data_cleaning/tree/llm-report-updates/experiments/therapy_sessions" target="_blank" rel="noopener noreferrer">experiments/therapy_sessions</a> and the framework notes in <a href="https://github.com/ryantigi254/AI_project_data_cleaning/blob/llm-report-updates/Reports/psychocounsel_testing_framework.md" target="_blank" rel="noopener noreferrer">psychocounsel_testing_framework.md</a>.</p>
+
+        <h2>Model strengths & weaknesses</h2>
+        <div class="figure" style="overflow-x:auto;">
+            <table style="width:100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background:#f0f0f0;">
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Type</th>
+                        <th style="border:1px solid #ccc; padding:8px; text-align:left;">Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Strength</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Multi‑layer crisis safety (deterministic crisis copy + layered detection); warm, concise tone with structured micro‑moves (validate → reflect → single open question → optional psychoeducation‑to‑application); clear plan stages; UON resource integration.</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Strength</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Neutral, jargon‑free language aiding inclusivity; consistent structure reduces ad‑hoc bias; explicit safety overrides.</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Weakness</td>
+                        <td style="border:1px solid #ccc; padding:8px;">UK/UON‑centric resources by default; needs broader localisation for non‑UK contexts and international students (including crisis lines and services).</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Weakness</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Prompts lack explicit cultural‑sensitivity cues; missing gentle checks for cultural/identity context when relevant.</td>
+                    </tr>
+                    <tr>
+                        <td style="border:1px solid #ccc; padding:8px;">Weakness</td>
+                        <td style="border:1px solid #ccc; padding:8px;">Occasional edge‑case tone misreads (e.g., “disrespectful” perception) and handling of abrupt topic shifts; plan‑alignment smoothing needed.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="caption">Summary of observed strengths and weaknesses from therapy session analyses.</div>
+        </div>
+        <h3>What needs to be done</h3>
+        <ul>
+            <li>Broaden resource localisation beyond UON/UK; add global crisis lines and international support pathways.</li>
+            <li>Add explicit cultural‑sensitivity probes in prompts; allow gentle checks for background/context when appropriate.</li>
+            <li>Refine language guards to avoid tone misreads; improve handling of abrupt topic shifts; smooth dynamic plan alignment.</li>
+            <li>Reduce cold‑start via pre‑warming/connection pooling; hold ≈2.5 s warm‑path responses under load.</li>
+            <li>Capture structured per‑session feedback; monitor action‑threshold effectiveness; investigate previously observed empty logs; strengthen GDPR logging/analytics for deployment.</li>
+        </ul>
+        <p>See supporting analyses: <a href="https://github.com/ryantigi254/AI_project_data_cleaning/blob/llm-report-updates/experiments/therapy_sessions/Therapy_session_testing/FlowReport/Model_Bias_Analysis.md" target="_blank" rel="noopener noreferrer">Model_Bias_Analysis.md</a>, <a href="https://github.com/ryantigi254/AI_project_data_cleaning/blob/llm-report-updates/experiments/therapy_sessions/Therapy_session_testing/FlowReport/Model_Inclusivity_Analysis.md" target="_blank" rel="noopener noreferrer">Model_Inclusivity_Analysis.md</a>, and <a href="https://github.com/ryantigi254/AI_project_data_cleaning/blob/llm-report-updates/experiments/therapy_sessions/Therapy_session_testing/FlowReport/Therapy_Session_Summary.md" target="_blank" rel="noopener noreferrer">Therapy_Session_Summary.md</a>.</p>
+
+        <h2>User feedback & next steps</h2>
+        <ul>
+            <li><strong>User feedback (final system):</strong> external student testing averaged 8.2/10; feedback highlighted understanding/empathy, appropriate response quality, and a calming UI; follow‑up questions felt natural; a small number flagged tone edge‑cases in specific turns.</li>
+            <li><strong>Performance notes:</strong> public demo showed ~20 s cold‑start then ~9 s warm responses; current optimised stack targets ≈2.5 s on warm paths.</li>
+            <li><strong>Improvements in progress:</strong> pre‑warming and pooling to reduce cold‑start spikes; broadened resource localisation; explicit cultural‑sensitivity cues in prompts; continued tuning of action‑threshold and plan alignment; structured feedback collection in sessions.</li>
+            <li><strong>Deployment:</strong> web deployment work is active to make the system publicly accessible, alongside GDPR controls, monitoring, and reliability targets.</li>
+        </ul>
+
+        <h2>Results (prototype stage)</h2>
+        <ul>
+            <li><strong>Layered crisis detection:</strong> ~99.99% reliability (internal) with 100% on our scenario set; 99.9% with a single-provider outage; ~99% worst-case local fallback (OpenAI 94%, Gemini 96%, local 88%; Table 2, p.24; Table 3, p.28).</li>
+            <li><strong>Satisfaction:</strong> 8.2/10 (Table 3, p.28).</li>
+            <li><strong>Latency:</strong> ~9s warm on early demo; ≈2.5s optimised (p.25 and Table 3, p.28).</li>
+            <li><strong>Cost:</strong> £13.36 per user/month (~89% reduction) — p.26 and Fig. 5 on p.27.</li>
+        </ul>
+
+        <h3>Technical addendum (from cycle insights)</h3>
+        <ul>
+            <li><strong>Micro-structure enforcement:</strong> PSY-OVERSEER-2 guidance always yields validation → reflection → optional psychoeducation-with-application → one open question.</li>
+            <li><strong>Action threshold gating:</strong> Coping/homework appears only after sufficient exploration progress to avoid premature advice.</li>
+            <li><strong>Stage transitions:</strong> Fixed initial plan then automatic Initial → Assessment → Treatment progression with dynamic plan alignment.</li>
+            <li><strong>Lightweight eval harness:</strong> Internal scoring correlated with the micro-elements above; details in the repo Cycle Insights report.</li>
+        </ul>
+
+        <h2>Productisation tracks (you can try the front-ends)</h2>
+        <ul>
+            <li><a href="https://github.com/ryantigi254/UniMind-Chatbot-Web-App" target="_blank" rel="noopener noreferrer">Web app</a> — crisis button, UON resources, self-help tools.</li>
+            <li><a href="https://github.com/ryantigi254/UniMind-Chatbot-iOS-App" target="_blank" rel="noopener noreferrer">iOS app</a> — SwiftUI client and journaling.</li>
+        </ul>
+
+        <h2>RASA → multi-agent pivot</h2>
+        <p>Earlier demo-day numbers (~9s average response and RASA limits) explain the pivot. Current stack returns ~2.5s on warm paths while preserving safety.</p>
+
+        <h2>What surprised us</h2>
+        <ul>
+            <li><strong>Structure liberates.</strong> Plan + micro-structure improved naturalness — pp.17–18.</li>
+            <li><strong>Patience is programmable.</strong> Action-threshold gating raised perceived empathy — pp.23–24, 28.</li>
+            <li><strong>Safety must be multi-layered.</strong> Crisis handled by predefined copy — p.18 (Fig. 2).</li>
+        </ul>
+
+        <h2>Roadmap</h2>
+        <ul>
+            <li>Push cold-start lower; 2–3s consistent responses</li>
+            <li>Auto-tag micro-elements for QA</li>
+            <li>Outcome tracking (opt-in), human-in-the-loop audits</li>
+            <li>Voice/multilingual modes within safety envelope</li>
+        </ul>
+
+        <h2>UI screenshots</h2>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Mental Health Chatbot Initial Page.jpeg" alt="Initial page after terms accepted">
+            <div class="caption">Initial page after terms accepted — Appendix Figs. 7–14 (pp.39–42).</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Crisis Button Mental Health Chatbot.jpeg" alt="Crisis button">
+            <div class="caption">Crisis button — Appendix Figs. 7–14.</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Breathing Exercises UON Chatbot.jpeg" alt="Breathing exercises">
+            <div class="caption">Breathing exercises (4-4-4) — Appendix Figs. 7–14.</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Grounding Exercise Mental Health Chatbot.jpeg" alt="54321 grounding exercise">
+            <div class="caption">5-4-3-2-1 grounding — Appendix Figs. 7–14.</div>
+        </div>
+        <div class="figure">
+            <img src="../assets/Chatbot_project/Mental Health Chatbot Journal.jpeg" alt="Journal UI">
+            <div class="caption">Journal UI — Appendix Figs. 7–14.</div>
+        </div>
+
+        <h2>Formal references</h2>
+        <ul>
+            <li><a href="https://github.com/ryantigi254/UniMind-Chatbot-Legacy-Approach" target="_blank" rel="noopener noreferrer">UniMind Chatbot Legacy Approach</a></li>
+            <li><a href="https://github.com/ryantigi254/AI_project_data_cleaning" target="_blank" rel="noopener noreferrer">AI Project Data Cleaning</a></li>
+            <li><a href="https://github.com/ryantigi254/UniMind-Chatbot-Web-App" target="_blank" rel="noopener noreferrer">UniMind Chatbot Web App</a></li>
+            <li><a href="https://github.com/ryantigi254/UniMind-Chatbot-iOS-App" target="_blank" rel="noopener noreferrer">UniMind Chatbot iOS App</a></li>
+        </ul>
+
+        <h2>Report (rendered PDF)</h2>
+        <p><a href="../Mental Health Chatbot UON Students Group 4.pdf" target="_blank" rel="noopener noreferrer">Open the full report PDF</a></p>
+    </div>
+</body>
+</html>
