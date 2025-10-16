@@ -19,8 +19,9 @@
         .back-button:hover { background-color: #e5e5e5; border-color: #ccc; text-decoration: none; }
         .back-button svg { width: 16px; height: 16px; fill: currentColor; }
         .blog-post img { width: 100%; height: auto; border-radius: 6px; }
-        .figure { margin: 24px 0; background: #f7f7f7; padding: 12px; border-radius: 8px; }
-        .caption { font-size: 14px; color: #333; margin-top: 8px; }
+        .blog-post img.small { width: 70%; max-width: 900px; display: block; margin-left: auto; margin-right: auto; }
+        .figure { margin: 12px auto; background: #fafafa; padding: 6px 8px; border-radius: 6px; max-width: 1100px; }
+        .caption { font-size: 12px; color: #333; margin-top: 6px; }
         .meta { color: #333; font-size: 14px; }
         .callout { background: #fff5e6; border-left: 3px solid #e16f00; padding: 10px 12px; border-radius: 4px; }
     </style>
@@ -43,7 +44,6 @@
     <div class="blog-post">
         <h1>Building a Human-Centric AI Mental Health Chatbot</h1>
         <p class="meta">From RASA to a multi-model system that plans, reasons, and responds with empathy</p>
-        <p class="meta">By Ryan Mutiga Gichuru — <a href="https://www.linkedin.com/in/ryan-gichuru-1bba671a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a> • <a href="https://ryangichuru.com" target="_blank" rel="noopener noreferrer">ryangichuru.com</a></p>
         <p class="meta">Co-authors: Ryan Gichuru, <a href="https://www.linkedin.com/in/shazab-hassan-2aa8a3281/" target="_blank" rel="noopener noreferrer">Shazab Hassan</a>, <a href="https://www.linkedin.com/in/akram-careem/" target="_blank" rel="noopener noreferrer">Akram Careem</a></p>
 
         <p>This is the story of <strong>UniMind</strong> — a student-facing mental-health chatbot we built at the University of Northampton. It began as a rule-driven RASA assistant and grew into a safety-first, multi-agent AI that <strong>plans the conversation before it speaks</strong>.</p>
@@ -132,7 +132,7 @@
         <h2>Making “helpful” feel human — style & safety by design</h2>
         <p>A strict system prompt set a warm persona, kept replies short and added a safety override for crisis language. An action threshold delayed concrete skills/advice until sufficient understanding.</p>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Mental Health Chatbot Resources.jpeg" alt="Resources and safety UI">
+            <img class="small" src="../Images/Chatbot_project/Mental Health Chatbot Resources.jpeg" alt="Resources and safety UI">
             <div class="caption">UI — Resources present in chat (Figs. 7–14, pp.39–42).</div>
         </div>
 
@@ -143,15 +143,15 @@
         <p>We first analysed Kaggle‑curated conversations and used an LLM scorer to rank micro‑elements (validation, reflection, open question, psychoeducation→application, tone, list‑avoidance). Those insights seeded our initial system prompt and micro‑structure before iterative evaluation and tuning.</p>
         <p>We chose this <strong>quantifiable</strong> route so changes could be defended with data rather than handcrafted rules. Using base data comparisons (original therapy vs student responses) and the exported metrics (<code>results.json</code>, <code>student_results.json</code>), we targeted the upper quartile for human‑likeness and tone, then encoded the highest‑impact micro‑elements into guidance. See analysis assets in the repo’s <a href="https://github.com/ryantigi254/AI_project_data_cleaning/tree/llm-report-updates/Reports/Analysis_of_Test_Cycles" target="_blank" rel="noopener noreferrer">Analysis_of_Test_Cycles</a>.</p>
         <div class="figure">
-            <img src="../Images/Chatbot_project/basedata_plot_1.png" alt="Prompt-design analysis base plot 1">
+            <img class="small" src="../Images/Chatbot_project/basedata_plot_1.png" alt="Prompt-design analysis base plot 1">
             <div class="caption">Prompt-design base analysis — features correlated with higher conversation quality.</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/basedata_plot_2.png" alt="Prompt-design analysis base plot 2">
+            <img class="small" src="../Images/Chatbot_project/basedata_plot_2.png" alt="Prompt-design analysis base plot 2">
             <div class="caption">Additional prompt-design signals used to seed initial guidance.</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/basedata_plot_corr.png" alt="Prompt-design correlation heatmap">
+            <img class="small" src="../Images/Chatbot_project/basedata_plot_corr.png" alt="Prompt-design correlation heatmap">
             <div class="caption">Correlation heatmap across micro‑elements; informed PSY‑OVERSEER‑2 guidance template.</div>
         </div>
 
@@ -252,23 +252,23 @@
 
         <h2>UI screenshots</h2>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Mental Health Chatbot Initial Page.jpeg" alt="Initial page after terms accepted">
+            <img class="small" src="../Images/Chatbot_project/Mental Health Chatbot Initial Page.jpeg" alt="Initial page after terms accepted">
             <div class="caption">Initial page after terms accepted — Appendix Figs. 7–14 (pp.39–42).</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Crisis Button Mental Health Chatbot.jpeg" alt="Crisis button">
+            <img class="small" src="../Images/Chatbot_project/Crisis Button Mental Health Chatbot.jpeg" alt="Crisis button">
             <div class="caption">Crisis button — Appendix Figs. 7–14.</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Breathing Exercises UON Chatbot.jpeg" alt="Breathing exercises">
+            <img class="small" src="../Images/Chatbot_project/Breathing Exercises UON Chatbot.jpeg" alt="Breathing exercises">
             <div class="caption">Breathing exercises (4-4-4) — Appendix Figs. 7–14.</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Grounding Exercise Mental Health Chatbot.jpeg" alt="54321 grounding exercise">
+            <img class="small" src="../Images/Chatbot_project/Grounding Exercise Mental Health Chatbot.jpeg" alt="54321 grounding exercise">
             <div class="caption">5-4-3-2-1 grounding — Appendix Figs. 7–14.</div>
         </div>
         <div class="figure">
-            <img src="../Images/Chatbot_project/Mental Health Chatbot Journal.jpeg" alt="Journal UI">
+            <img class="small" src="../Images/Chatbot_project/Mental Health Chatbot Journal.jpeg" alt="Journal UI">
             <div class="caption">Journal UI — Appendix Figs. 7–14.</div>
         </div>
 
