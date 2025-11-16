@@ -46,14 +46,16 @@
         <p class="meta">From RASA to a multi-model system that plans, reasons, and responds with empathy</p>
         <p class="meta">Co-authors: Ryan Gichuru, <a href="https://www.linkedin.com/in/shazab-hassan-2aa8a3281/" target="_blank" rel="noopener noreferrer">Shazab Hassan</a>, <a href="https://www.linkedin.com/in/akram-careem/" target="_blank" rel="noopener noreferrer">Akram Careem</a></p>
 
-        <p>This is the story of <strong>UniMind</strong> — a student-facing mental-health chatbot we built at the University of Northampton. It began as a rule-driven RASA assistant and grew into a safety-first, multi-agent AI that <strong>plans the conversation before it speaks</strong>.</p>
+        <p>This is the story of <strong>UniMind</strong> — a student-facing mental-health chatbot we built at the University of Northampton. As part of our second-year group project module, we were given two main objectives:</p>
+        
+        <ol>
+            <li>The chatbot should not attempt to solve problems directly, but rather signpost students to appropriate resources or provide supportive guidance.</li>
+            <li>The chatbot must implement conversation planning to maintain a coherent therapeutic trajectory. This ensures that even during extended interactions, the conversation remains structured and goal-oriented, rather than devolving into disconnected, one-off responses.</li>
+        </ol>
+        
+        <p>It began as a rule-driven RASA assistant and grew into a safety-first, multi-agent AI that <strong>plans the conversation before it speaks</strong>.</p>
 
-        <div class="figure">
-            <img src="../Images/Chatbot_project/Multi-Agent System Overview for UON Students.png" alt="Multi-agent system overview">
-            <div class="caption">Multi-agent overview.</div>
-        </div>
-
-        <h2>Why we started: bridging the support gap</h2>
+        <h2>How we started: bridging the support gap</h2>
         <p>University counselling teams work incredibly hard — and they’re also at capacity. Our goal with UniMind was not to replace clinicians but to offer safe, 24/7 first-line support that complements existing services and seamlessly routes students to real help. The final system hits those targets across multiple metrics — including <strong>layered crisis detection with ~99.99% reliability (internal)</strong> (<em>100% on our scenario set; ≥99.9% with a single-provider outage; ~99% worst-case local fallback</em>), <strong>8.2/10 satisfaction</strong>, and an <strong>~89% cost reduction</strong>.</p>
 
         <h2>Phase 1 — The legacy RASA approach (and what it taught us)</h2>
@@ -65,6 +67,12 @@
         <p><a href="https://github.com/ryantigi254/UniMind-Chatbot-Legacy-Approach" target="_blank" rel="noopener noreferrer">Legacy repo (archived)</a></p>
 
         <h2>Phase 2 — From rules to reasoning: the multi-agent redesign</h2>
+        
+        <div class="figure">
+            <img src="../Images/Chatbot_project/Multi-Agent System Overview for UON Students.png" alt="Multi-agent system overview">
+            <div class="caption">Multi-agent overview.</div>
+        </div>
+        
         <p>We rebuilt UniMind as a three-agent therapeutic architecture:</p>
         <ul>
             <li><strong>PSY-OVERSEER-1 (Planner)</strong> — proposes a short plan for the next step(s) of the conversation (Initial → Assessment → Treatment).</li>

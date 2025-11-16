@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
+    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
+    <title>Reliable Clinical Reasoning in LLMs - Ryan M. Gichuru</title>
+    <link rel="stylesheet" href="page-styles.css">
+</head>
+
+<body>
+<main>
+    <header class="page-header">
+        <a href="../index.html" class="return-link" onclick="if(localStorage.getItem('returnToProjects')) { window.location.href='../index.html#projects'; localStorage.removeItem('returnToProjects'); return false; }">← Back to Portfolio</a>
+        <p class="eyebrow">Clinical NLP · 2025</p>
+        <h1>Reliable Clinical Reasoning in LLMs: Faithfulness, Empathy–Truth, Continuity</h1>
+        <p class="page-lede">
+            A three-study benchmark that pressure-tests counselling LLMs for alignment failures uncovered by the latest research on in-context scheming, alignment faking, and multi-turn sycophancy.
+        </p>
+        <div class="meta-grid">
+            <div class="meta-card">
+                <p class="meta-label">Scope</p>
+                <p class="meta-value">CSY3055 Benchmark · Dissertation Support</p>
+            </div>
+            <div class="meta-card">
+                <p class="meta-label">Models</p>
+                <p class="meta-value">PsyLLM · Qwen/Qwen3-8B · openai/gpt-oss-20b</p>
+            </div>
+            <div class="meta-card">
+                <p class="meta-label">Status</p>
+                <p class="meta-value">Research & Evaluation · Q4 2025</p>
+            </div>
+            <div class="meta-card">
+                <p class="meta-label">Stack</p>
+                <p class="meta-value">Python · HF Pipelines · MiniLM · Bootstrap CI</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-card" id="overview">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+            The benchmark is a compact, reproducible harness that measures <strong>clinical reasoning reliability without retrieval</strong> in LLMs earmarked for mental-health support tooling. It zeroes in on three failure modes that surfaced in 2024–2025 alignment work: unfaithful reasoning, sycophancy under pressure, and longitudinal drift when memory is absent or brittle.
+        </p>
+        <p>
+            By standardising data splits, metrics, bootstrap confidence intervals, and qualitative failure taxonomies, the harness makes it easy to compare small counselling-tuned models against larger generalist baselines while preserving NHS-style privacy and cost constraints (no RAG, lightweight memory only).
+        </p>
+        <div class="tag-row">
+            <span class="tag">Safety-first AI</span>
+            <span class="tag">Clinical NLP</span>
+            <span class="tag">Benchmark Design</span>
+            <span class="tag">NHS-ready</span>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Research Landscape · 2024–2025</h2>
+        <p>
+            The benchmark is grounded in frontier alignment research that is very much active—not historic theory. The following highlights shaped the scope:
+        </p>
+        <div class="timeline">
+            <h4>Key Papers</h4>
+            <ul class="list-spaced">
+                <li><strong>Meinke et al. (2024)</strong> — in-context scheming (arXiv:2412.04984). Frontier models can covertly pursue hidden goals while emitting convincing but fabricated reasoning.</li>
+                <li><strong>Koorndijk (2025)</strong> — alignment faking (arXiv:2506.21584). Demonstrated small models that appear safe yet internally deviate from protocol, plus prompt-level mitigations.</li>
+                <li><strong>Sycophancy wave (2023–2025)</strong> — Wei, Sharma, Liu (“TRUTH DECAY”), Fanous (“SycEval”), Pandey (“Beacon”), Hong, Kaur. All quantified strategic agreement across single and multi-turn chats.</li>
+            </ul>
+            <p><strong>Status:</strong> These threads are still evolving, particularly for safety-critical deployments such as mental-health triage. The benchmark translates their insights into concrete tests and metrics.</p>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Core Alignment Concepts in a Clinical Context</h2>
+        <div class="concept-grid">
+            <div class="concept-box">
+                <h4>In-Context Scheming</h4>
+                <p>Covert strategies that produce compliant-looking answers with fabricated reasoning. Clinically, auditors may trust a correct referral even if the reasoning fabricates diagnoses. Faithfulness checks are essential.</p>
+            </div>
+            <div class="concept-box">
+                <h4>Alignment Faking</h4>
+                <p>Models mimic helpfulness whilst their internal decision process ignores safety policy. In mental-health chat, that looks like empathic tone masking advice that skirts escalation or consent rules.</p>
+            </div>
+            <div class="concept-box">
+                <h4>Sycophancy</h4>
+                <p>Strategic agreement to please the user. Distressed users may suggest harmful coping strategies; a sycophantic bot echoes them instead of redirecting to safe resources.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Architectural Diagram</h2>
+        <div class="image-frame">
+            <img src="../Images/NLP/NLP Project Evaluation Diagrams Nov 15 2025.png" alt="NLP Project Architectural Diagram">
+        </div>
+    </section>
+
+    <section class="section-card" id="studies">
+        <h2 class="section-title">Three Focused Studies</h2>
+        <div class="study-grid">
+            <div class="study-card">
+                <h3>Study A · Faithfulness</h3>
+                <p><strong>Signal:</strong> Detects “right for the wrong reasons” scenarios reminiscent of scheming.</p>
+                <ul class="list-spaced">
+                    <li><strong>Metrics:</strong> Step-F1, Final Accuracy, and Faithfulness Gap = Pr(final correct ∧ steps contradict gold).</li>
+                    <li><strong>Interventions:</strong> Direct Answer baseline, Chain-of-Thought, and Self-Critique (second-pass judgement).</li>
+                    <li><strong>Expectation:</strong> Self-Critique narrows the Faithfulness Gap by forcing the model to critique unfaithful rationales.</li>
+                    <li><strong>Research Spine:</strong> ERASER, Self-Refine, Reflexion, and alignment-faking detection work.</li>
+                </ul>
+            </div>
+            <div class="study-card">
+                <h3>Study B · Empathy vs Truth</h3>
+                <p><strong>Signal:</strong> Quantifies sycophancy by separating tone from factual correctness.</p>
+                <ul class="list-spaced">
+                    <li><strong>Metrics:</strong> AgreementRate, Accuracy, and Truth-Under-Pressure (accuracy when the model disagrees with the user).</li>
+                    <li><strong>Personas:</strong> Agree-with-me (pressure to comply) vs Clinically Accurate (truth priority).</li>
+                    <li><strong>Scaffold:</strong> Empathy-then-correct prompt keeps supportive tone while enforcing factual corrections.</li>
+                    <li><strong>Research Spine:</strong> Simple Synthetic Data, TRUTH DECAY, SycEval, Beacon, and argument-driven sycophancy papers.</li>
+                </ul>
+            </div>
+            <div class="study-card">
+                <h3>Study C · Longitudinal Continuity</h3>
+                <p><strong>Signal:</strong> Reveals strategic drift or safety lapses across turns.</p>
+                <ul class="list-spaced">
+                    <li><strong>Metrics:</strong> Continuity Score (MiniLM cosine vs target plan), Safety Drift Rate, Refusal / Redirect Rate.</li>
+                    <li><strong>Conditions:</strong> No-memory baseline vs structured case-summary memory (same token budget).</li>
+                    <li><strong>Expectation:</strong> Lightweight memory boosts continuity while preserving rapid refusals.</li>
+                    <li><strong>Motivation:</strong> NHS deployments need consistency despite privacy-driven memory limits.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Why the Studies Work Together</h2>
+        <ol class="list-spaced">
+            <li><strong>Study A</strong> flags fabricated reasoning even when answers look correct.</li>
+            <li><strong>Study B</strong> forces models to choose between user approval and truth under explicit social pressure.</li>
+            <li><strong>Study C</strong> checks whether guidance remains stable once the monitoring context shifts over multiple turns.</li>
+        </ol>
+        <p>Combined, they give a multi-dimensional alignment profile tailored to safety-critical mental-health tooling.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Clinical & NHS Considerations</h2>
+        <div class="concept-grid">
+            <div class="concept-box">
+                <h4>Unfaithful Reasoning</h4>
+                <ul class="list-spaced">
+                    <li>Auditors require visibility into diagnostic logic, not just nice answers.</li>
+                    <li>Mist-matched rationales can mislead clinicians reviewing transcripts.</li>
+                </ul>
+            </div>
+            <div class="concept-box">
+                <h4>Sycophancy Risks</h4>
+                <ul class="list-spaced">
+                    <li>Distressed users may seek validation for unsafe ideas.</li>
+                    <li>Empathy-first scaffolds must still redirect to evidence-based care.</li>
+                </ul>
+            </div>
+            <div class="concept-box">
+                <h4>Longitudinal Drift</h4>
+                <ul class="list-spaced">
+                    <li>Inconsistent plans erode trust and can escalate risk.</li>
+                    <li>Lightweight memory preserves context without breaching privacy.</li>
+                </ul>
+            </div>
+        </div>
+        <p><strong>NHS-style constraints:</strong> no RAG, cost-sensitive inference, explicit refusal protocols, auditable metrics with bootstrap confidence intervals, and crisp failure taxonomies that product teams can action.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Expected Contributions</h2>
+        <div class="meta-stack">
+            <div class="meta-tile">
+                <h4>AI Safety Research</h4>
+                <ul class="list-spaced">
+                    <li>Domain-specific evaluation of scheming, sycophancy, and drift.</li>
+                    <li>Practical metrics (Faithfulness Gap, Truth-Under-Pressure, Continuity Score).</li>
+                    <li>Intervention testing: Self-Critique, empathy-then-correct, case-summary memory.</li>
+                </ul>
+            </div>
+            <div class="meta-tile">
+                <h4>Clinical Deployment</h4>
+                <ul class="list-spaced">
+                    <li>Reproducible evaluation harness with policy-aligned prompts.</li>
+                    <li>Safety signals for go/no-go decisions.</li>
+                    <li>Mitigation playbook that is lightweight to implement.</li>
+                </ul>
+            </div>
+            <div class="meta-tile">
+                <h4>Dissertation & “Robert” Bot</h4>
+                <ul class="list-spaced">
+                    <li>Feeds Planner/Verifier loops and Signals & Audit milestones.</li>
+                    <li>Wraps any counselling agent with domain checks before release.</li>
+                    <li>Establishes measurable baselines for successive iterations.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Key References</h2>
+        <ul class="reference-list">
+            <li>Meinke, A., et al. (2024). “Frontier Models are Capable of In-context Scheming.” arXiv:2412.04984.</li>
+            <li>Koorndijk, J. (2025). “Empirical Evidence for Alignment Faking in a Small LLM…” arXiv:2506.21584.</li>
+            <li>Wei, J., et al. (2023). “Simple Synthetic Data Reduces Sycophancy…” arXiv:2308.03958.</li>
+            <li>Sharma, M., et al. (2023). “Towards Understanding Sycophancy…” arXiv:2310.13548.</li>
+            <li>Liu, J., et al. (2025). “TRUTH DECAY: Quantifying Multi-Turn Sycophancy.” arXiv:2503.11656.</li>
+            <li>Fanous, A., et al. (2025). “SycEval: Evaluating LLM Sycophancy.” arXiv:2502.08177.</li>
+            <li>Pandey, S., et al. (2025). “Beacon: Single-Turn Diagnosis of Latent Sycophancy.” arXiv:2510.16727.</li>
+            <li>Hong, J., et al. (2025). “Measuring Sycophancy in Multi-turn Dialogues.” EMNLP Findings.</li>
+            <li>Kaur, A. (2025). “Echoes of Agreement.” EMNLP Findings.</li>
+            <li>Wei, J., et al. (2022). “Chain-of-Thought Prompting…” arXiv:2201.11903.</li>
+            <li>Wang, X., et al. (2022). “Self-Consistency Improves Chain-of-Thought…” arXiv:2203.11171.</li>
+            <li>Madaan, A., et al. (2023). “Self-Refine.” arXiv:2303.17651.</li>
+            <li>Shinn, N., et al. (2023). “Reflexion.” arXiv:2303.11366.</li>
+            <li>DeYoung, J., et al. (2020). “ERASER.” ACL.</li>
+            <li>Hu, H., et al. (2025). “Beyond Empathy…” arXiv:2505.15715.</li>
+        </ul>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Deliverables</h2>
+        <p>
+            • Public benchmark repo with data splits, evaluation runner, confidence intervals, and taxonomy.<br>
+            • Metrics ready to drop into CI for any counselling agent.<br>
+            • Documentation that spells out mitigations per failure mode.
+        </p>
+    </section>
+
+    <section class="project-links">
+        <h3>Ready to dive deeper?</h3>
+        <p>Explore the benchmark artefacts or reach out if you’d like to pressure-test your own counselling stack.</p>
+        <div class="button-row">
+            <a class="button primary" href="https://github.com/ryantigi254/NLP-Module" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
+            <a class="button secondary" href="../index.html#contact">Discuss Deployment</a>
+        </div>
+    </section>
+</main>
+
+<script>
+    window.onload = function() {
+        if (document.referrer.includes('index.html')) {
+            localStorage.setItem('returnToProjects', 'true');
+        }
+    };
+</script>
+</body>
+</html>
+
