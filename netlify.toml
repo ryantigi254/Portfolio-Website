@@ -2,11 +2,6 @@
   command = ""  # No build command needed for a static site
   publish = "."  # Publish root directory
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [[headers]]
   for = "/*"
   [headers.values]
