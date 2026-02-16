@@ -26,6 +26,12 @@ body {
     padding-left: 25px;
 }
 
+.site-title {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
 svg {
     width: 100%;
     height: auto;
@@ -103,8 +109,8 @@ a:hover {
     align-items: center;
     padding: 5px 10px;
     background-color: rgba(225, 111, 0, 0.2);
-    color: #C5322E;;
-    border: 2px solid #C5322E;;
+    color: #7a1f1c;
+    border: 2px solid #7a1f1c;
     border-radius: 25px;
     font-size: 14px;
     transition: all 0.3s ease;
@@ -158,6 +164,13 @@ a:hover {
 }
 
 .expandable-header {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    font: inherit;
     cursor: pointer;
     color: #000000;
     transition: color 0.3s ease;
@@ -172,19 +185,13 @@ a:hover {
     font-weight: bold;
 }
 
-.expandable-header {
-    cursor: pointer;
-    color: #000000;
-    transition: color 0.5s ease;
+.expandable-list[data-accordion-prefix="project"] .expandable-header {
+    font-weight: 700;
 }
 
-.expandable-header:hover {
-    color: #C5322E;
-}
-
-.expandable-header.active {
-    color: #C5322E;
-    font-weight: bold;
+.expandable-header:focus-visible {
+    outline: 2px solid #C5322E;
+    outline-offset: 3px;
 }
 
 .short-description {
@@ -470,7 +477,7 @@ a:hover {
 @media screen and (max-width: 768px) {
     body {
         padding: 0 20px;
-        max-width: 70%;
+        max-width: 100%;
     }
 
     .landing {

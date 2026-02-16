@@ -36,7 +36,7 @@
             </div>
             <div class="meta-card">
                 <p class="meta-label">Status</p>
-                <p class="meta-value">Research & Evaluation · Q4 2025</p>
+                <p class="meta-value">Concept Run Complete · Scaling In Progress (2026)</p>
             </div>
             <div class="meta-card">
                 <p class="meta-label">Stack</p>
@@ -98,7 +98,9 @@
     <section class="section-card">
         <h2 class="section-title">Architectural Diagram</h2>
         <div class="image-frame">
-            <img src="../Images/NLP/NLP Project Evaluation Diagrams Nov 15 2025.png" alt="NLP Project Architectural Diagram">
+            <a href="../Images/NLP/mental-health-llm-benchmark-architecture.png" target="_blank" rel="noopener noreferrer">
+                <img src="../Images/NLP/mental-health-llm-benchmark-architecture.png" alt="Mental Health LLM Benchmark Architecture Diagram">
+            </a>
         </div>
     </section>
 
@@ -136,6 +138,33 @@
                 </ul>
             </div>
         </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Pre-Scaling Concept Run (Current Results)</h2>
+        <p>
+            Before scaling, we ran a concept benchmark pass across all three studies to validate metric behaviour and identify early model patterns. These results are directional and will be re-estimated on the locked scaled set.
+        </p>
+        <ul class="list-spaced">
+            <li><strong>Study A · Faithfulness (≈300 samples per model):</strong> best CoT accuracy reached <strong>12.15%</strong> (Qwen3-LMStudio), with faithfulness gap ranging from <strong>-7.94%</strong> to <strong>+6.13%</strong> across models.</li>
+            <li><strong>Study B · Empathy–Truth (277 pairs per model):</strong> sycophancy probability ranged from <strong>3.99%</strong> (Qwen3-LMStudio) to <strong>16.67%</strong> (DeepSeek-R1-LMStudio).</li>
+            <li><strong>Study C · Continuity (30 cases/model, 10 turns per case):</strong> turn-10 entity recall ranged from <strong>20.57%</strong> to <strong>49.65%</strong>, with continuity score ranging from <strong>0.2076</strong> to <strong>0.2991</strong>.</li>
+        </ul>
+        <p>
+            We also validated pipeline sensitivity during concept evaluation: cleaning changed diagnosis extraction in <strong>40.8%</strong> of raw-vs-cleaned comparisons, which informed tighter preprocessing controls before scale-up.
+        </p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Current Work</h2>
+        <ul class="list-spaced">
+            <li>Executing the scaled benchmark run across the full expanded evaluation set.</li>
+            <li>Running clinician dataset review to improve construct validity and labelling quality.</li>
+            <li>Finalising closed test-set creation and lock before final comparative reporting.</li>
+        </ul>
+        <p>
+            The current phase is focused on stronger statistical stability and cleaner evidence for deployment-facing model selection.
+        </p>
     </section>
 
     <section class="section-card">
@@ -240,7 +269,7 @@
         <h3>Ready to dive deeper?</h3>
         <p>Explore the benchmark artefacts or reach out if you’d like to pressure-test your own counselling stack.</p>
         <div class="button-row">
-            <a class="button primary" href="https://github.com/ryantigi254/NLP-Module" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
+            <a class="button primary" href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
             <a class="button secondary" href="../index.html#contact">Discuss Deployment</a>
         </div>
     </section>
@@ -255,4 +284,3 @@
 </script>
 </body>
 </html>
-

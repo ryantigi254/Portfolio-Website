@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan M. Gichuru</title>
+    <meta name="description" content="Portfolio of Ryan M. Gichuru, an AI and Data Science student showcasing projects, experience, research, and contact details.">
     <link rel="stylesheet" href="styles.css">
     
     <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
     <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
     <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
     <link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
 </head>
@@ -23,6 +19,7 @@
 
     <div class="landing">
         <div class="svg-container">
+            <h1 class="site-title">Ryan M. Gichuru</h1>
             <svg viewBox="-20 0 340 100" xmlns="http://www.w3.org/2000/svg">
                 <!-- RYAN (shifted right by 1 unit above GICHURU) -->
                 <path d="M 63 0 H 93 V 20 H 83 L 93 40 H 83 L 73 20 H 73 V 40 H 63 V 0 M 73 10 V 15 H 83 V 10 H 73" fill="#000000" />
@@ -41,15 +38,16 @@
             </svg>
         </div>
         
-        <div class="links-container">
+        <nav class="links-container" aria-label="Primary">
             <a href="#about-me">About me</a><span class="separator">|</span>
             <a href="#projects">Projects</a><span class="separator">|</span>
             <a href="#experience">Experience</a><span class="separator">|</span>
             <a href="#blog">Blog</a><span class="separator">|</span>
             <a href="#contact">Contact</a>
-        </div>
+        </nav>
     </div>
 
+    <main id="main-content">
     <hr>
 
     <h2 id="about-me">About me</h2>
@@ -105,31 +103,32 @@
     <hr>
 
     <h2 id="projects">Projects</h2>
-    <ul class="expandable-list">
+    <ul class="expandable-list" data-accordion-prefix="project">
         <li>
-            <strong class="expandable-header">Reliable Clinical Reasoning in LLMs: Evaluating Faithfulness, Empathy–Truth Trade-offs, and Longitudinal Continuity</strong>
-            <span class="short-description">Building a reproducible benchmark to stress-test mental-health LLMs across three alignment failure modes.</span>
+            <button type="button" class="expandable-header" aria-expanded="false">Reliable Clinical Reasoning in LLMs: Evaluating Faithfulness, Empathy–Truth Trade-offs, and Longitudinal Continuity</button>
+            <span class="short-description">A reproducible clinical benchmark tracking faithfulness, empathy–truth trade-offs, and continuity in counselling LLMs.</span>
             <div class="expandable-content">
                 <div class="project-full">
                     <p>
-                        This CSY3055 Natural Language Processing project develops a compact, reproducible evaluation harness that measures <strong>clinical reasoning reliability without retrieval</strong> in large language models destined for mental-health support tooling. The work addresses a critical gap: aligned assistants can appear helpful while exhibiting three failure modes that matter clinically: unfaithful reasoning (plausible explanations that don't match correct diagnostic logic), sycophancy under social pressure which harms truthfulness, and longitudinal drift where guidance becomes inconsistent across sessions.
+                        This project builds a compact, reproducible benchmark to measure <strong>clinical reasoning reliability without retrieval</strong> in mental-health LLMs. It targets three failure modes with direct safety impact: unfaithful reasoning, empathy-driven truth erosion under social pressure, and longitudinal drift across repeated sessions.
                     </p>
                     <p>
-                        The benchmark evaluates three models: <strong>PsyLLM</strong> (a fine-tuned counselling-oriented model), <strong>Qwen/Qwen3-8B</strong> (untuned baseline), and <strong>openai/gpt-oss-20b</strong> (larger generic reasoning comparator). The project includes three focused studies testing faithfulness of reasoning traces, empathy–truth trade-offs under social pressure, and longitudinal therapeutic continuity across sessions.
+                        The pre-scaling concept run is complete and produced strong early signal quality: Study A (faithfulness) ran at ~300 samples/model, Study B (empathy–truth) at 277 pairs/model, and Study C (continuity) at 30 cases/model over 10 turns. Early ranges showed meaningful spread in faithfulness gap, sycophancy probability, and turn-10 continuity recall across models.
                     </p>
                     <p>
-                        Inspired by cutting-edge AI safety research from groups like Anthropic and Apollo Research, this work directly addresses alignment safety concerns in mental-health applications. The deliverable includes a public benchmark repository with evaluation metrics, visualisations, and a failure taxonomy that supports rigorous, domain-specific checks for counselling agents.
+                        Current work is focused on the scaled run, clinician dataset review, and closed test-set creation so final comparisons are statistically stronger and deployment-ready for clinical safety assessment.
                     </p>
                 </div>
                 <div class="project-condensed">
-                    <p>Developing a reproducible benchmark to evaluate clinical reasoning reliability in mental-health LLMs. Testing three models (PsyLLM, Qwen, GPT-OSS) across three alignment failure modes: unfaithful reasoning, sycophancy under pressure, and longitudinal drift. Inspired by frontier AI safety research on in-context scheming and alignment faking.</p>
+                    <p>A three-study clinical benchmark for mental-health LLM reliability. Concept results are in, and we are now running the scaled benchmark, clinician dataset review, and closed test-set creation.</p>
                 </div>
                 <a href="pages/nlp-project.html" class="project-details-button">View Full Project Details</a>
+                <a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </li>
 
         <li>
-            <strong class="expandable-header">SensoryNeural: AI-Driven Support for Neurodivergent Children</strong>
+            <button type="button" class="expandable-header" aria-expanded="false">SensoryNeural: AI-Driven Support for Neurodivergent Children</button>
             <span class="short-description">Secured second place at Elevate Great AI Competition 2025 with adaptive sensory support for neurodivergent children.</span>
             <div class="expandable-content">
                 <div class="project-full">
@@ -159,7 +158,7 @@
         </li>
 
         <li>
-            <strong class="expandable-header">Dissertation Project (in progress)</strong>
+            <button type="button" class="expandable-header" aria-expanded="false">Dissertation Project (in progress)</button>
             <span class="short-description">Extending UniMind — new user group, same plan-first, safety-first core.</span>
             
             <div class="expandable-content">
@@ -185,7 +184,7 @@
         </li>
 
         <li>
-            <strong class="expandable-header">UniMind: Mental Health Chatbot for UON Students</strong>
+            <button type="button" class="expandable-header" aria-expanded="false">UniMind: Mental Health Chatbot for UON Students</button>
             <span class="short-description">Leading a crisis-safe, multi-agent mental health platform for the University of Northampton.</span>
             <div class="expandable-content">
                 <div class="project-full">
@@ -215,7 +214,7 @@
         </li>
 
         <li>
-            <strong class="expandable-header">Study Smart: AI Literacy Initiative</strong>
+            <button type="button" class="expandable-header" aria-expanded="false">Study Smart: AI Literacy Initiative</button>
             <span class="short-description">Driving data-driven insights for AI literacy development across the University of Northampton.</span>
             <div class="expandable-content">
                 <div class="project-full">
@@ -247,10 +246,10 @@
     <hr>
 
     <h2 id="experience">Experience</h2>
-    <ul class="expandable-list">
+    <ul class="expandable-list" data-accordion-prefix="experience">
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Community Connector, School Space (May 2025 - Present):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Community Connector, School Space (May 2025 - Present):</button>
                 <span class="short-description">Bridging schools and local communities by managing venue rentals and events.</span>
                 <div class="expandable-content">
                     <p>As a Community Connector, I play a vital role in fostering connections between schools and their local communities. My responsibilities include managing the use of school facilities for community events during evenings and weekends, ensuring a seamless experience for both the schools and the event organisers.</p>
@@ -273,7 +272,7 @@
         </li>
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Student Careers Coach, University of Northampton (September 2024 - Present):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Student Careers Coach, University of Northampton (September 2024 - Present):</button>
                 <span class="short-description">Supporting students in their career development through guidance and coaching.</span>
                 <div class="expandable-content">
                     <p>As a Student Careers Coach at the University of Northampton, I support students in their career development by offering guidance on CV writing, job applications, and interview preparation.</p>
@@ -293,7 +292,7 @@
 
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Founding AI Engineer, BARBAH Games (May 2024 - Present):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Founding AI Engineer, BARBAH Games (May 2024 - Present):</button>
                 <span class="short-description">Driving AI innovation across gaming and educational applications.</span>
                 <div class="expandable-content">
                     <p>Leading AI integration in the company, focusing on AI assisted learning for our users, working on creating personalised assistants using LLM techniques and custom AI avatars, lastly, enhancing language translation for local dialects.</p>
@@ -310,7 +309,7 @@
 
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Research Assistant, Knowledge Exchange and Enterprise Programme (May 2024 - July 2024):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Research Assistant, Knowledge Exchange and Enterprise Programme (May 2024 - July 2024):</button>
                 <span class="short-description">Enhancing warehouse efficiency through AI-assisted consolidation techniques with GXO.</span>
                 <div class="expandable-content">
                     <p>As a Research Assistant funded by the Knowledge Exchange and Enterprise Programme, I collaborate with GXO on cutting-edge AI projects aimed at optimising warehouse operations. My role involved applying advanced algorithms like k-means clustering and decision trees to analyse vast datasets and uncover trends and opportunities for operational improvements.</p>
@@ -328,10 +327,10 @@
 
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Student Ambassador, Intel Corporation (June 2024 - September 2024):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Student Ambassador, Intel Corporation (June 2024 - September 2024):</button>
                 <span class="short-description">Activated Intel’s oneAPI programme inside the UON AI & Robotics Society.</span>
                 <div class="expandable-content">
-                    <p>During the Summer ’24 cohort I partnered with our AI & Robotics Society to run Intel-backed programming sprints, HPC walk-throughs, and watch parties that demystified oneAPI and the Developer Cloud for first- and second-year engineers.</p>
+                    <p>During the Summer ’24 cohort I partnered with our AI &amp; Robotics Society to run Intel-backed programming sprints, HPC walk-throughs, and watch parties that demystified oneAPI and the Developer Cloud for first- and second-year engineers.</p>
                     <p>I translated Intel training decks into hands-on labs, recorded short Loom explainers, and co-authored society blog posts so students could keep experimenting after each workshop. The role wrapped in September 2024, but the resources now sit in the society’s permanent curriculum and continue to power onboarding sessions.</p>
                     <p>This ambassador stint was ultimately an AI society initiative delivered under Intel’s programme, so I’ve kept the highlights here for context while the ongoing student-community work shows up under my society leadership entries.</p>
                 </div>
@@ -345,7 +344,7 @@
 
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Campus Ambassador, Facia (May 2024 - Present):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Campus Ambassador, Facia (May 2024 - Present):</button>
                 <span class="short-description">Raising cybersecurity awareness within academia through creative campaigns and events.</span>
                 <div class="expandable-content">
                     <p>As a Campus Ambassador for Facia, I'm leading efforts to raise cybersecurity awareness within our academic community.</p>
@@ -360,7 +359,7 @@
         </li>
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">AI Content Quality Evaluator, Outlier (June 2024 - September 2024):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">AI Content Quality Evaluator, Outlier (June 2024 - September 2024):</button>
                 <span class="short-description">Enhancing AI-generated content through meticulous evaluation and feedback.</span>
                 <div class="expandable-content">
                     <p>In my role as an AI Content Quality Evaluator at Outlier, I'm directly contributing to the improvement of AI models for some of the world's leading companies. My work involves providing detailed human feedback on AI-generated content, focusing on ensuring high standards of factuality, completeness, brevity, and grammatical correctness.</p>
@@ -375,7 +374,7 @@
         </li>
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Research Assistant, University of Northampton (November 2023 - July 2024):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Research Assistant, University of Northampton (November 2023 - July 2024):</button>
                 <span class="short-description">Spearheading AI literacy research and development in higher education.</span>
                 <div class="expandable-content">
                     <p>As a key member of the Study Smart project, funded by the UON Learning Enhancement and Innovation Fund, I'm deeply involved in groundbreaking research on AI applications in education. Our focus is on enhancing independent learning and revision among students through interesting AI-driven solutions.</p>
@@ -393,7 +392,7 @@
         </li>
         <li class="experience-item">
             <div class="experience-content">
-                <strong class="expandable-header">Society Mentor (Previously President & Treasurer), UON AI Society (September 2023 - Present):</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Society Mentor (Previously President & Treasurer), UON AI Society (September 2023 - Present):</button>
                 <span class="short-description">Advising and guiding the UON AI Society's leadership and initiatives.</span>
                 <div class="expandable-content">
                     <p>After serving as President and Treasurer, I now act as a Society Mentor, providing strategic guidance to the leadership team. My focus is on leveraging my experience to support the society's growth and success.</p>
@@ -405,7 +404,7 @@
                             <li>Helped facilitate the merger between the AI and Robotics societies.</li>
                         </ul>
                     <p>Key Achievements: <br>
-                        • As President, I led the society to win the "Society Event of the Year 2024/2025". You can see photos <a href="https://www.linkedin.com/posts/ryan-gichuru-1bba671a8_after-a-vigorous-two-years-with-the-uon-ai-activity-7333873877346848768-1RI-?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADCRDl8BQQc9ZoYH8IkMIny9ZokvpcoQLKY" target="_blank" rel="noopener noreferrer">here</a>. <br>
+                        • As President, I led the society to win the "Society Event of the Year 2024/2025". You can see photos in this <a href="https://www.linkedin.com/posts/ryan-gichuru-1bba671a8_after-a-vigorous-two-years-with-the-uon-ai-activity-7333873877346848768-1RI-?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADCRDl8BQQc9ZoYH8IkMIny9ZokvpcoQLKY" target="_blank" rel="noopener noreferrer">LinkedIn post</a>. <br>
                         • As Treasurer, I significantly boosted the society's budget by 52%, enabling key projects and events. <br>
                         • Grew our community to over 200 LinkedIn followers, 100+ members on both Discord and Instagram. <br>
                         • Established key partnerships with industry and academic groups. <br>
@@ -424,10 +423,10 @@
 
 
         <h2 id="education">Education</h2>
-    <ul class="expandable-list">
+    <ul class="expandable-list" data-accordion-prefix="education">
         <li class="education-item">
             <div class="education-content">
-                <strong class="expandable-header">Bachelor's in Artificial Intelligence and Data Science (Expected Graduation Year 2026)</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Bachelor's in Artificial Intelligence and Data Science (Expected Graduation Year 2026)</button>
                 <span class="short-description">University of Northampton, Northampton, United Kingdom</span>
                 <div class="expandable-content">
                     <p>Year 1 modules and grades:</p>
@@ -449,7 +448,7 @@
         </li>
         <li class="education-item">
             <div class="education-content">
-                <strong class="expandable-header">Generative AI Bootcamp, GetSeen Ventures (July 2023 - September 2023)</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Generative AI Bootcamp, GetSeen Ventures (July 2023 - September 2023)</button>
                 <span class="short-description">Six-week programme on advanced Generative AI technologies and applications</span>
                 <div class="expandable-content">
                     <p>This focused bootcamp gave me practical experience with modern Generative AI technologies. I learned how to develop AI solutions using Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG). Through team projects, I applied these concepts to address real business challenges, improving my skills in creating useful AI applications.</p>
@@ -465,7 +464,7 @@
 
         <li class="education-item">
             <div class="education-content">
-                <strong class="expandable-header">Generative AI Applications Bootcamp, Encode Club and Venture Miner (August 2024 - October 2024)</strong>
+                <button type="button" class="expandable-header" aria-expanded="false">Generative AI Applications Bootcamp, Encode Club and Venture Miner (August 2024 - October 2024)</button>
                 <span class="short-description">Eight-week programme focused on practical uses of Generative AI across industries</span>
                 <div class="expandable-content">
                     <p>This intensive bootcamp provided hands-on experience with advanced AI technologies and their real-world applications. Through expert-led sessions, group projects, and problem-solving exercises, I improved my skills in:</p>
@@ -478,7 +477,6 @@
                     <p>Key projects included building a multi-purpose AI chatbot with image recognition, an AI-powered illustrated book creator, and a RAG-based chatbot using custom data sources. These projects showed my ability to plan, develop, and launch complex AI applications using both cloud services and local hardware.</p>
                 </div>
             </div>
-            </div>
             <div class="institution-logo">
                 <a href="https://www.encode.club/" target="_blank" rel="noopener noreferrer">
                     <img src="assets/encode_club_logo.jpeg" alt="Encode Club Logo">
@@ -490,14 +488,14 @@
     <hr>
 
     <h2>Awards and Recognitions</h2>
-    <ul class="expandable-list">
+    <ul class="expandable-list" data-accordion-prefix="awards">
         <li>Presenter at the Learning and Teaching Conference, University of Northampton - Showcased early <a href="https://mypad.northampton.ac.uk/lte/urban/" target="_blank" rel="noopener noreferrer">URBAN</a>, research work</li>
         <li>Presenter at the UON Research Conference - Presented Study Smart data analysis work</li>
         <li>Speaker at <a href="https://digitalnorthants.com/mergedfutures" target="_blank" rel="noopener noreferrer">Merged Futures VI</a>, University of Northampton - Presented Study Smart project findings</li>
         <li class="education-item">
             <div class="certificates-section">
                 <div class="education-content">
-                    <strong class="expandable-header">Certificates <span class="arrow">&#9662;</span></strong>
+                    <button type="button" class="expandable-header" aria-expanded="false">Certificates <span class="arrow">&#9662;</span></button>
                     <span class="short-description">Various certifications in AI, Machine Learning, and Data Analysis</span>
                     <div class="expandable-content">
                         <ul>
@@ -525,42 +523,43 @@
 
     <hr>
 
-    <ul class="blog-list">
-        <h2 id="blog">Blog</h2>
+    <section id="blog">
+        <h2>Blog</h2>
         <ul class="blog-list">
             <li><a href="https://github.com/ryantigi254/URBAN-AI-for-Independent-Learning-and-AI-Assisted-Learning-Revision">AI for Independent Learning: A Glimpse into Our Research</a> <span>- July 05, 2024</span></li>
             <li><a href="pages/unimind-chatbot-blog.html">Building a Human-Centric AI Mental Health Chatbot</a> <span>- October 15, 2025</span></li>
         </ul>
-    
-        <hr>
-        <h2 id="contact">Contact</h2>
-        <p>Don't hesitate to reach out if you want to collaborate on a project or discuss other opportunities.</p>
-        <span style="font-size:18px;">Ryan Mutiga Gichuru</span> <span class="separator">|</span> 
-        <span style="font-size:18px;">ryan.gichuru22@my.northampton.ac.uk</span> <span class="separator">|</span> 
-        <br><br>
-        <div class="contact-container">
+    </section>
+
+    <hr>
+    <h2 id="contact">Contact</h2>
+    <p>Don't hesitate to reach out if you want to collaborate on a project or discuss other opportunities.</p>
+    <span style="font-size:18px;">Ryan Mutiga Gichuru</span> <span class="separator">|</span> 
+    <span style="font-size:18px;">ryan.gichuru22@my.northampton.ac.uk</span> <span class="separator">|</span> 
+    <br><br>
+    <div class="contact-container">
         <ul class="contact-list">
-            <li><a href="mailto:ryan@barbahgames.gg">
+            <li><a href="mailto:ryan@barbahgames.gg" aria-label="Email Ryan" title="Email Ryan">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 12.713l-11.99-6.713h23.979l-11.989 6.713zm11.989-8.713h-23.979c-1.104 0-2.01.896-2.01 2v12c0 1.104.906 2 2.01 2h23.979c1.104 0 2.011-.896 2.011-2v-12c0-1.104-.907-2-2.011-2zm-11.989 10.787l-11.989-6.737v9.95h23.979v-9.95l-11.99 6.737z"/>
                 </svg>
             </a></li>
-            <li><a href="https://github.com/ryantigi254">
+            <li><a href="https://github.com/ryantigi254" aria-label="GitHub profile" title="GitHub profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.416-4.042-1.416-.546-1.385-1.333-1.756-1.333-1.756-1.09-.744.084-.729.084-.729 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.107-.776.418-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.467-2.382 1.235-3.221-.124-.303-.535-1.527.116-3.176 0 0 1.007-.322 3.3 1.23.957-.266 1.983-.399 3.005-.404 1.022.005 2.048.138 3.006.404 2.292-1.552 3.298-1.23 3.298-1.23.653 1.649.242 2.873.119 3.176.77.839 1.233 1.911 1.233 3.221 0 4.609-2.806 5.624-5.478 5.921.43.371.814 1.102.814 2.222 0 1.606-.015 2.899-.015 3.293 0 .322.218.694.825.576 4.765-1.589 8.201-6.084 8.201-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
             </a></li>
-            <li><a href="https://www.linkedin.com/in/ryan-gichuru-1bba671a8/">
+            <li><a href="https://www.linkedin.com/in/ryan-gichuru-1bba671a8/" aria-label="LinkedIn profile" title="LinkedIn profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.732 0-.942.784-1.732 1.75-1.732s1.75.79 1.75 1.732c0 .942-.784 1.732-1.75 1.732zm13.5 11.268h-3v-5.339c0-3.065-3-2.831-3 0v5.339h-3v-10h3v1.601c1.396-2.586 6-2.777 6 2.476v5.923z"/>
                 </svg>
             </a></li>
-            <li><a href="https://x.com/Ryan_Gichuru">
+            <li><a href="https://x.com/Ryan_Gichuru" aria-label="X profile" title="X profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
             </a></li>
-            <li><a href="https://www.kaggle.com/ryanmutiga">
+            <li><a href="https://www.kaggle.com/ryanmutiga" aria-label="Kaggle profile" title="Kaggle profile">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                     <path d="M304.2 501.5L158.4 320.3 298.2 185c2.6-2.7 1.7-10.5-5.3-10.5h-69.2c-3.5 0-7 1.8-10.5 5.3L80.9 313.5V7.5q0-7.5-7.5-7.5H21.5Q14 0 14 7.5v497q0 7.5 7.5 7.5h51.9q7.5 0 7.5-7.5v-109l30.8-29.3 110.5 140.6c3 3.5 6.5 5.3 10.5 5.3h66.9q5.25 0 6-3z"/>
                 </svg>
@@ -572,126 +571,145 @@
             </svg>
             <span>Download </span>
         </a>
-        </div>  
-        <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                const expandableHeaders = document.querySelectorAll('.expandable-header');
-                let currentlyOpen = null;
-                
-                expandableHeaders.forEach(header => {
-                    header.addEventListener('click', function(event) {
-                        event.stopPropagation();
-                        toggleContent(this);
-                    });
-                });
-
-                function toggleContent(header) {
-                    const listItem = header.closest('li');
-                    const content = listItem.querySelector('.expandable-content');
-                    const shortDescription = listItem.querySelector('.short-description');
-
-                    if (currentlyOpen && currentlyOpen !== listItem) {
-                        // Close the currently open content
-                        const openHeader = currentlyOpen.querySelector('.expandable-header');
-                        const openContent = currentlyOpen.querySelector('.expandable-content');
-                        const openShortDescription = currentlyOpen.querySelector('.short-description');
-
-                        openContent.classList.remove('expanded');
-                        openHeader.classList.remove('active');
-                        openShortDescription.classList.remove('hidden');
-                    }
-
-                    content.classList.toggle('expanded');
-
-                    if (content.classList.contains('expanded')) {
-                        header.classList.add('active');
-                        shortDescription.classList.add('hidden');
-                        currentlyOpen = listItem;
-
-                        // Smooth scroll to the expanded content
-                        setTimeout(() => {
-                            content.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-                        }, 300);
-                    } else {
-                        header.classList.remove('active');
-                        shortDescription.classList.remove('hidden');
-                        currentlyOpen = null;
-                    }
-                }
-            });
-
-                document.addEventListener('DOMContentLoaded', function() {
-                const interestsHeader = document.querySelector('.interests-header');
-                if (interestsHeader) {
-                    interestsHeader.addEventListener('click', function() {
-                        const interestsContent = this.nextElementSibling;
-                        if (interestsContent) {
-                            interestsContent.classList.toggle('expanded');
-                            this.classList.toggle('active');
-                            
-                            if (interestsContent.classList.contains('expanded')) {
-                                setTimeout(() => {
-                                    interestsContent.scrollIntoView({behavior: 'smooth', block: 'nearest'});
-                                }, 300);
-                            }
-                        }
-                    });
-                }
-            });
-            
+    </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
             function scrollToElement(element, duration) {
-                var target = document.querySelector(element);
-                var targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                var startPosition = window.pageYOffset;
-                var distance = targetPosition - startPosition;
-                var startTime = null;
-            
-                function animation(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    var timeElapsed = currentTime - startTime;
-                    var run = ease(timeElapsed, startPosition, distance, duration);
-                    window.scrollTo(0, run);
-                    if (timeElapsed < duration) requestAnimationFrame(animation);
+                const target = document.querySelector(element);
+                if (!target) {
+                    return;
                 }
-            
+
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const startPosition = window.pageYOffset;
+                const distance = targetPosition - startPosition;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) {
+                        startTime = currentTime;
+                    }
+                    const timeElapsed = currentTime - startTime;
+                    const run = ease(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
                 function ease(t, b, c, d) {
                     t /= d / 2;
-                    if (t < 1) return c / 2 * t * t + b;
+                    if (t < 1) {
+                        return c / 2 * t * t + b;
+                    }
                     t--;
                     return -c / 2 * (t * (t - 2) - 1) + b;
                 }
-            
+
                 requestAnimationFrame(animation);
             }
-            
+
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+                anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     scrollToElement(this.getAttribute('href'), 1000);
                 });
             });
-            
 
-                document.addEventListener('DOMContentLoaded', function() {
-                    const certificatesHeader = document.querySelector('.certificates-section .expandable-header');
-                    
-                    if (certificatesHeader) {
-                        certificatesHeader.addEventListener('click', function() {
-                            const section = this.closest('.certificates-section');
-                            section.classList.toggle('active');
-                            
-                            const content = section.querySelector('.expandable-content');
-                            const arrow = this.querySelector('.arrow');
-                            
-                            if (section.classList.contains('active')) {
-                                content.style.maxHeight = content.scrollHeight + "px";
-                            } else {
-                                content.style.maxHeight = 0;
-                            }
-                        });
+            const interestsHeader = document.querySelector('.interests-header');
+            if (interestsHeader) {
+                interestsHeader.addEventListener('click', function() {
+                    const interestsContent = this.nextElementSibling;
+                    if (interestsContent) {
+                        interestsContent.classList.toggle('expanded');
+                        this.classList.toggle('active');
+                        if (interestsContent.classList.contains('expanded')) {
+                            setTimeout(() => {
+                                interestsContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }, 300);
+                        }
                     }
                 });
-        </script>
+            }
+
+            const currentlyOpenByList = new WeakMap();
+            document.querySelectorAll('.expandable-list').forEach((listElement, listIndex) => {
+                const prefix = listElement.getAttribute('data-accordion-prefix') || `section-${listIndex + 1}`;
+                const listItems = Array.from(listElement.children).filter(child => child.tagName === 'LI');
+                let itemCounter = 0;
+
+                function closeListItem(listItem) {
+                    const openHeader = listItem.querySelector('.expandable-header');
+                    const openContent = listItem.querySelector('.expandable-content');
+                    const openShortDescription = listItem.querySelector('.short-description');
+                    const certificatesSection = listItem.querySelector('.certificates-section');
+
+                    if (openHeader && openContent) {
+                        openContent.classList.remove('expanded');
+                        openHeader.classList.remove('active');
+                        openHeader.setAttribute('aria-expanded', 'false');
+                    }
+                    if (openShortDescription) {
+                        openShortDescription.classList.remove('hidden');
+                    }
+                    if (certificatesSection) {
+                        certificatesSection.classList.remove('active');
+                    }
+                }
+
+                listItems.forEach(listItem => {
+                    const header = listItem.querySelector('.expandable-header');
+                    const content = listItem.querySelector('.expandable-content');
+                    if (!header || !content) {
+                        return;
+                    }
+
+                    itemCounter += 1;
+                    const toggleId = `${prefix}-toggle-${itemCounter}`;
+                    const panelId = `${prefix}-panel-${itemCounter}`;
+                    const shortDescription = listItem.querySelector('.short-description');
+                    const certificatesSection = listItem.querySelector('.certificates-section');
+
+                    header.id = toggleId;
+                    header.setAttribute('aria-controls', panelId);
+                    header.setAttribute('aria-expanded', 'false');
+                    content.id = panelId;
+                    content.setAttribute('role', 'region');
+                    content.setAttribute('aria-labelledby', toggleId);
+
+                    header.addEventListener('click', function(event) {
+                        event.stopPropagation();
+
+                        const currentlyOpen = currentlyOpenByList.get(listElement);
+                        if (currentlyOpen && currentlyOpen !== listItem) {
+                            closeListItem(currentlyOpen);
+                        }
+
+                        const isExpanded = content.classList.toggle('expanded');
+                        header.classList.toggle('active', isExpanded);
+                        header.setAttribute('aria-expanded', String(isExpanded));
+
+                        if (shortDescription) {
+                            shortDescription.classList.toggle('hidden', isExpanded);
+                        }
+                        if (certificatesSection) {
+                            certificatesSection.classList.toggle('active', isExpanded);
+                        }
+
+                        if (isExpanded) {
+                            currentlyOpenByList.set(listElement, listItem);
+                            setTimeout(() => {
+                                content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            }, 300);
+                        } else {
+                            currentlyOpenByList.delete(listElement);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
     </body>
     </html> 

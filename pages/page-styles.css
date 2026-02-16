@@ -17,8 +17,8 @@
 body {
     margin: 0;
     font-family: 'Lucida Console', monospace;
-    font-size: 18px;
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.6;
     background: var(--surface);
     color: var(--text);
 }
@@ -42,7 +42,7 @@ a:hover {
 
 .page-header {
     position: relative;
-    padding: 36px 32px 40px;
+    padding: 30px 28px 34px;
     background: var(--card);
     border: 2px solid var(--border);
     border-radius: var(--radius);
@@ -85,12 +85,12 @@ a:hover {
 
 .page-header h1 {
     margin: 0;
-    font-size: clamp(32px, 4vw, 52px);
+    font-size: clamp(26px, 3.2vw, 40px);
 }
 
 .page-lede {
     margin-top: 16px;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--muted);
     max-width: 720px;
 }
@@ -126,14 +126,14 @@ a:hover {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 24px;
-    padding: 32px;
+    padding: 26px;
     margin-bottom: 28px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .tag-row {
@@ -275,6 +275,6 @@ a:hover {
     }
     .page-header,
     .section-card {
-        padding: 24px;
+        padding: 20px;
     }
 }
