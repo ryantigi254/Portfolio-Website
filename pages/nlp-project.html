@@ -32,7 +32,7 @@
             </div>
             <div class="meta-card">
                 <p class="meta-label">Models</p>
-                <p class="meta-value">PsyLLM · Qwen/Qwen3-8B · openai/gpt-oss-20b</p>
+                <p class="meta-value">8-model setup: PsyLLM · Psych_Qwen_32B (4-bit) · Psyche-R1 · Piaget-8B · Qwen3-8B · GPT-OSS-20B · QwQ-32B (4-bit) · DeepSeek-R1-Distill-Qwen-14B</p>
             </div>
             <div class="meta-card">
                 <p class="meta-label">Status</p>
@@ -143,13 +143,16 @@
     <section class="section-card">
         <h2 class="section-title">Pre-Scaling Concept Run (Current Results)</h2>
         <p>
-            Before scaling, we ran a concept benchmark pass across all three studies to validate metric behaviour and identify early model patterns. These results are directional and will be re-estimated on the locked scaled set.
+            Before scaling, we ran a concept benchmark pass across all three studies to validate metric behaviour and identify early model patterns. The initial run covered an <strong>8-model setup</strong> (PsyLLM, Psych_Qwen_32B (4-bit), Psyche-R1, Piaget-8B, Qwen3-8B, GPT-OSS-20B, QwQ-32B (4-bit), and DeepSeek-R1-Distill-Qwen-14B). These results are directional and will be re-estimated on the locked scaled set.
         </p>
         <ul class="list-spaced">
-            <li><strong>Study A · Faithfulness (≈300 samples per model):</strong> best CoT accuracy reached <strong>12.15%</strong> (Qwen3-LMStudio), with faithfulness gap ranging from <strong>-7.94%</strong> to <strong>+6.13%</strong> across models.</li>
-            <li><strong>Study B · Empathy–Truth (277 pairs per model):</strong> sycophancy probability ranged from <strong>3.99%</strong> (Qwen3-LMStudio) to <strong>16.67%</strong> (DeepSeek-R1-LMStudio).</li>
+            <li><strong>Study A · Faithfulness (≈300 samples per model):</strong> best CoT accuracy reached <strong>12.15%</strong> (Qwen3-8B), with faithfulness gap ranging from <strong>-7.94%</strong> to <strong>+6.13%</strong> across models.</li>
+            <li><strong>Study B · Empathy–Truth (277 pairs per model):</strong> sycophancy probability ranged from <strong>3.99%</strong> (Qwen3-8B) to <strong>16.67%</strong> (DeepSeek-R1-Distill-Qwen-14B).</li>
             <li><strong>Study C · Continuity (30 cases/model, 10 turns per case):</strong> turn-10 entity recall ranged from <strong>20.57%</strong> to <strong>49.65%</strong>, with continuity score ranging from <strong>0.2076</strong> to <strong>0.2991</strong>.</li>
         </ul>
+        <p>
+            In prompt terms, the concept run covered roughly <strong>9,232 evaluation prompt events</strong> across studies (2,400 in Study A, 4,432 paired prompts in Study B, and 2,400 turn-level prompts in Study C).
+        </p>
         <p>
             We also validated pipeline sensitivity during concept evaluation: cleaning changed diagnosis extraction in <strong>40.8%</strong> of raw-vs-cleaned comparisons, which informed tighter preprocessing controls before scale-up.
         </p>
@@ -163,7 +166,7 @@
             <li>Finalising closed test-set creation and lock before final comparative reporting.</li>
         </ul>
         <p>
-            The current phase is focused on stronger statistical stability and cleaner evidence for deployment-facing model selection.
+            The scaling phase extends coverage beyond the concept run, then freezes a clinician-reviewed closed set for final model comparisons and stronger deployment-facing evidence.
         </p>
     </section>
 

@@ -106,21 +106,21 @@
     <ul class="expandable-list" data-accordion-prefix="project">
         <li>
             <button type="button" class="expandable-header" aria-expanded="false">Reliable Clinical Reasoning in LLMs: Evaluating Faithfulness, Empathy–Truth Trade-offs, and Longitudinal Continuity</button>
-            <span class="short-description">A reproducible clinical benchmark tracking faithfulness, empathy–truth trade-offs, and continuity in counselling LLMs.</span>
+            <span class="short-description">An 8-model clinical benchmark tracking faithfulness, empathy–truth trade-offs, and continuity in counselling LLMs.</span>
             <div class="expandable-content">
                 <div class="project-full">
                     <p>
                         This project builds a compact, reproducible benchmark to measure <strong>clinical reasoning reliability without retrieval</strong> in mental-health LLMs. It targets three failure modes with direct safety impact: unfaithful reasoning, empathy-driven truth erosion under social pressure, and longitudinal drift across repeated sessions.
                     </p>
                     <p>
-                        The pre-scaling concept run is complete and produced strong early signal quality: Study A (faithfulness) ran at ~300 samples/model, Study B (empathy–truth) at 277 pairs/model, and Study C (continuity) at 30 cases/model over 10 turns. Early ranges showed meaningful spread in faithfulness gap, sycophancy probability, and turn-10 continuity recall across models.
+                        The pre-scaling concept run is complete across an 8-model setup (PsyLLM, Psych_Qwen_32B (4-bit), Psyche-R1, Piaget-8B, Qwen3-8B, GPT-OSS-20B, QwQ-32B (4-bit), and DeepSeek-R1-Distill-Qwen-14B). Study A ran at ~300 samples/model, Study B at 277 pairs/model, and Study C at 30 cases/model over 10 turns, totalling roughly 9,232 evaluation prompt events in the initial run.
                     </p>
                     <p>
                         Current work is focused on the scaled run, clinician dataset review, and closed test-set creation so final comparisons are statistically stronger and deployment-ready for clinical safety assessment.
                     </p>
                 </div>
                 <div class="project-condensed">
-                    <p>A three-study clinical benchmark for mental-health LLM reliability. Concept results are in, and we are now running the scaled benchmark, clinician dataset review, and closed test-set creation.</p>
+                    <p>A three-study, 8-model clinical benchmark for mental-health LLM reliability. The initial concept run (~9,232 prompt events) is complete, and scaling is now in progress with clinician review and closed test-set creation.</p>
                 </div>
                 <a href="pages/nlp-project.html" class="project-details-button">View Full Project Details</a>
                 <a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
