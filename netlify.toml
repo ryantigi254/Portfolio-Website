@@ -1,9 +1,23 @@
 [build]
-  command = ""  # No build command needed for a static site
-  publish = "."  # Publish root directory
+  base = "/"
+  command = "echo \"Static site: no build step required\""
+  publish = "."
 
 [build.environment]
   NODE_VERSION = "22"
+
+[context.production.environment]
+  NODE_VERSION = "22"
+
+[context.deploy-preview.environment]
+  NODE_VERSION = "22"
+
+[context.branch-deploy.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[headers]]
   for = "/*"
