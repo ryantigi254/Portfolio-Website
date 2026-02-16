@@ -2,6 +2,9 @@
   command = ""  # No build command needed for a static site
   publish = "."  # Publish root directory
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [[headers]]
   for = "/*"
   [headers.values]
