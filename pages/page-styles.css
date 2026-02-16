@@ -237,6 +237,11 @@ a:hover {
     margin-top: 24px;
 }
 
+.quick-links {
+    justify-content: flex-start;
+    margin-top: 18px;
+}
+
 .button {
     padding: 12px 28px;
     border-radius: 999px;
