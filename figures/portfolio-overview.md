@@ -1,0 +1,16 @@
+# Portfolio Overview
+
+This diagram shows the main paths through Ryan Gichuru's portfolio.
+
+```mermaid
+flowchart TD
+    A[Welcome to Ryan Gichuru's portfolio] --> B[About]
+    B --> C[AI and data science]
+    C --> D[Single-cell research]
+    C --> E[Responsible AI evaluation]
+    A --> F[Featured projects]
+    F --> G[LLM safety benchmark]
+    F --> H[Robert dissertation prototype]
+    F --> I[O-Predict research assistance]
+    A --> J[Experience and contact]
+```

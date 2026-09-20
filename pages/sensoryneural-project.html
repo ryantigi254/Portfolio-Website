@@ -130,6 +130,37 @@
         .phase h3 {
             margin-top: 0;
         }
+
+        .signal-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin: 24px 0;
+        }
+
+        .signal-step {
+            position: relative;
+            padding: 18px;
+            border: 1px solid #d9e6f2;
+            border-radius: 10px;
+            background: #f7fbff;
+        }
+
+        .signal-step h3 {
+            margin: 0 0 8px;
+            color: #285d8f;
+        }
+
+        .signal-step p {
+            margin: 0;
+        }
+
+        .research-boundary {
+            padding: 18px 20px;
+            border-left: 4px solid #4a90e2;
+            border-radius: 0 8px 8px 0;
+            background: #f0f7ff;
+        }
     </style>
     <script>
         window.onload = function() {
@@ -234,6 +265,47 @@
         </div>
 
         <div class="project-section">
+            <h2>From wearable data to an actionable signal</h2>
+            <p>
+                For the finals prototype, we used synthetic calibration data shaped around paediatric heart-rate variability. The aim was not to diagnose a child or infer a medical condition: it was to turn a changing input stream into a transparent, prototype-level indication that could prompt a supportive option in the dashboard.
+            </p>
+            <div class="signal-flow" aria-label="SensoryNeural prototype data flow">
+                <div class="signal-step">
+                    <h3>1. Input stream</h3>
+                    <p>Synthetic wearable-style heart-rate and variability readings arrive over the prototype's real-time connection.</p>
+                </div>
+                <div class="signal-step">
+                    <h3>2. Calibration</h3>
+                    <p>Age-sensitive baseline ranges and recent changes are used to contextualise the incoming values.</p>
+                </div>
+                <div class="signal-step">
+                    <h3>3. AI-guided signal</h3>
+                    <p>Heuristics and model-guided logic combine those patterns into an interpretable stress-support signal.</p>
+                </div>
+                <div class="signal-step">
+                    <h3>4. Support surface</h3>
+                    <p>The dashboard visualises the signal and can surface a timely, human-reviewed sensory-support suggestion.</p>
+                </div>
+            </div>
+            <p class="research-boundary">
+                <strong>Prototype boundary:</strong> the demo used synthetic data and was built for concept exploration. It is not a clinical monitoring system, medical device, diagnostic model, or substitute for professional judgement.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Where AI fits</h2>
+            <p>
+                AI was used as a decision-support layer rather than an autonomous authority. It helped connect a live signal pattern to a small, understandable set of possible sensory supports, while the interface kept the underlying status visible to the people using it.
+            </p>
+            <ul>
+                <li><strong>Pattern awareness:</strong> detect changes against a calibrated baseline instead of reacting to a single raw reading.</li>
+                <li><strong>Contextual suggestions:</strong> map a prototype-level signal to practical, low-risk support options in the dashboard.</li>
+                <li><strong>Human-centred presentation:</strong> make the reasoning legible to caregivers and educators instead of presenting an opaque score as a verdict.</li>
+                <li><strong>Responsible prototyping:</strong> keep privacy, safeguarding, and the limits of synthetic data visible throughout the concept.</li>
+            </ul>
+        </div>
+
+        <div class="project-section">
             <h2>Development Approach</h2>
             <p>
                 Our project is following a thoughtful, staged development process with an emphasis on privacy, security, and ethical considerations at every step. We're working closely with clinical experts to ensure our approach is grounded in evidence-based practice.
@@ -322,7 +394,8 @@
         </div>
 
         <div style="text-align: center; margin: 40px 0;">
-            <p>Explore the code and artefacts, or reach out for collaboration:</p>
+            <p>Explore the live concept, code, and project artefacts:</p>
+            <a href="https://sensoryneural.netlify.app/" class="cta-button" target="_blank" rel="noopener noreferrer">Visit Project Website</a>
             <a href="https://github.com/ryantigi254/Sensory_Neural" class="cta-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             <a href="mailto:ryan.gichuru22@my.northampton.ac.uk" class="cta-button" style="margin-left: 10px;">Contact Me</a>
         </div>

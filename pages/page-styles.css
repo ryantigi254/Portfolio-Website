@@ -17,8 +17,8 @@
 body {
     margin: 0;
     font-family: 'Lucida Console', monospace;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.7;
     background: var(--surface);
     color: var(--text);
 }
@@ -42,7 +42,7 @@ a:hover {
 
 .page-header {
     position: relative;
-    padding: 30px 28px 34px;
+    padding: 36px 32px 40px;
     background: var(--card);
     border: 2px solid var(--border);
     border-radius: var(--radius);
@@ -85,12 +85,12 @@ a:hover {
 
 .page-header h1 {
     margin: 0;
-    font-size: clamp(26px, 3.2vw, 40px);
+    font-size: clamp(32px, 4vw, 52px);
 }
 
 .page-lede {
     margin-top: 16px;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--muted);
     max-width: 720px;
 }
@@ -126,14 +126,23 @@ a:hover {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 24px;
-    padding: 26px;
+    padding: 32px;
     margin-bottom: 28px;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
     margin-top: 0;
-    font-size: 20px;
+    font-size: 24px;
+}
+
+.section-kicker {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
 .tag-row {
@@ -237,11 +246,6 @@ a:hover {
     margin-top: 24px;
 }
 
-.quick-links {
-    justify-content: flex-start;
-    margin-top: 18px;
-}
-
 .button {
     padding: 12px 28px;
     border-radius: 999px;
@@ -261,10 +265,188 @@ a:hover {
     color: var(--text);
 }
 
+.section-navigation {
+    justify-content: flex-start;
+}
+
+.section-navigation .button {
+    min-width: 160px;
+    text-align: center;
+}
+
+.study-section,
+.diagnostic-section {
+    scroll-margin-top: 24px;
+}
+
+.visual-description {
+    margin: 16px 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.coverage-grid,
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.coverage-grid div,
+.result-grid div {
+    display: grid;
+    gap: 7px;
+    padding: 18px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.coverage-grid strong,
+.result-grid strong {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+}
+
+.coverage-grid span,
+.result-grid span {
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.diagnostic-visual {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    margin: 22px 0;
+    padding: 18px;
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+}
+
+.diagnostic-visual span {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    min-height: 78px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.diagnostic-visual b {
+    align-self: center;
+    color: var(--accent);
+    font-size: 26px;
+}
+
+.study-disclosure {
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: var(--card);
+    margin: 16px 0;
+    overflow: hidden;
+}
+
+.study-disclosure summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 20px;
+    font-weight: bold;
+    color: var(--accent);
+    list-style: none;
+}
+
+.study-disclosure summary::-webkit-details-marker {
+    display: none;
+}
+
+.study-disclosure[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+.study-disclosure[open] summary span:last-child {
+    transform: rotate(45deg);
+}
+
+.study-disclosure-content {
+    padding: 4px 20px 24px;
+}
+
+.study-disclosure-content .image-frame {
+    margin: 20px 0;
+}
+
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.visual-grid figure {
+    margin: 0;
+}
+
+.visual-grid figcaption {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.signal-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.signal-step {
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+}
+
+.signal-step h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.signal-step p {
+    margin: 0;
+}
+
 .link-list {
     list-style: none;
     padding-left: 0;
     margin: 0;
+}
+
+@media (max-width: 620px) {
+    .section-navigation .button {
+        width: 100%;
+    }
+
+    .diagnostic-visual {
+        flex-direction: column;
+    }
+
+    .diagnostic-visual b {
+        align-self: center;
+        transform: rotate(90deg);
+    }
 }
 
 .link-list li {
@@ -280,6 +462,6 @@ a:hover {
     }
     .page-header,
     .section-card {
-        padding: 20px;
+        padding: 24px;
     }
 }

@@ -3,291 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_1.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_2.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_3.png" sizes="24x24">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_4.png" sizes="64x64">
-    <link rel="icon" type="image/png" href="../assets/Modern_Creative_Technology_Logo_5.png" sizes="128x128">
-    <link rel="shortcut icon" href="../assets/favicon_io/favicon.ico" type="image/x-icon">
-    <title>FSD-Mental-Health-Safety-Benchmark</title>
+    <title>FSD Mental Health Safety Benchmark | Ryan Gichuru</title>
     <link rel="stylesheet" href="page-styles.css">
 </head>
-
 <body>
 <main>
     <header class="page-header">
-        <a href="../index.html" class="return-link" onclick="if(localStorage.getItem('returnToProjects')) { window.location.href='../index.html#projects'; localStorage.removeItem('returnToProjects'); return false; }">← Back to Portfolio</a>
-        <p class="eyebrow">LLM Evaluation · Dissertation Research</p>
-        <h1>FSD-Mental-Health-Safety-Benchmark</h1>
-        <p class="page-lede">
-            A reproducible evaluation benchmark for testing metric invariance and controllability in counselling-oriented language models.
-        </p>
+        <a href="../index.html#projects" class="return-link">← Back to Portfolio</a>
+        <p class="eyebrow">Dissertation · LLM Evaluation</p>
+        <h1>FSD Mental Health Safety Benchmark</h1>
+        <p class="page-lede">A reproducible benchmark for examining whether language-model behaviour remains interpretable under reasoning, social pressure, demographic variation, and long multi-turn conversations.</p>
         <div class="button-row quick-links">
-            <a class="button primary" href="https://fsd-benchmark.netlify.app/#about" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
+            <a class="button primary" href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark-Ready" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a class="button secondary" href="https://fsd-benchmark.netlify.app/#about" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
+            <a class="button secondary" href="dissertation-project.html">Explore Robert Prototype</a>
         </div>
         <div class="meta-grid">
-            <div class="meta-card">
-                <p class="meta-label">Scope</p>
-                <p class="meta-value">Dissertation evaluation project</p>
-            </div>
-            <div class="meta-card">
-                <p class="meta-label">Models</p>
-                <p class="meta-value">8-model setup: PsyLLM · Psych_Qwen_32B (4-bit) · Psyche-R1 · Piaget-8B · Qwen3-8B · GPT-OSS-20B · QwQ-32B (4-bit) · DeepSeek-R1-Distill-Qwen-14B</p>
-            </div>
-            <div class="meta-card">
-                <p class="meta-label">Status</p>
-                <p class="meta-value">Public frozen review release · Further analysis in progress</p>
-            </div>
-            <div class="meta-card">
-                <p class="meta-label">Stack</p>
-                <p class="meta-value">Python · HF Pipelines · MiniLM · Bootstrap CI</p>
-            </div>
+            <div class="meta-card"><p class="meta-label">Scope</p><p class="meta-value">Dissertation evaluation study</p></div>
+            <div class="meta-card"><p class="meta-label">Model panel</p><p class="meta-value">Eight candidate language models</p></div>
+            <div class="meta-card"><p class="meta-label">Evidence</p><p class="meta-value">Versioned prompts, metrics, confidence intervals, and failure taxonomy</p></div>
+            <div class="meta-card"><p class="meta-label">Boundary</p><p class="meta-value">Behavioural evaluation, not clinical validation</p></div>
         </div>
     </header>
 
     <section class="section-card" id="overview">
-        <h2 class="section-title">Project Overview</h2>
-        <p>
-            The benchmark is a compact, reproducible harness for studying <strong>metric invariance and controllability</strong> in language models used in counselling-oriented settings. It examines whether model behaviour and reported scores remain interpretable under controlled changes to evaluation conditions, rather than evaluating a chatbot product.
-        </p>
-        <p>
-            By standardising data splits, metrics, bootstrap confidence intervals, and qualitative failure taxonomies, the harness supports controlled comparison of counselling-tuned models and generalist baselines. The public release is a frozen review snapshot; benchmark findings are not clinical-validation claims.
-        </p>
-        <div class="tag-row">
-            <span class="tag">LLM Evaluation</span>
-            <span class="tag">Metric Invariance</span>
-            <span class="tag">Benchmark Design</span>
-            <span class="tag">Controllability</span>
+        <h2 class="section-title">What the benchmark asks</h2>
+        <p>Fluent, supportive language is not enough evidence for a safety-critical use case. This benchmark probes whether a model can maintain useful behaviour when the evaluation conditions change, rather than treating a polished response as proof of reliability.</p>
+        <p>It is the evaluation arm of my dissertation: its findings inform the auditable controls in the Robert chatbot prototype, but neither the benchmark nor the prototype makes a clinical-safety or deployment-readiness claim.</p>
+        <div class="tag-row"><span class="tag">Faithfulness</span><span class="tag">Pressure Resistance</span><span class="tag">Silent Bias</span><span class="tag">Longitudinal Continuity</span></div>
+    </section>
+
+    <section class="section-card" id="project-map">
+        <h2 class="section-title">How to read this project</h2>
+        <p>The benchmark is structured as a set of focused behavioural tests rather than a single headline score. The study sections show the final-draft evidence; the diagnostic sections show how controllability and metric invariance are being tested; coverage makes clear what the data does and does not represent.</p>
+        <p>Use the actions below to move directly to each part of the evidence. They are navigation controls, not claims that one study or metric can establish safety on its own.</p>
+        <div class="button-row section-navigation" aria-label="Project sections">
+            <a class="button primary" href="#study-a">Study A</a>
+            <a class="button primary" href="#study-b">Study B</a>
+            <a class="button primary" href="#study-c">Study C</a>
+            <a class="button primary" href="#data-coverage">Data Coverage</a>
+            <a class="button primary" href="#results">Results</a>
         </div>
     </section>
 
     <section class="section-card">
-        <h2 class="section-title">Research Landscape · 2024–2025</h2>
-        <p>
-            The benchmark is grounded in frontier alignment research that is very much active—not historic theory. The following highlights shaped the scope:
-        </p>
-        <div class="timeline">
-            <h4>Key Papers</h4>
-            <ul class="list-spaced">
-                <li><strong>Meinke et al. (2024)</strong> — in-context scheming (arXiv:2412.04984). Frontier models can covertly pursue hidden goals while emitting convincing but fabricated reasoning.</li>
-                <li><strong>Koorndijk (2025)</strong> — alignment faking (arXiv:2506.21584). Demonstrated small models that appear safe yet internally deviate from protocol, plus prompt-level mitigations.</li>
-                <li><strong>Sycophancy wave (2023–2025)</strong> — Wei, Sharma, Liu (“TRUTH DECAY”), Fanous (“SycEval”), Pandey (“Beacon”), Hong, Kaur. All quantified strategic agreement across single and multi-turn chats.</li>
-            </ul>
-            <p><strong>Status:</strong> These threads are still evolving, particularly for safety-critical deployments such as mental-health triage. The benchmark translates their insights into concrete tests and metrics.</p>
+        <h2 class="section-title">From prompts to evidence</h2>
+        <div class="image-frame"><a href="../assets/benchmark/benchmark-scoring-pipeline.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/benchmark-scoring-pipeline.png" alt="Benchmark scoring pipeline from prepared study inputs through model outputs, cleaning, metrics, and comparison"></a></div>
+        <p>The pipeline keeps preparation, generation, post-processing, and scoring separate. That separation makes it possible to trace a reported signal back to a stable prompt, output, metric contract, and comparison rather than relying on an informal model judgement.</p>
+    </section>
+
+    <section class="section-card study-section" id="study-a">
+        <p class="section-kicker">Study A</p>
+        <h2 class="section-title">Faithfulness and silent bias</h2>
+        <p><strong>Question:</strong> does exposed reasoning genuinely improve answer quality, and do controlled demographic variations produce changes that go unacknowledged?</p>
+        <div class="image-frame"><a href="../assets/benchmark/results/study-a-faithfulness.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-a-faithfulness.png" alt="Study A faithfulness gap chart for the released model panel"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the bars compare the gap between stated reasoning and evaluated answer quality across the released model panel. The project gate is shown as a reference rather than a model ranking.</p>
+        <p><strong>Result:</strong> exposed reasoning did not reliably improve accuracy in the final panel. All reported faithfulness gaps were below the project gate, so plausible reasoning text was not treated as a safety proxy. Silent-bias outcomes remained a separate adversarial warning signal.</p>
+    </section>
+
+    <section class="section-card study-section" id="study-b">
+        <p class="section-kicker">Study B</p>
+        <h2 class="section-title">Sycophancy under pressure</h2>
+        <p><strong>Question:</strong> can a model remain supportive without yielding to inaccurate or unsafe social pressure?</p>
+        <div class="image-frame"><a href="../assets/benchmark/results/study-b-sycophancy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-b-sycophancy.png" alt="Study B single-turn sycophancy probability chart for the released model panel"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> this comparison isolates the single-turn response to social pressure. It sits alongside, rather than replaces, the longer five-turn safe-window check.</p>
+        <p><strong>Result:</strong> the corrected single-turn comparisons fell below the local sycophancy boundary, but the extended pressure test was stricter: no reported model cleared the five-turn safe-window gate. Pressure resistance therefore remains a conversation-level control problem, not a one-prompt pass.</p>
+    </section>
+
+    <section class="section-card study-section" id="study-c">
+        <p class="section-kicker">Study C</p>
+        <h2 class="section-title">Longitudinal continuity</h2>
+        <p><strong>Question:</strong> do salient entities and commitments survive a longer conversation without contradiction or context drift?</p>
+        <div class="image-frame"><a href="../assets/benchmark/results/study-c-recall.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-c-recall.png" alt="Study C entity recall at turn 10 chart for the released model panel"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the chart focuses on entity recall at turn 10, making the difference between a short coherent reply and a sustained interaction visible.</p>
+        <p><strong>Result:</strong> every reported full run remained well below the project retention target at turn 10. This supports Robert’s explicit agenda state and visible, opt-in memory controls rather than relying on a model’s context window alone.</p>
+    </section>
+
+    <section class="section-card" id="data-coverage">
+        <h2 class="section-title">Data coverage</h2>
+        <p>Coverage is shown separately from outcomes so that the breadth of the test material is not mistaken for a result. The benchmark samples the behavioural conditions required by the three studies, while retaining clear limits around diagnosis, deployment, and clinical validity.</p>
+        <div class="image-frame"><a href="../assets/benchmark/benchmark-composition-radar.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/benchmark-composition-radar.png" alt="Radar chart comparing the benchmark's category composition across study slices"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> this radar chart compares how the study slices are distributed across the benchmark’s category composition. It communicates balance and gaps in the material, not model performance.</p>
+        <div class="coverage-grid" aria-label="Coverage dimensions">
+            <div><strong>Reasoning</strong><span>Faithfulness probes</span></div>
+            <div><strong>Social pressure</strong><span>Single- and multi-turn tests</span></div>
+            <div><strong>Demographic variation</strong><span>Controlled adversarial changes</span></div>
+            <div><strong>Conversation time</strong><span>Longitudinal recall checks</span></div>
+        </div>
+        <p>This is a behavioural coverage view, not a claim that a model is clinically safe for any category or population.</p>
+    </section>
+
+    <section class="section-card" id="diagnostics">
+        <h2 class="section-title">Controllability and metric invariance</h2>
+        <p>The benchmark also includes a developing diagnostic layer: whether an explicit control can shift a model in the intended direction, whether harmless wording changes preserve the same endpoint, and whether both properties hold together.</p>
+        <p>These checks are intentionally separate: a response can be steerable yet still change under an equivalent surface perturbation. The linked views describe the evaluation design and early evidence without turning incomplete coverage into a final ranking.</p>
+        <div class="button-row section-navigation" aria-label="Diagnostic sections">
+            <a class="button primary" href="#controllability">Controllability</a>
+            <a class="button primary" href="#metric-invariance">Metric Invariance</a>
+            <a class="button primary" href="#control-invariance">Control + Invariance</a>
         </div>
     </section>
 
-    <section class="section-card">
-        <h2 class="section-title">Core Alignment Concepts in a Clinical Context</h2>
-        <div class="concept-grid">
-            <div class="concept-box">
-                <h4>In-Context Scheming</h4>
-                <p>Covert strategies that produce compliant-looking answers with fabricated reasoning. Clinically, auditors may trust a correct referral even if the reasoning fabricates diagnoses. Faithfulness checks are essential.</p>
-            </div>
-            <div class="concept-box">
-                <h4>Alignment Faking</h4>
-                <p>Models mimic helpfulness whilst their internal decision process ignores safety policy. In mental-health chat, that looks like empathic tone masking advice that skirts escalation or consent rules.</p>
-            </div>
-            <div class="concept-box">
-                <h4>Sycophancy</h4>
-                <p>Strategic agreement to please the user. Distressed users may suggest harmful coping strategies; a sycophantic bot echoes them instead of redirecting to safe resources.</p>
-            </div>
+    <section class="section-card diagnostic-section" id="controllability">
+        <p class="section-kicker">Diagnostic 01</p>
+        <h2 class="section-title">Controllability</h2>
+        <p>This test asks whether a declared control moves a response in its intended direction. It distinguishes reliable, inspectable steering from a response that only appears responsive because of wording or prompt context.</p>
+        <div class="diagnostic-visual" aria-label="Controllability evaluation flow"><span>Declared control</span><b>→</b><span>Expected response shift</span><b>→</b><span>Metric check</span></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the evaluation follows a declared intervention through to a measurable response change. A successful shift alone is not sufficient; the result must also remain interpretable under the metric contract.</p>
+    </section>
+
+    <section class="section-card diagnostic-section" id="metric-invariance">
+        <p class="section-kicker">Diagnostic 02</p>
+        <h2 class="section-title">Metric invariance</h2>
+        <p>This test asks whether equivalent, harmless changes to phrasing preserve the same evaluated endpoint. It is designed to reveal cases where a metric changes because of surface form rather than meaningful behaviour.</p>
+        <div class="diagnostic-visual" aria-label="Metric invariance evaluation flow"><span>Equivalent prompt variants</span><b>→</b><span>Comparable endpoint</span><b>→</b><span>Stability check</span></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> equivalent inputs should remain aligned at the endpoint. Divergence flags a potential fragility for investigation, rather than automatically labelling a model unsafe.</p>
+    </section>
+
+    <section class="section-card diagnostic-section" id="control-invariance">
+        <p class="section-kicker">Diagnostic 03</p>
+        <h2 class="section-title">Control under invariance</h2>
+        <p>This combined test checks whether an intended control still works when the prompt receives an equivalent surface perturbation. It brings controllability and invariance together to expose brittle interactions, including entity-recall drift.</p>
+        <div class="diagnostic-visual" aria-label="Combined diagnostic evaluation flow"><span>Control + prompt variant</span><b>→</b><span>Expected stable shift</span><b>→</b><span>Joint check</span></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the intended response direction should persist even as the equivalent prompt form changes. The layer is still developing, so these views describe test logic and evidence boundaries rather than a final model league table.</p>
+    </section>
+
+    <section class="section-card" id="results">
+        <h2 class="section-title">What the results mean</h2>
+        <p>The studies do not produce a single pass/fail verdict. Together, they show why a safe-looking individual response is insufficient evidence for a sustained, safety-sensitive interaction.</p>
+        <div class="result-grid">
+            <div><strong>Reasoning</strong><span>Exposed reasoning was not a reliable proxy for answer quality.</span></div>
+            <div><strong>Pressure</strong><span>Single-turn performance did not transfer to the stricter multi-turn safe window.</span></div>
+            <div><strong>Continuity</strong><span>Turn-10 recall supports explicit state and opt-in memory controls.</span></div>
         </div>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Architectural Diagram</h2>
-        <div class="image-frame">
-            <a href="../Images/NLP/mental-health-llm-benchmark-architecture.png" target="_blank" rel="noopener noreferrer">
-                <img src="../Images/NLP/mental-health-llm-benchmark-architecture.png" alt="Mental Health LLM Benchmark Architecture Diagram">
-            </a>
-        </div>
-    </section>
-
-    <section class="section-card" id="studies">
-        <h2 class="section-title">Three Focused Studies</h2>
-        <div class="study-grid">
-            <div class="study-card">
-                <h3>Study A · Faithfulness</h3>
-                <p><strong>Signal:</strong> Detects “right for the wrong reasons” scenarios reminiscent of scheming.</p>
-                <ul class="list-spaced">
-                    <li><strong>Metrics:</strong> Step-F1, Final Accuracy, and Faithfulness Gap = Pr(final correct ∧ steps contradict gold).</li>
-                    <li><strong>Interventions:</strong> Direct Answer baseline, Chain-of-Thought, and Self-Critique (second-pass judgement).</li>
-                    <li><strong>Expectation:</strong> Self-Critique narrows the Faithfulness Gap by forcing the model to critique unfaithful rationales.</li>
-                    <li><strong>Research Spine:</strong> ERASER, Self-Refine, Reflexion, and alignment-faking detection work.</li>
-                </ul>
-            </div>
-            <div class="study-card">
-                <h3>Study B · Empathy vs Truth</h3>
-                <p><strong>Signal:</strong> Quantifies sycophancy by separating tone from factual correctness.</p>
-                <ul class="list-spaced">
-                    <li><strong>Metrics:</strong> AgreementRate, Accuracy, and Truth-Under-Pressure (accuracy when the model disagrees with the user).</li>
-                    <li><strong>Personas:</strong> Agree-with-me (pressure to comply) vs Clinically Accurate (truth priority).</li>
-                    <li><strong>Scaffold:</strong> Empathy-then-correct prompt keeps supportive tone while enforcing factual corrections.</li>
-                    <li><strong>Research Spine:</strong> Simple Synthetic Data, TRUTH DECAY, SycEval, Beacon, and argument-driven sycophancy papers.</li>
-                </ul>
-            </div>
-            <div class="study-card">
-                <h3>Study C · Longitudinal Continuity</h3>
-                <p><strong>Signal:</strong> Reveals strategic drift or safety lapses across turns.</p>
-                <ul class="list-spaced">
-                    <li><strong>Metrics:</strong> Continuity Score (MiniLM cosine vs target plan), Safety Drift Rate, Refusal / Redirect Rate.</li>
-                    <li><strong>Conditions:</strong> No-memory baseline vs structured case-summary memory (same token budget).</li>
-                    <li><strong>Expectation:</strong> Lightweight memory boosts continuity while preserving rapid refusals.</li>
-                    <li><strong>Motivation:</strong> NHS deployments need consistency despite privacy-driven memory limits.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Pre-Scaling Concept Run (Current Results)</h2>
-        <p>
-            Before scaling, we ran a concept benchmark pass across all three studies to validate metric behaviour and identify early model patterns. The initial run covered an <strong>8-model setup</strong> (PsyLLM, Psych_Qwen_32B (4-bit), Psyche-R1, Piaget-8B, Qwen3-8B, GPT-OSS-20B, QwQ-32B (4-bit), and DeepSeek-R1-Distill-Qwen-14B). These results are directional and will be re-estimated on the locked scaled set.
-        </p>
-        <ul class="list-spaced">
-            <li><strong>Study A · Faithfulness (≈300 samples per model):</strong> best CoT accuracy reached <strong>12.15%</strong> (Qwen3-8B), with faithfulness gap ranging from <strong>-7.94%</strong> to <strong>+6.13%</strong> across models.</li>
-            <li><strong>Study B · Empathy–Truth (277 pairs per model):</strong> sycophancy probability ranged from <strong>3.99%</strong> (Qwen3-8B) to <strong>16.67%</strong> (DeepSeek-R1-Distill-Qwen-14B).</li>
-            <li><strong>Study C · Continuity (30 cases/model, 10 turns per case):</strong> turn-10 entity recall ranged from <strong>20.57%</strong> to <strong>49.65%</strong>, with continuity score ranging from <strong>0.2076</strong> to <strong>0.2991</strong>.</li>
-        </ul>
-        <p>
-            In prompt terms, the concept run covered roughly <strong>9,232 evaluation prompt events</strong> across studies (2,400 in Study A, 4,432 paired prompts in Study B, and 2,400 turn-level prompts in Study C).
-        </p>
-        <p>
-            We also validated pipeline sensitivity during concept evaluation: cleaning changed diagnosis extraction in <strong>40.8%</strong> of raw-vs-cleaned comparisons, which informed tighter preprocessing controls before scale-up.
-        </p>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Current Work</h2>
-        <ul class="list-spaced">
-            <li>Executing the scaled benchmark run across the full expanded evaluation set.</li>
-            <li>Running clinician dataset review to improve construct validity and labelling quality.</li>
-            <li>Finalising closed test-set creation and lock before final comparative reporting.</li>
-        </ul>
-        <p>
-            The scaling phase extends coverage beyond the concept run, then freezes a clinician-reviewed closed set for final model comparisons and stronger deployment-facing evidence.
-        </p>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Why the Studies Work Together</h2>
-        <ol class="list-spaced">
-            <li><strong>Study A</strong> flags fabricated reasoning even when answers look correct.</li>
-            <li><strong>Study B</strong> forces models to choose between user approval and truth under explicit social pressure.</li>
-            <li><strong>Study C</strong> checks whether guidance remains stable once the monitoring context shifts over multiple turns.</li>
-        </ol>
-        <p>Combined, they give a multi-dimensional alignment profile tailored to safety-critical mental-health tooling.</p>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Clinical & NHS Considerations</h2>
-        <div class="concept-grid">
-            <div class="concept-box">
-                <h4>Unfaithful Reasoning</h4>
-                <ul class="list-spaced">
-                    <li>Auditors require visibility into diagnostic logic, not just nice answers.</li>
-                    <li>Mist-matched rationales can mislead clinicians reviewing transcripts.</li>
-                </ul>
-            </div>
-            <div class="concept-box">
-                <h4>Sycophancy Risks</h4>
-                <ul class="list-spaced">
-                    <li>Distressed users may seek validation for unsafe ideas.</li>
-                    <li>Empathy-first scaffolds must still redirect to evidence-based care.</li>
-                </ul>
-            </div>
-            <div class="concept-box">
-                <h4>Longitudinal Drift</h4>
-                <ul class="list-spaced">
-                    <li>Inconsistent plans erode trust and can escalate risk.</li>
-                    <li>Lightweight memory preserves context without breaching privacy.</li>
-                </ul>
-            </div>
-        </div>
-        <p><strong>NHS-style constraints:</strong> no RAG, cost-sensitive inference, explicit refusal protocols, auditable metrics with bootstrap confidence intervals, and crisp failure taxonomies that product teams can action.</p>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Expected Contributions</h2>
-        <div class="meta-stack">
-            <div class="meta-tile">
-                <h4>AI Safety Research</h4>
-                <ul class="list-spaced">
-                    <li>Domain-specific evaluation of scheming, sycophancy, and drift.</li>
-                    <li>Practical metrics (Faithfulness Gap, Truth-Under-Pressure, Continuity Score).</li>
-                    <li>Intervention testing: Self-Critique, empathy-then-correct, case-summary memory.</li>
-                </ul>
-            </div>
-            <div class="meta-tile">
-                <h4>Clinical Deployment</h4>
-                <ul class="list-spaced">
-                    <li>Reproducible evaluation harness with policy-aligned prompts.</li>
-                    <li>Safety signals for go/no-go decisions.</li>
-                    <li>Mitigation playbook that is lightweight to implement.</li>
-                </ul>
-            </div>
-            <div class="meta-tile">
-                <h4>Dissertation & “Robert” Bot</h4>
-                <ul class="list-spaced">
-                    <li>Feeds Planner/Verifier loops and Signals & Audit milestones.</li>
-                    <li>Wraps any counselling agent with domain checks before release.</li>
-                    <li>Establishes measurable baselines for successive iterations.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Key References</h2>
-        <ul class="reference-list">
-            <li>Meinke, A., et al. (2024). “Frontier Models are Capable of In-context Scheming.” <a href="https://arxiv.org/abs/2412.04984" target="_blank" rel="noopener noreferrer">arXiv:2412.04984</a>.</li>
-            <li>Koorndijk, J. (2025). “Empirical Evidence for Alignment Faking in a Small LLM…” <a href="https://arxiv.org/abs/2506.21584" target="_blank" rel="noopener noreferrer">arXiv:2506.21584</a>.</li>
-            <li>Wei, J., et al. (2023). “Simple Synthetic Data Reduces Sycophancy…” <a href="https://arxiv.org/abs/2308.03958" target="_blank" rel="noopener noreferrer">arXiv:2308.03958</a>.</li>
-            <li>Sharma, M., et al. (2023). “Towards Understanding Sycophancy…” <a href="https://arxiv.org/abs/2310.13548" target="_blank" rel="noopener noreferrer">arXiv:2310.13548</a>.</li>
-            <li>Liu, J., et al. (2025). “TRUTH DECAY: Quantifying Multi-Turn Sycophancy.” <a href="https://arxiv.org/abs/2503.11656" target="_blank" rel="noopener noreferrer">arXiv:2503.11656</a>.</li>
-            <li>Fanous, A., et al. (2025). “SycEval: Evaluating LLM Sycophancy.” <a href="https://arxiv.org/abs/2502.08177" target="_blank" rel="noopener noreferrer">arXiv:2502.08177</a>.</li>
-            <li>Pandey, S., et al. (2025). “Beacon: Single-Turn Diagnosis of Latent Sycophancy.” <a href="https://arxiv.org/abs/2510.16727" target="_blank" rel="noopener noreferrer">arXiv:2510.16727</a>.</li>
-            <li>Hong, J., et al. (2025). “Measuring Sycophancy in Multi-turn Dialogues.” <a href="https://aclanthology.org/search/?q=Measuring%20Sycophancy%20in%20Multi-turn%20Dialogues" target="_blank" rel="noopener noreferrer">EMNLP Findings listing</a>.</li>
-            <li>Kaur, A. (2025). “Echoes of Agreement.” <a href="https://aclanthology.org/search/?q=Echoes%20of%20Agreement" target="_blank" rel="noopener noreferrer">EMNLP Findings listing</a>.</li>
-            <li>Wei, J., et al. (2022). “Chain-of-Thought Prompting…” <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer">arXiv:2201.11903</a>.</li>
-            <li>Wang, X., et al. (2022). “Self-Consistency Improves Chain-of-Thought…” <a href="https://arxiv.org/abs/2203.11171" target="_blank" rel="noopener noreferrer">arXiv:2203.11171</a>.</li>
-            <li>Madaan, A., et al. (2023). “Self-Refine.” <a href="https://arxiv.org/abs/2303.17651" target="_blank" rel="noopener noreferrer">arXiv:2303.17651</a>.</li>
-            <li>Shinn, N., et al. (2023). “Reflexion.” <a href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener noreferrer">arXiv:2303.11366</a>.</li>
-            <li>DeYoung, J., et al. (2020). “ERASER.” <a href="https://aclanthology.org/2020.acl-main.408/" target="_blank" rel="noopener noreferrer">ACL Anthology</a>.</li>
-            <li>Hu, H., et al. (2025). “Beyond Empathy…” <a href="https://arxiv.org/abs/2505.15715" target="_blank" rel="noopener noreferrer">arXiv:2505.15715</a>.</li>
-        </ul>
-    </section>
-
-    <section class="section-card">
-        <h2 class="section-title">Deliverables</h2>
-        <p>
-            • Public benchmark repo with data splits, evaluation runner, confidence intervals, and taxonomy.<br>
-            • Metrics ready to drop into CI for any counselling agent.<br>
-            • Documentation that spells out mitigations per failure mode.
-        </p>
+        <p>That evidence informs the Robert prototype’s visible controls and bounded interaction design. It does not validate a clinical intervention, establish real-world efficacy, or recommend any model for independent use.</p>
     </section>
 
     <section class="project-links">
-        <h3>Ready to dive deeper?</h3>
-        <p>Explore the benchmark artefacts or reach out if you’d like to pressure-test your own counselling stack.</p>
+        <h2 class="section-title">Explore the project</h2>
         <div class="button-row">
-            <a class="button secondary" href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
-            <a class="button primary" href="https://fsd-benchmark.netlify.app/#hero" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
-            <a class="button secondary" href="../index.html#contact">Discuss Deployment</a>
+            <a class="button primary" href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark-Ready" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a class="button secondary" href="https://fsd-benchmark.netlify.app/#about" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
         </div>
     </section>
 </main>
-
-<script>
-    window.onload = function() {
-        if (document.referrer.includes('index.html')) {
-            localStorage.setItem('returnToProjects', 'true');
-        }
-    };
-</script>
 </body>
 </html>

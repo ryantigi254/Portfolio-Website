@@ -17,8 +17,9 @@
 <body>
 
 
-        <div class="landing">
+    <div class="landing">
         <div class="svg-container">
+            <h1 class="site-title">Ryan Gichuru</h1>
             <svg viewBox="-20 0 340 100" xmlns="http://www.w3.org/2000/svg">
                 <!-- RYAN (shifted right by 1 unit above GICHURU) -->
                 <path d="M 63 0 H 93 V 20 H 83 L 93 40 H 83 L 73 20 H 73 V 40 H 63 V 0 M 73 10 V 15 H 83 V 10 H 73" fill="#000000" />
@@ -68,158 +69,40 @@
     <h2 id="projects">Projects</h2>
     <ul class="expandable-list" data-accordion-prefix="project">
         <li>
-            <button type="button" class="expandable-header" aria-expanded="false">FSD-Mental-Health-Safety-Benchmark</button>
-            <span class="short-description">A reproducible LLM evaluation benchmark centred on metric invariance, controllability, faithfulness, social-pressure resistance, and longitudinal continuity.</span>
-            <div class="expandable-content">
-                <div class="project-full">
-                    <p>
-                        This project is the evaluation arm of my dissertation work: a reproducible benchmark for examining how reliably language-model metrics hold under controlled changes to prompts, personas, conditions, and multi-turn context. Its focus is measurement rather than chatbot implementation.
-                    </p>
-                    <p>
-                        The benchmark separates <strong>core invariance</strong> from <strong>control under invariance</strong>, then tests whether scores remain interpretable when the evaluation setting changes. It covers reasoning faithfulness, response controllability, resistance to social pressure, silent-bias signals, and continuity across multi-turn interactions.
-                    </p>
-                    <p>
-                        The public repository contains the frozen review release, implementation-level metric definitions, data-split and evaluation material, confidence-interval tooling, and the project’s failure taxonomy. Results are presented as benchmark evidence, not clinical validation or a claim about a deployed chatbot.
-                    </p>
-                </div>
-                <div class="project-condensed">
-                    <p>A reproducible LLM benchmark for metric invariance and controllability, covering faithfulness, social pressure, bias signals, and multi-turn continuity.</p>
-                </div>
-                <a href="pages/nlp-project.html" class="project-details-button">View Full Project Details</a>
-                <a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            </div>
+            <button type="button" class="expandable-header" aria-expanded="false">Predict C Project — Computing Department Research Assistant Project</button>
+            <span class="short-description">A University of Northampton project using predictive analytics to support students identified as at risk.</span>
+            <div class="expandable-content"><div class="project-full"><p>My research-assistant contribution supported a predictive-analytics project for early support. Public detail remains deliberately high-level to protect student information, internal data, and operational workflows.</p></div><div class="project-condensed"><p>Predictive analytics research for early support, handled within strict data-governance boundaries.</p></div><a href="pages/predict-c-project.html" class="project-details-button">View Full Project Details</a><a href="https://pure.northampton.ac.uk/en/projects/predict-c-predictive-analytics-for-early-support-of-at-risk-gem-c/" class="project-details-button" target="_blank" rel="noopener noreferrer">View University Project</a></div>
         </li>
-
-        <li>
-            <button type="button" class="expandable-header" aria-expanded="false">SensoryNeural: AI-Driven Support for Neurodivergent Children</button>
-            <span class="short-description">Secured second place at Elevate Great AI Competition 2025 with adaptive sensory support for neurodivergent children.</span>
-            <div class="expandable-content">
-                <div class="project-full">
-                    <p>
-                        SensoryNeural earned <strong>second place</strong> in the Elevate Great AI Competition 2025. The organising team's LinkedIn recap thanked the judges and celebrated the finalist cohort — including our team — for pushing the boundaries of responsible AI. As the AI specialist, I helped conceptualise a system that harnesses adaptive intelligence so environments respond to children's sensory needs instead of forcing children to endure rigid settings.
-                    </p>
-                    <p>
-                        On the technical side, I led most of the implementation: building Python backend prototypes, crafting the stress‑detection loop with synthetic calibration datasets, and wiring a WebSocket‑driven dashboard for real‑time signals and interventions. I also structured the TypeScript/React site (Vite + Tailwind) and wrote run books so others could reproduce the finals prototype.
-                    </p>
-                    <p>Key Innovations:</p>
-                    <ul>
-                        <li>Predictive sensory support that anticipates triggers before they cause distress</li>
-                        <li>Personalised adaptations based on individual sensory profiles</li>
-                        <li>Multi-environment support extending beyond home to educational settings</li>
-                        <li>Data-informed insights for parents, educators, and healthcare providers</li>
-                    </ul>
-                    <p>
-                        This project represents a paradigm shift from reactive to proactive sensory support, with the potential to significantly improve quality of life for children with autism spectrum disorder (ASD) and sensory processing disorders (SPD). Our ultimate vision is to create a more inclusive world where neurodivergent children have the same opportunities to thrive as their neurotypical peers.
-                    </p>
-                </div>
-                <div class="project-condensed">
-                    <p>As the AI specialist for SensoryNeural — the second-place team at the Elevate Great AI Competition 2025 — I helped design predictive sensory support that adapts environments for neurodivergent children, easing daily challenges for those with ASD and SPD.</p>
-                </div>
-                <a href="https://sensoryneural.uk/" class="project-details-button" target="_blank" rel="noopener noreferrer">View Full Project Details</a>
-                <a href="https://github.com/ryantigi254/Sensory_Neural" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            </div>
-        </li>
-
         <li>
             <button type="button" class="expandable-header" aria-expanded="false">Dissertation — Robert: BPD-Informed Support Chatbot</button>
-            <span class="short-description">A research prototype exploring safe, non-clinical conversational support for people with borderline personality disorder (BPD).</span>
-
-            <div class="expandable-content">
-              <div class="project-full">
-                <p>
-                  My dissertation centres on <em>Robert</em>, a BPD-informed conversational-support research prototype.
-                  It explores how validation-first dialogue, DBT-informed coping prompts, and explicit safety boundaries can be designed into a non-clinical chatbot without presenting it as therapy or a substitute for professional care.
-                </p>
-                <ul>
-                  <li><strong>System design:</strong> a working v2 prototype with a FastAPI backend and Next.js frontend, structured conversation control, DBT-informed support tools, and risk-escalation pathways.</li>
-                  <li><strong>Research focus:</strong> the limits and design requirements of BPD-informed digital support, including non-directive interaction, continuity, and safe signposting.</li>
-                  <li><strong>Evaluation:</strong> traceable testing, failure-case review, and conservative claims boundaries; the separate benchmark project evaluates model behaviour and metrics.</li>
-                </ul>
-                <p class="note">Research prototype only. Robert has not been clinically validated and is not a diagnostic, therapeutic, or crisis-service replacement.</p>
-              </div>
-
-              <div class="project-condensed">
-                <p>Robert is my BPD-informed dissertation chatbot: a non-clinical research prototype for validation-first support, DBT-informed prompts, and safe escalation.</p>
-              </div>
-            </div>
+            <span class="short-description">A non-clinical research prototype for validation-first, support-oriented conversation.</span>
+            <div class="expandable-content"><div class="project-full"><p>Robert is my dissertation prototype, exploring visible conversation controls, support tools, and clear safety boundaries without presenting itself as therapy or crisis care.</p></div><div class="project-condensed"><p>BPD-informed, support-oriented conversational AI with explicit research boundaries.</p></div><a href="pages/dissertation-project.html" class="project-details-button">View Full Project Details</a><a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark-Ready" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
         </li>
-
         <li>
-            <button type="button" class="expandable-header" aria-expanded="false">O-Predict — Computing Department Research Assistant Project</button>
-            <span class="short-description">Research-assistant contribution to a Computing Department predictive-systems project, handled with privacy and data-governance constraints in mind.</span>
-            <div class="expandable-content">
-                <div class="project-full">
-                    <p>
-                        O-Predict is a Computing Department research-assistant project exploring predictive approaches in a university setting. My contribution covered research and technical support for the project while working within the department’s data-protection and governance requirements.
-                    </p>
-                    <p>
-                        The public description is intentionally high-level: the work may involve student information and internal university data, so this portfolio does not disclose datasets, operational workflows, model details, results, or access arrangements.
-                    </p>
-                </div>
-                <div class="project-condensed">
-                    <p>A Computing Department research-assistant project on predictive systems, with public details limited to protect student information and internal university data.</p>
-                </div>
-            </div>
+            <button type="button" class="expandable-header" aria-expanded="false">FSD Mental Health Safety Benchmark</button>
+            <span class="short-description">A reproducible LLM evaluation benchmark for invariance, controllability, faithfulness, pressure resistance, and continuity.</span>
+            <div class="expandable-content"><div class="project-full"><p>The evaluation arm of my dissertation: reproducible behavioural studies that test whether model metrics remain interpretable as prompts, personas, and conversation context change.</p></div><div class="project-condensed"><p>Benchmark evidence for metric invariance and controllability.</p></div><a href="pages/nlp-project.html" class="project-details-button">View Full Project Details</a><a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
         </li>
-
+        <li>
+            <button type="button" class="expandable-header" aria-expanded="false">SensoryNeural: AI-Driven Sensory Support</button>
+            <span class="short-description">Second-place Elevate Great AI Competition 2025 concept using synthetic wearable-style signals and AI-guided support.</span>
+            <div class="expandable-content"><div class="project-full"><p>SensoryNeural explores how synthetic wearable-style data can be contextualised into an interpretable support signal. It is a concept prototype, not a clinical monitoring system.</p></div><div class="project-condensed"><p>AI-guided sensory-support concept with a clear prototype boundary.</p></div><a href="https://sensoryneural.netlify.app/" class="project-details-button" target="_blank" rel="noopener noreferrer">Visit Project Website</a><a href="pages/sensoryneural-project.html" class="project-details-button">View Full Project Details</a><a href="https://github.com/ryantigi254/Sensory_Neural" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
+        </li>
         <li>
             <button type="button" class="expandable-header" aria-expanded="false">UniMind: Mental Health Chatbot for UON Students</button>
-            <span class="short-description">Leading a crisis-safe, multi-agent mental health platform for the University of Northampton.</span>
-            <div class="expandable-content">
-                <div class="project-full">
-                    <p>
-                        Serving as group lead for UniMind, a CSY2088 module project that delivers 24/7 wellbeing support to University of Northampton students through layered AI safety controls, empathetic conversation design, and GDPR-aligned data stewardship.
-                    </p>
-                    <p>Key system accomplishments:</p>
-                    <ul>
-                        <li>Engineered a multi-agent architecture combining Gemini planning agents, a fine-tuned therapeutic LLM, and an OpenAI resource assistant to provide human-level dialogue with <strong>layered crisis detection ~99.99% reliability (internal)</strong> — 100% on our scenario set; ≥99.9% with a single-provider outage; ~99% worst-case local fallback.</li>
-                        <li>Reduced per-student support costs by <strong>89%</strong> (GBP 13.36 vs GBP 128 per month) while maintaining <strong>8.2/10 user satisfaction</strong> across participant evaluations and public demonstrations.</li>
-                        <li>Integrated UON Student Hub and NILE resources with automated escalation pathways, ensuring immediate referral to Samaritans, NHS, SafeZone, and on-campus counselling services.</li>
-                        <li>Led ethics, privacy, and DPIA-ready data governance workstreams, including consent-driven retention controls, AES-256 encryption, and anonymised analytics pipelines.</li>
-                        <li>Coordinated a three-person cross-functional team, 70+ research sources, and 70 student survey responses to ground feature prioritisation, persona development, and evaluation strategy.</li>
-                    </ul>
-                    <p>
-                        The project demonstrates how responsibly deployed generative AI can extend university mental health provision, delivering evidence-backed outcomes, rapid crisis response (&lt;3 seconds under load), and a replicable deployment framework for higher-education partners.
-                    </p>
-                </div>
-                <div class="project-condensed">
-                    <p>Delivered UniMind, a UON-focused mental health chatbot with 99% crisis detection, 97% plan alignment with the intended trajectory, 8.2/10 user satisfaction, and 89% cheaper support versus traditional counselling.</p>
-                </div>
-                <div class="project-details-container">
-                    <a href="https://github.com/ryantigi254/AI-Mental-Health-Chatbot" class="project-details-button" target="_blank" rel="noopener noreferrer">View Project Details (GitHub)</a>
-                    <a href="pages/unimind-chatbot-blog.html" class="project-details-button">Read Project Blog</a>
-                </div>
-            </div>
+            <span class="short-description">A student wellbeing chatbot project with layered crisis pathways and resource signposting.</span>
+            <div class="expandable-content"><div class="project-full"><p>A UON-focused module project exploring support-oriented conversation, crisis routing, and university-resource signposting.</p></div><div class="project-condensed"><p>Student wellbeing chatbot project with safety-conscious interaction design.</p></div><a href="https://github.com/ryantigi254/AI-Mental-Health-Chatbot" class="project-details-button" target="_blank" rel="noopener noreferrer">View Project Details</a><a href="pages/unimind-chatbot-blog.html" class="project-details-button">Read Project Blog</a></div>
         </li>
-
+        <li>
+            <button type="button" class="expandable-header" aria-expanded="false">GXO Warehouse Analytics Project</button>
+            <span class="short-description">Research-assistant work on data-led order-consolidation opportunities for warehouse operations.</span>
+            <div class="expandable-content"><div class="project-full"><p>A University of Northampton and GXO Logistics collaboration exploring AI and data analytics for warehouse operations. My work focused on a reproducible analysis route for identifying potential order-consolidation opportunities.</p></div><div class="project-condensed"><p>Warehouse analytics and geospatial order-consolidation exploration.</p></div><a href="pages/gxo-project.html" class="project-details-button">View Full Project Details</a><a href="https://pure.northampton.ac.uk/en/projects/developing-ai-powered-solutions-for-inventory-and-labor-managemen/" class="project-details-button" target="_blank" rel="noopener noreferrer">View University Project</a></div>
+        </li>
         <li>
             <button type="button" class="expandable-header" aria-expanded="false">Study Smart: AI Literacy Initiative</button>
-            <span class="short-description">Driving data-driven insights for AI literacy development across the University of Northampton.</span>
-            <div class="expandable-content">
-                <div class="project-full">
-                    <p>
-                        Playing a key role in a university-wide project funded by the UON Learning Enhancement and Innovation Fund, aimed at fostering AI literacy among staff and students. This initiative bridges knowledge gaps relating to Generative AI tools and pedagogic strategies to positively impact educational outcomes while maintaining high ethical standards.
-                    </p>
-                    <p>Key Contributions and Responsibilities:</p>
-                    <ul>
-                        <li>Spearheading comprehensive data analysis efforts, including cleaning, processing, and interpreting data from various project components.</li>
-                        <li>Developing and fine-tuning a custom GPT model specifically for analysing project data, ensuring high-quality and relevant outputs.</li>
-                        <li>Creating impactful visualisations to effectively communicate findings and insights from the project data.</li>
-                        <li>Collaborating with the research team to develop a robust methodology for AI-assisted qualitative data analysis, currently working on a paper to expound on this innovative approach.</li>
-                        <li>Contributing to the analysis of workshop outcomes and participant feedback, using AI-driven techniques to identify trends and areas for improvement in the AI literacy programme.</li>
-                        <li>Assisting in the integration of data-driven insights into the Staff Toolkit and AI-enhanced course creation tools.</li>
-                    </ul>
-                    <p>
-                        This project aligns with the University's strategic objectives, addressing key themes such as learning and teaching enhancement, assessment and feedback improvement, creativity and employability boost, diversity and inclusion promotion, and research and ethics considerations in the context of AI integration in higher education. My work focuses on utilizing AI and data science to provide actionable insights that drive the project's success and impact.
-                    </p>
-                </div>
-                <div class="project-condensed">
-                    <p>Contributing to a university-wide AI literacy project, focusing on data analysis, custom GPT model development, and AI-driven insights. The project aims to enhance AI understanding among staff and students, aligning with key university objectives.</p>
-                </div>
-                <a href="https://pure.northampton.ac.uk/en/activities/study-smart-staff-and-students-co-constructing-ai-literacy-at-uon" class="project-details-button">View Full Project Details</a>
-            </div>
+            <span class="short-description">University research on co-constructing practical AI literacy with staff and students.</span>
+            <div class="expandable-content"><div class="project-full"><p>A University of Northampton initiative applying research, data analysis, and AI-enabled tools to help staff and students develop AI literacy together.</p></div><div class="project-condensed"><p>Research-led AI literacy development for higher education.</p></div><a href="https://pure.northampton.ac.uk/en/activities/study-smart-staff-and-students-co-constructing-ai-literacy-at-uon" class="project-details-button" target="_blank" rel="noopener noreferrer">View University Project</a></div>
         </li>
-
     </ul>
 
     <hr>

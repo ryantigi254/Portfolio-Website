@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Dissertation Project | Ryan Gichuru</title>
+    <link rel="stylesheet" href="page-styles.css">
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <a href="../index.html#projects" class="return-link">← Back to Portfolio</a>
+        <p class="eyebrow">Dissertation · Support-Oriented Conversational AI</p>
+        <h1>Robert: BPD-Informed Support Chatbot</h1>
+        <p class="page-lede">A support-oriented research prototype that makes conversation controls, user choice, and safety boundaries visible rather than treating a warm response as sufficient evidence.</p>
+        <div class="button-row quick-links">
+            <a class="button primary" href="https://robert-chatbot.netlify.app/" target="_blank" rel="noopener noreferrer">Launch Robert Website</a>
+            <a class="button secondary" href="nlp-project.html">Explore the Benchmark</a>
+        </div>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Focus</p><p class="meta-value">Support-oriented conversational system design</p></div>
+            <div class="meta-card"><p class="meta-label">Interaction</p><p class="meta-value">Validation-first dialogue, direct-request handling, and transparent boundaries</p></div>
+            <div class="meta-card"><p class="meta-label">Safety stance</p><p class="meta-value">Not a crisis service, therapy tool, or diagnostic system</p></div>
+            <div class="meta-card"><p class="meta-label">Status</p><p class="meta-value">Live research prototype on Netlify</p></div>
+        </div>
+    </header>
+
+    <section class="section-card">
+        <h2 class="section-title">What Robert offers</h2>
+        <p>Robert offers a calm, clearly bounded starting point for supportive conversation. The live interface foregrounds its non-crisis status, immediate help route, and quick exit rather than hiding them behind a polished chat experience.</p>
+        <div class="concept-grid">
+            <div class="concept-box"><h4>Guided support tools</h4><p>Short, user-selected activities for breathing, grounding, pause skills, and body reset. These are brief supports, not a comprehensive therapy programme.</p></div>
+            <div class="concept-box"><h4>Resources and help routes</h4><p>Visible pathways to urgent help, self-help material, and ongoing support, with safety information available from the main interface.</p></div>
+            <div class="concept-box"><h4>Preference surfaces</h4><p>Accessibility and interaction preferences, including readable presentation options, motion choices, and opt-in, device-local memory controls.</p></div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Live interface</h2>
+        <div class="visual-grid">
+            <figure class="image-frame"><img src="../assets/robert/robert-landing-chat.png" alt="Robert live chat landing interface with safety boundary and help route"><figcaption>The opening interface makes the supportive, non-crisis scope explicit.</figcaption></figure>
+            <figure class="image-frame"><img src="../assets/robert/robert-guided-tools.jpeg" alt="Robert guided tools showing breathing, grounding, DBT STOP, and muscle release"><figcaption>Guided tools are short, user-selected supports with an urgent-help reminder.</figcaption></figure>
+        </div>
+        <div class="button-row"><a class="button primary" href="https://robert-chatbot.netlify.app/" target="_blank" rel="noopener noreferrer">Open Robert on Netlify</a></div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Requirements that shaped the prototype</h2>
+        <p>Meeting notes with Lily and Dr Mu informed the user-facing emphasis on a calmer, accessible between-session support experience. The final project treats those notes as requirements grounding, not as clinical or lived-experience validation evidence.</p>
+        <div class="concept-grid">
+            <div class="concept-box"><h4>Validation before advice</h4><p>Respond to distress without minimising it, forced positivity, diagnosis claims, or pseudo-clinical authority.</p></div>
+            <div class="concept-box"><h4>Agency and direct requests</h4><p>Keep conversation non-directive while following through when a user explicitly asks for a practical coping tool.</p></div>
+            <div class="concept-box"><h4>Visible continuity</h4><p>Make memory opt-in, user-triggered, and visible rather than relying on opaque personalisation.</p></div>
+            <div class="concept-box"><h4>Conservative escalation</h4><p>Prioritise clear crisis-route visibility and UK-facing signposting over any claim of automated safeguarding.</p></div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">How the benchmark connects</h2>
+        <p>The benchmark comes first: it measures failure modes in candidate language models, including unfaithful reasoning, pressure yielding, silent bias, and continuity drift. Those results motivate Robert’s explicit controls: agenda state, move contracts, overseer checks, visible memory updates, and crisis-boundary handling.</p>
+        <p>This is an architectural hand-off, not a clinical validation chain. The benchmark identifies risks; Robert makes relevant controls inspectable; further clinician, lived-experience, and deployment evaluation remains outside the current claim.</p>
+        <div class="button-row"><a class="button secondary" href="nlp-project.html">View Benchmark Evidence</a></div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Research boundary</h2>
+        <p>Robert is a research prototype. It is not presented as therapy, diagnosis, a crisis service, or evidence of clinical effectiveness. Its contribution is the visible, auditable handling of conversational controls and safety boundaries.</p>
+    </section>
+</main>
+</body>
+</html>

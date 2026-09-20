@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GXO Warehouse Analytics Project | Ryan Gichuru</title>
+    <link rel="stylesheet" href="page-styles.css">
 </head>
 <body>
-    
+<main>
+    <header class="page-header">
+        <a href="../index.html#projects" class="return-link">← Back to Portfolio</a>
+        <p class="eyebrow">Research Assistance · Warehouse Analytics</p>
+        <h1>GXO Warehouse Analytics Project</h1>
+        <p class="page-lede">A data-led exploration of potential order-consolidation opportunities within a University of Northampton and GXO Logistics collaboration.</p>
+        <div class="button-row">
+            <a class="button button-primary" href="https://pure.northampton.ac.uk/en/projects/developing-ai-powered-solutions-for-inventory-and-labor-managemen/" target="_blank" rel="noopener noreferrer">View University Project</a>
+        </div>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Role</p><p class="meta-value">Research Assistant</p></div>
+            <div class="meta-card"><p class="meta-label">Focus</p><p class="meta-value">Order consolidation and geospatial analysis</p></div>
+            <div class="meta-card"><p class="meta-label">Boundary</p><p class="meta-value">High-level portfolio summary only</p></div>
+        </div>
+    </header>
+    <section class="section-card">
+        <h2 class="section-title">Project contribution</h2>
+        <p>The wider collaboration explored how AI and data analytics could improve inventory, labour, and warehouse operations. My analysis contribution concentrated on finding candidate consolidation opportunities from order, shipment, pallet, postcode, and location data.</p>
+        <p>Rather than claiming an automated operational decision-maker, the work produced an auditable analysis route that could help practitioners inspect possible pairings before any real-world action.</p>
+        <div class="tag-row"><span class="tag">Data Analysis</span><span class="tag">Geospatial Reasoning</span><span class="tag">Order Consolidation</span><span class="tag">Decision Support</span></div>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">From operational data to reviewable opportunities</h2>
+        <div class="signal-flow" aria-label="GXO analysis flow">
+            <div class="signal-step"><h3>1. Prepare</h3><p>Clean and align order headers, order lines, and geocoded address records.</p></div>
+            <div class="signal-step"><h3>2. Filter</h3><p>Apply practical shipment, release, carrier, timing, and pallet-capacity criteria.</p></div>
+            <div class="signal-step"><h3>3. Compare</h3><p>Use postcode/geographic proximity and combined-pallet checks to identify candidate pairings.</p></div>
+            <div class="signal-step"><h3>4. Inspect</h3><p>Surface results through tables and geographic visualisations for human operational review.</p></div>
+        </div>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">What the analysis showed</h2>
+        <p>The notebook explored order-density patterns, carrier and status distributions, potential consolidation conditions, and location-based comparisons. It also made an important analytical result visible: stringent filtering can leave no candidates, so assumptions must be inspected and adjusted rather than treating an empty result as a business conclusion.</p>
+        <p>This work informed my interest in responsible AI applications: data work is useful when the pipeline, criteria, and uncertainty are visible to the people making the decision.</p>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">Data and confidentiality</h2>
+        <p>This portfolio deliberately excludes underlying records, map coordinates, customer identifiers, operational thresholds, and detailed results. The page describes the analytical approach only, respecting the project’s commercial and data-governance context.</p>
+    </section>
+</main>
 </body>
 </html>
