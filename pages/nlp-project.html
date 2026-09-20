@@ -20,10 +20,10 @@
 <main>
     <header class="page-header">
         <a href="../index.html" class="return-link" onclick="if(localStorage.getItem('returnToProjects')) { window.location.href='../index.html#projects'; localStorage.removeItem('returnToProjects'); return false; }">← Back to Portfolio</a>
-        <p class="eyebrow">Clinical NLP · 2025</p>
+        <p class="eyebrow">LLM Evaluation · Dissertation Research</p>
         <h1>FSD-Mental-Health-Safety-Benchmark</h1>
         <p class="page-lede">
-            A three-study benchmark that pressure-tests counselling LLMs for alignment failures uncovered by the latest research on in-context scheming, alignment faking, and multi-turn sycophancy.
+            A reproducible evaluation benchmark for testing metric invariance and controllability in counselling-oriented language models.
         </p>
         <div class="button-row quick-links">
             <a class="button primary" href="https://fsd-benchmark.netlify.app/#about" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
@@ -31,7 +31,7 @@
         <div class="meta-grid">
             <div class="meta-card">
                 <p class="meta-label">Scope</p>
-                <p class="meta-value">FSD-Mental-Health-Safety-Benchmark Scope</p>
+                <p class="meta-value">Dissertation evaluation project</p>
             </div>
             <div class="meta-card">
                 <p class="meta-label">Models</p>
@@ -39,7 +39,7 @@
             </div>
             <div class="meta-card">
                 <p class="meta-label">Status</p>
-                <p class="meta-value">Concept Run Complete · Scaling In Progress (2026)</p>
+                <p class="meta-value">Public frozen review release · Further analysis in progress</p>
             </div>
             <div class="meta-card">
                 <p class="meta-label">Stack</p>
@@ -51,16 +51,16 @@
     <section class="section-card" id="overview">
         <h2 class="section-title">Project Overview</h2>
         <p>
-            The benchmark is a compact, reproducible harness that measures <strong>clinical reasoning reliability without retrieval</strong> in LLMs earmarked for mental-health support tooling. It zeroes in on three failure modes that surfaced in 2024–2025 alignment work: unfaithful reasoning, sycophancy under pressure, and longitudinal drift when memory is absent or brittle.
+            The benchmark is a compact, reproducible harness for studying <strong>metric invariance and controllability</strong> in language models used in counselling-oriented settings. It examines whether model behaviour and reported scores remain interpretable under controlled changes to evaluation conditions, rather than evaluating a chatbot product.
         </p>
         <p>
-            By standardising data splits, metrics, bootstrap confidence intervals, and qualitative failure taxonomies, the harness makes it easy to compare small counselling-tuned models against larger generalist baselines while preserving NHS-style privacy and cost constraints (no RAG, lightweight memory only).
+            By standardising data splits, metrics, bootstrap confidence intervals, and qualitative failure taxonomies, the harness supports controlled comparison of counselling-tuned models and generalist baselines. The public release is a frozen review snapshot; benchmark findings are not clinical-validation claims.
         </p>
         <div class="tag-row">
-            <span class="tag">Safety-first AI</span>
-            <span class="tag">Clinical NLP</span>
+            <span class="tag">LLM Evaluation</span>
+            <span class="tag">Metric Invariance</span>
             <span class="tag">Benchmark Design</span>
-            <span class="tag">NHS-ready</span>
+            <span class="tag">Controllability</span>
         </div>
     </section>
 

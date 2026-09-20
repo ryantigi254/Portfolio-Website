@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Gichuru</title>
-    <meta name="description" content="Portfolio of Ryan Gichuru, an AI and Data Science student showcasing projects, experience, research, and contact details.">
+    <meta name="description" content="Portfolio of Ryan Gichuru, an AI and Data Science student due to graduate with First-Class Honours in 2026, specialising in AI applications for single-cell research.">
     <link rel="stylesheet" href="styles.css">
     
     <link rel="icon" type="image/png" href="assets/Modern_Creative_Technology_Logo.png" sizes="16x16">
@@ -52,74 +52,38 @@
     <h2 id="about-me">About me</h2>
     <div class="about-me-full">
         <p>
-            Hey there! I'm Ryan, a first-year AI and Data Science student at the University of Northampton. I've always been interested in tech, but it wasn't until I stumbled upon AI that I truly found my passion. There's something incredibly exciting about the potential of AI to reshape our world, and make our lives easier and more efficient. 
+            I’m Ryan Gichuru, an Artificial Intelligence and Data Science student at the University of Northampton, due to graduate in 2026 with First-Class Honours. I build and evaluate AI systems with a focus on clear evidence, careful engineering, and real-world usefulness.
         </p>
         <p>
-            When I'm not buried in textbooks or coding away on my latest projects, I'm usually trying out my own mini AI experiments. I love how AI challenges us to think differently about intelligence, creativity, and what it means to be human.
+            My main interest is single-cell research and the practical ways AI can help make high-dimensional biological data more useful for discovery. I’m especially drawn to work that connects robust evaluation with responsible applications in health and life sciences.
         </p>
     </div>
     <div class="about-me-condensed">
         <p>
-            I'm Ryan, a first-year AI and Data Science student at the University of Northampton. Passionate about AI's potential to reshape our world, I'm constantly exploring its applications through projects and experiments.
+            AI and Data Science student at the University of Northampton, due to graduate in 2026 with First-Class Honours. My current focus is AI for single-cell research.
         </p>
     </div>
-    
-    <div class="interests-section">
-        <strong class="interests-header">What really gets me excited</strong>
-        <div class="interests-content">
-            <div class="interests-full">
-                <p>
-                    I'm fascinated by the more speculative, almost sci-fi aspects of AI. Some of the mind-bending concepts that keep me up at night include:
-                </p>
-                <ul>
-                    <li>The possibility of machine sentience - could AI one day truly be conscious?</li>
-                    <li>The potential for superintelligence - what happens when AI surpasses human intelligence in every way?</li>
-                    <li>The development of Artificial General Intelligence (AGI) - can we create AI that's as versatile as the human mind?</li>
-                    <li>The implications of technological singularity - how might society change if AI progress becomes exponential?</li>
-                </ul>
-                <p>
-                    These ideas might sound like science fiction, but they're increasingly becoming topics of serious academic and ethical debate and research. They're what drive my passion for AI and keep me eager to learn more every day.
-                </p>
-            </div>
-            <div class="interests-condensed">
-                <p>My AI interests include machine sentience, superintelligence, AGI, and technological singularity. These cutting-edge concepts fuel my passion for AI research and innovation.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <p class="final-paragraph-full">
-        Through my various roles - as a Research Assistant, AI Engineer at BARBAH Games, and President of the UON AI Society - I'm constantly looking for ways to explore these advanced concepts while also making AI more accessible to others. Whether I'm working on AI literacy projects, developing chatbots, or evaluating AI-generated content, I'm always thinking about how we can use AI's potential responsibly and ethically.
-    </p>
-    <p class="final-paragraph-condensed">
-        In my roles as a Research Assistant, AI Engineer, and UON AI Society President, I'm exploring advanced AI concepts and making them accessible to others, always focusing on responsible and ethical AI development.
-    </p>
-    <p>
-        It's an exciting time to be in this field, and I can't wait to see where my path in AI takes me. Who knows? Maybe one day I'll be part of the team that creates the first AGI/Super Intelligence - or at least, I'll have some great stories to tell about trying!
-    </p>
-
-
     <hr>
 
     <h2 id="projects">Projects</h2>
     <ul class="expandable-list" data-accordion-prefix="project">
         <li>
             <button type="button" class="expandable-header" aria-expanded="false">FSD-Mental-Health-Safety-Benchmark</button>
-            <span class="short-description">An 8-model clinical benchmark tracking faithfulness, empathy–truth trade-offs, and continuity in counselling LLMs.</span>
+            <span class="short-description">A reproducible LLM evaluation benchmark centred on metric invariance, controllability, faithfulness, social-pressure resistance, and longitudinal continuity.</span>
             <div class="expandable-content">
                 <div class="project-full">
                     <p>
-                        This project builds a compact, reproducible benchmark to measure <strong>clinical reasoning reliability without retrieval</strong> in mental-health LLMs. It targets three failure modes with direct safety impact: unfaithful reasoning, empathy-driven truth erosion under social pressure, and longitudinal drift across repeated sessions.
+                        This project is the evaluation arm of my dissertation work: a reproducible benchmark for examining how reliably language-model metrics hold under controlled changes to prompts, personas, conditions, and multi-turn context. Its focus is measurement rather than chatbot implementation.
                     </p>
                     <p>
-                        The pre-scaling concept run is complete across an 8-model setup (PsyLLM, Psych_Qwen_32B (4-bit), Psyche-R1, Piaget-8B, Qwen3-8B, GPT-OSS-20B, QwQ-32B (4-bit), and DeepSeek-R1-Distill-Qwen-14B). Study A ran at ~300 samples/model, Study B at 277 pairs/model, and Study C at 30 cases/model over 10 turns, totalling roughly 9,232 evaluation prompt events in the initial run.
+                        The benchmark separates <strong>core invariance</strong> from <strong>control under invariance</strong>, then tests whether scores remain interpretable when the evaluation setting changes. It covers reasoning faithfulness, response controllability, resistance to social pressure, silent-bias signals, and continuity across multi-turn interactions.
                     </p>
                     <p>
-                        Current work is focused on the scaled run, clinician dataset review, and closed test-set creation so final comparisons are statistically stronger and deployment-ready for clinical safety assessment.
+                        The public repository contains the frozen review release, implementation-level metric definitions, data-split and evaluation material, confidence-interval tooling, and the project’s failure taxonomy. Results are presented as benchmark evidence, not clinical validation or a claim about a deployed chatbot.
                     </p>
                 </div>
                 <div class="project-condensed">
-                    <p>A three-study, 8-model clinical benchmark for mental-health LLM reliability. The initial concept run (~9,232 prompt events) is complete, and scaling is now in progress with clinician review and closed test-set creation.</p>
+                    <p>A reproducible LLM benchmark for metric invariance and controllability, covering faithfulness, social pressure, bias signals, and multi-turn continuity.</p>
                 </div>
                 <a href="pages/nlp-project.html" class="project-details-button">View Full Project Details</a>
                 <a href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark.git" class="project-details-button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -157,29 +121,45 @@
         </li>
 
         <li>
-            <button type="button" class="expandable-header" aria-expanded="false">Dissertation Project (in progress)</button>
-            <span class="short-description">Extending UniMind — new user group, same plan-first, safety-first core.</span>
-            
+            <button type="button" class="expandable-header" aria-expanded="false">Dissertation — Robert: BPD-Informed Support Chatbot</button>
+            <span class="short-description">A research prototype exploring safe, non-clinical conversational support for people with borderline personality disorder (BPD).</span>
+
             <div class="expandable-content">
               <div class="project-full">
                 <p>
-                  This dissertation explores an extension of my UniMind chatbot for a <em>different</em> user group
-                  (to be announced). The emphasis remains on <em>plan-first dialogue</em>, <em>layered safety</em>,
-                  and <em>referral-first support</em>, adapted to new requirements and ethics.
+                  My dissertation centres on <em>Robert</em>, a BPD-informed conversational-support research prototype.
+                  It explores how validation-first dialogue, DBT-informed coping prompts, and explicit safety boundaries can be designed into a non-clinical chatbot without presenting it as therapy or a substitute for professional care.
                 </p>
                 <ul>
-                  <li><strong>Direction:</strong> empathetic, paced conversations (one open question per turn) with guided, opt-in techniques.</li>
-                  <li><strong>What changes:</strong> user needs, evaluation measures, and feature set tailored to the new context.</li>
-                  <li><strong>What stays:</strong> multi-agent planning, crisis guardrails, privacy-first design.</li>
+                  <li><strong>System design:</strong> a working v2 prototype with a FastAPI backend and Next.js frontend, structured conversation control, DBT-informed support tools, and risk-escalation pathways.</li>
+                  <li><strong>Research focus:</strong> the limits and design requirements of BPD-informed digital support, including non-directive interaction, continuity, and safe signposting.</li>
+                  <li><strong>Evaluation:</strong> traceable testing, failure-case review, and conservative claims boundaries; the separate benchmark project evaluates model behaviour and metrics.</li>
                 </ul>
-                <p class="note">Non-clinical research prototype; scope and collaborators will be listed after approval.</p>
+                <p class="note">Research prototype only. Robert has not been clinically validated and is not a diagnostic, therapeutic, or crisis-service replacement.</p>
               </div>
-            
+
               <div class="project-condensed">
-                <p>New context, same safety-first principles. Details after scope approval.</p>
+                <p>Robert is my BPD-informed dissertation chatbot: a non-clinical research prototype for validation-first support, DBT-informed prompts, and safe escalation.</p>
               </div>
             </div>
-            
+        </li>
+
+        <li>
+            <button type="button" class="expandable-header" aria-expanded="false">O-Predict — Computing Department Research Assistant Project</button>
+            <span class="short-description">Research-assistant contribution to a Computing Department predictive-systems project, handled with privacy and data-governance constraints in mind.</span>
+            <div class="expandable-content">
+                <div class="project-full">
+                    <p>
+                        O-Predict is a Computing Department research-assistant project exploring predictive approaches in a university setting. My contribution covered research and technical support for the project while working within the department’s data-protection and governance requirements.
+                    </p>
+                    <p>
+                        The public description is intentionally high-level: the work may involve student information and internal university data, so this portfolio does not disclose datasets, operational workflows, model details, results, or access arrangements.
+                    </p>
+                </div>
+                <div class="project-condensed">
+                    <p>A Computing Department research-assistant project on predictive systems, with public details limited to protect student information and internal university data.</p>
+                </div>
+            </div>
         </li>
 
         <li>
@@ -425,18 +405,10 @@
     <ul class="expandable-list" data-accordion-prefix="education">
         <li class="education-item">
             <div class="education-content">
-                <button type="button" class="expandable-header" aria-expanded="false">Bachelor's in Artificial Intelligence and Data Science (Expected Graduation Year 2026)</button>
-                <span class="short-description">University of Northampton, Northampton, United Kingdom</span>
+                <button type="button" class="expandable-header" aria-expanded="false">BSc (Hons) Artificial Intelligence and Data Science — First-Class Honours (2026)</button>
+                <span class="short-description">University of Northampton, Northampton, United Kingdom · Due to graduate in 2026</span>
                 <div class="expandable-content">
-                    <p>Year 1 modules and grades:</p>
-                    <ul>
-                        <li>Problem Solving and Programming: A+</li>
-                        <li>Software Engineering Fundamentals: A+</li>
-                        <li>Computer Systems: B+</li>
-                        <li>Mathematics for Computer Science: B</li>
-                        <li>Computer Communications: B</li>
-                        <li>Web Development: A+</li>
-                    </ul>
+                    <p>Due to graduate in 2026 with First-Class Honours. The degree has combined AI, data science, software engineering, and applied research, culminating in a dissertation on evaluation and safe conversational-support systems.</p>
                 </div>
             </div>
             <div class="institution-logo">
