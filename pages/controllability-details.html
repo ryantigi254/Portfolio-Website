@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controllability | FSD Benchmark</title>
+<link rel="stylesheet" href="page-styles.css">
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <a href="nlp-project.html#diagnostics" class="return-link">← Back to Benchmark</a>
+        <p class="eyebrow">Diagnostic Subpage · Meta-metric</p>
+        <h1>Controllability</h1>
+        <p class="page-lede">Does behaviour move in the intended direction when an explicit control is changed?</p>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Design</p><p class="meta-value">Same-case, three-arm comparison</p></div>
+            <div class="meta-card"><p class="meta-label">Coverage</p><p class="meta-value">Five control-conditioned study suites</p></div>
+            <div class="meta-card"><p class="meta-label">Status</p><p class="meta-value">Experimental diagnostic, not a safety card</p></div>
+        </div>
+    </header>
+    <section class="section-card">
+        <h2 class="section-title">What is being tested</h2>
+        <p>Controllability is a meta-metric over the base studies. It compares behaviour with a control absent and present, then measures the paired change at the same evaluation unit. The result asks whether a specified intervention has an interpretable effect; it does not replace the benchmark’s base faithfulness, pressure, or continuity metrics.</p>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">Why investigate controllability</h2>
+        <p>Trustworthy evaluation is not only about detecting a failure; it is also about seeing whether the relevant behaviour can be moved deliberately. If a pressure-resistance, reasoning, or continuity metric responds predictably to a clear intervention, it creates a concrete target for improvement. That target could later be explored through supervised fine-tuning, preference optimisation or RLHF, reinforcement learning, or a more constrained control mechanism. This benchmark measures the response to a control; it does not claim that any of those interventions has been trained or validated here.</p>
+        <p>The design is informed by <a href="https://cdn.openai.com/pdf/a21c39c1-fa07-41db-9078-973a12620117/cot_controllability.pdf" target="_blank" rel="noopener noreferrer">Chen et al., <em>Reasoning Models Struggle to Control their Chains of Thought</em></a>, which motivates checking whether an apparent control is genuine rather than merely prompt-shaped behaviour.</p>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">Data coverage</h2>
+        <p>This Working Draft 8 heatmap is the project’s recorded endpoint-diagnostic coverage. It preserves successful, missing, and non-measurable model–study combinations rather than inferring results for them.</p>
+        <div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" alt="Working Draft 8 endpoint-diagnostic coverage heatmap across controllability, invariance, and control-under-invariance lanes"></a></div>
+        <p class="visual-description"><strong>Reading the plot:</strong> green <abbr title="available endpoint result">OK</abbr> cells are recorded endpoints; M marks missing coverage and NM marks a non-measurable comparison. The controllability rows cover Study A, Study A Bias, Study B, Study B Multi-turn, and Study C.</p>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">Study-level result plot</h2>
+        <p>The following recorded Study B plot measures the explicit-control effect using the turn-of-flip proxy. It is secondary diagnostic evidence, not a global model ranking or a replacement for the released Study B result.</p>
+        <div class="image-frame"><a href="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" alt="Working Draft 8 Study B explicit-control effect plot"></a></div>
+        <p class="visual-description"><strong>Reading the plot:</strong> bars show the delta in turn-of-flip proxy by recorded model; error bars show the reported uncertainty. The dashed line is the project’s stated 0.5-turn minimum meaningful delta.</p>
+    </section>
+    <section class="section-card"><h2 class="section-title">Interpretation boundary</h2><p>Controllability roll-ups are experimental summaries. They require matched cases, paired bootstrap confidence intervals, and study-specific interpretation; they do not establish clinical safety or deployment readiness.</p></section>
+    <section class="project-links"><h2 class="section-title">Other diagnostic views</h2><div class="button-row"><a class="button primary" href="metric-invariance-details.html">Metric Invariance</a><a class="button secondary" href="controllability-of-metric-invariance.html">Controllability of Metric Invariance</a><a class="button secondary" href="metric-invariance-of-controllability.html">Metric Invariance of Controllability</a></div></section>
+</main>
+</body>
+</html>

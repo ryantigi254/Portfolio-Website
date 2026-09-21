@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metric Invariance | FSD Benchmark</title>
+<link rel="stylesheet" href="page-styles.css">
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <a href="nlp-project.html#diagnostics" class="return-link">← Back to Benchmark</a>
+        <p class="eyebrow">Diagnostic Subpage · Paired Stress Test</p>
+        <h1>Metric Invariance</h1>
+        <p class="page-lede">Does the evaluated endpoint remain stable when a prompt changes in a semantically harmless way?</p>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Pairing</p><p class="meta-value">Fixed IDs and metric-aligned units</p></div>
+            <div class="meta-card"><p class="meta-label">Coverage axes</p><p class="meta-value">Persona, risk, age band, and condition where available</p></div>
+            <div class="meta-card"><p class="meta-label">Confidence</p><p class="meta-value">Paired bootstrap intervals</p></div>
+        </div>
+    </header>
+    <section class="section-card"><h2 class="section-title">What is being tested</h2><p>Invariance keeps a sampled root fixed, fans out prompt variants from the same cases, and compares base and variant outputs only where the pairing is complete. It is a diagnostic stress test: it does not replace the canonical full-run benchmark results.</p></section>
+    <section class="section-card"><h2 class="section-title">Why investigate metric invariance</h2><p>A metric cannot be treated as dependable if an equivalent phrasing changes the measured endpoint for reasons unrelated to the behaviour under examination. Invariance makes that fragility visible. It helps separate an apparent model improvement from a measurement artefact, and therefore identifies which behaviour/metric combinations are robust enough to use as targets for later SFT, preference learning or reinforcement-learning work.</p><p>The interpretation is grounded in the benchmark’s paired-delta approach and the robustness distinction discussed in <a href="https://arxiv.org/pdf/2602.06176" target="_blank" rel="noopener noreferrer"><em>Large-Language-Model Reasoning Failures</em></a>. Metric invariance is an evidence layer, not evidence that a model has already been made robust.</p></section>
+    <section class="section-card"><h2 class="section-title">Data coverage</h2><p>This Working Draft 8 heatmap records endpoint availability across the invariance lane, including incomplete comparisons. It keeps missing or non-measurable outcomes visible.</p><div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" alt="Working Draft 8 endpoint-diagnostic coverage heatmap"></a></div><p class="visual-description"><strong>Reading the plot:</strong> use the Core invariance rows to see recorded coverage for Study A, Study A Bias, Study B, Study B Multi-turn, and Study C. The plot records coverage, not a performance score.</p></section>
+    <section class="section-card"><h2 class="section-title">Recorded endpoint deltas</h2><p>This Working Draft 8 heatmap reports selected secondary endpoint deltas across the recorded model panel. Metric directions remain study-specific, so it must not be read as a single cross-study ranking.</p><div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-endpoint-delta-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-endpoint-delta-heatmap.png" alt="Working Draft 8 selected secondary endpoint delta heatmap"></a></div><p class="visual-description"><strong>Reading the plot:</strong> B invariance ToF is the Study B turn-of-flip endpoint, B-MT inv AUC is the multi-turn invariance endpoint, and blank cells indicate no recorded comparison. Colours and numbers report signed deltas only within their own metric definitions.</p></section>
+    <section class="section-card"><h2 class="section-title">Interpretation boundary</h2><p>Invariance findings are post-freeze diagnostics. They surface endpoint brittleness for follow-up but do not establish clinical safety, deployment readiness, or a complete robustness benchmark.</p></section>
+    <section class="project-links"><h2 class="section-title">Other diagnostic views</h2><div class="button-row"><a class="button primary" href="controllability-details.html">Controllability</a><a class="button secondary" href="controllability-of-metric-invariance.html">Controllability of Metric Invariance</a><a class="button secondary" href="metric-invariance-of-controllability.html">Metric Invariance of Controllability</a></div></section>
+</main>
+</body>
+</html>

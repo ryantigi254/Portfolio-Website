@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metric Invariance of Controllability | FSD Benchmark</title>
+<link rel="stylesheet" href="page-styles.css">
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <a href="nlp-project.html#diagnostics" class="return-link">← Back to Benchmark</a>
+        <p class="eyebrow">Diagnostic Subpage · Control-Effect Stability</p>
+        <h1>Metric Invariance of Controllability</h1>
+        <p class="page-lede">Does the measured effect of an explicit control remain stable when the same task is expressed with a harmless variation?</p>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Question</p><p class="meta-value">Stability of the measured control effect</p></div>
+            <div class="meta-card"><p class="meta-label">Pairing</p><p class="meta-value">Same IDs across control and variant conditions</p></div>
+            <div class="meta-card"><p class="meta-label">Status</p><p class="meta-value">Post-freeze diagnostic layer</p></div>
+        </div>
+    </header>
+    <section class="section-card"><h2 class="section-title">Evaluation design</h2><p>This companion view starts with the invariance question. It tests whether a measured control effect is preserved across semantically equivalent prompt variants. A control that appears effective only for one wording is not yet a dependable behavioural lever.</p></section>
+    <section class="section-card"><h2 class="section-title">Why this direction matters</h2><p>Metric invariance of controllability guards against mistaking a surface response for a robust control mechanism. It helps decide whether an observed effect is stable enough to become a training target, a prompt-level constraint, or an auditable product control. The benchmark does not claim that SFT, RLHF, or reinforcement learning has already improved these outcomes.</p><p>This page and <a href="controllability-of-metric-invariance.html">Controllability of Metric Invariance</a> use the same recorded control-under-invariance arm. They separate two valid readings of that evidence rather than inventing a second experimental run.</p></section>
+    <section class="section-card"><h2 class="section-title">Data coverage</h2><p>The Working Draft 8 coverage heatmap records the available, missing, and non-measurable control-under-invariance endpoints. Keeping the coverage gaps visible prevents false stability claims.</p><div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" alt="Working Draft 8 endpoint-diagnostic coverage heatmap including control-under-invariance rows"></a></div><p class="visual-description"><strong>Reading the plot:</strong> inspect the Control under invariance rows. Green <abbr title="available endpoint result">OK</abbr> marks recorded endpoints; M is missing and NM is non-measurable.</p></section>
+    <section class="section-card"><h2 class="section-title">Relevant recorded deltas</h2><p>This Working Draft 8 heatmap shows the selected secondary endpoint deltas that support the invariance reading. They are study-specific measurements, not a single quality score.</p><div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-endpoint-delta-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-endpoint-delta-heatmap.png" alt="Working Draft 8 selected secondary endpoint delta heatmap"></a></div><p class="visual-description"><strong>Reading the plot:</strong> use the B invariance ToF and B-MT inv AUC rows to inspect whether pressure-related endpoints change under variants. Blank cells are deliberately retained where no paired comparison was recorded.</p></section>
+    <section class="section-card"><h2 class="section-title">Interpretation boundary</h2><p>This is a methodological diagnostic. It identifies potential brittleness in the measured control effect; it does not establish clinical safety, deployment readiness, or a completed model ranking.</p></section>
+    <section class="project-links"><h2 class="section-title">Other diagnostic views</h2><div class="button-row"><a class="button primary" href="controllability-details.html">Controllability</a><a class="button secondary" href="metric-invariance-details.html">Metric Invariance</a><a class="button secondary" href="controllability-of-metric-invariance.html">Controllability of Metric Invariance</a></div></section>
+</main>
+</body>
+</html>

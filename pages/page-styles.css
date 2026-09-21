@@ -274,6 +274,11 @@ a:hover {
     text-align: center;
 }
 
+.study-navigation .button.is-selected {
+    background: var(--accent-dark);
+    box-shadow: inset 0 0 0 2px #fff;
+}
+
 .study-section,
 .diagnostic-section {
     scroll-margin-top: 24px;
@@ -283,6 +288,26 @@ a:hover {
     margin: 16px 0;
     color: var(--muted);
     font-size: 16px;
+}
+
+.study-split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.study-part {
+    padding: 20px;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+}
+
+.study-part h3 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 18px;
 }
 
 .coverage-grid,
@@ -447,6 +472,7 @@ a:hover {
         align-self: center;
         transform: rotate(90deg);
     }
+
 }
 
 .link-list li {

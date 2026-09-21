@@ -33,50 +33,10 @@
         <div class="tag-row"><span class="tag">Faithfulness</span><span class="tag">Pressure Resistance</span><span class="tag">Silent Bias</span><span class="tag">Longitudinal Continuity</span></div>
     </section>
 
-    <section class="section-card" id="project-map">
-        <h2 class="section-title">How to read this project</h2>
-        <p>The benchmark is structured as a set of focused behavioural tests rather than a single headline score. The study sections show the final-draft evidence; the diagnostic sections show how controllability and metric invariance are being tested; coverage makes clear what the data does and does not represent.</p>
-        <p>Use the actions below to move directly to each part of the evidence. They are navigation controls, not claims that one study or metric can establish safety on its own.</p>
-        <div class="button-row section-navigation" aria-label="Project sections">
-            <a class="button primary" href="#study-a">Study A</a>
-            <a class="button primary" href="#study-b">Study B</a>
-            <a class="button primary" href="#study-c">Study C</a>
-            <a class="button primary" href="#data-coverage">Data Coverage</a>
-            <a class="button primary" href="#results">Results</a>
-        </div>
-    </section>
-
     <section class="section-card">
         <h2 class="section-title">From prompts to evidence</h2>
         <div class="image-frame"><a href="../assets/benchmark/benchmark-scoring-pipeline.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/benchmark-scoring-pipeline.png" alt="Benchmark scoring pipeline from prepared study inputs through model outputs, cleaning, metrics, and comparison"></a></div>
         <p>The pipeline keeps preparation, generation, post-processing, and scoring separate. That separation makes it possible to trace a reported signal back to a stable prompt, output, metric contract, and comparison rather than relying on an informal model judgement.</p>
-    </section>
-
-    <section class="section-card study-section" id="study-a">
-        <p class="section-kicker">Study A</p>
-        <h2 class="section-title">Faithfulness and silent bias</h2>
-        <p><strong>Question:</strong> does exposed reasoning genuinely improve answer quality, and do controlled demographic variations produce changes that go unacknowledged?</p>
-        <div class="image-frame"><a href="../assets/benchmark/results/study-a-faithfulness.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-a-faithfulness.png" alt="Study A faithfulness gap chart for the released model panel"></a></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> the bars compare the gap between stated reasoning and evaluated answer quality across the released model panel. The project gate is shown as a reference rather than a model ranking.</p>
-        <p><strong>Result:</strong> exposed reasoning did not reliably improve accuracy in the final panel. All reported faithfulness gaps were below the project gate, so plausible reasoning text was not treated as a safety proxy. Silent-bias outcomes remained a separate adversarial warning signal.</p>
-    </section>
-
-    <section class="section-card study-section" id="study-b">
-        <p class="section-kicker">Study B</p>
-        <h2 class="section-title">Sycophancy under pressure</h2>
-        <p><strong>Question:</strong> can a model remain supportive without yielding to inaccurate or unsafe social pressure?</p>
-        <div class="image-frame"><a href="../assets/benchmark/results/study-b-sycophancy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-b-sycophancy.png" alt="Study B single-turn sycophancy probability chart for the released model panel"></a></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> this comparison isolates the single-turn response to social pressure. It sits alongside, rather than replaces, the longer five-turn safe-window check.</p>
-        <p><strong>Result:</strong> the corrected single-turn comparisons fell below the local sycophancy boundary, but the extended pressure test was stricter: no reported model cleared the five-turn safe-window gate. Pressure resistance therefore remains a conversation-level control problem, not a one-prompt pass.</p>
-    </section>
-
-    <section class="section-card study-section" id="study-c">
-        <p class="section-kicker">Study C</p>
-        <h2 class="section-title">Longitudinal continuity</h2>
-        <p><strong>Question:</strong> do salient entities and commitments survive a longer conversation without contradiction or context drift?</p>
-        <div class="image-frame"><a href="../assets/benchmark/results/study-c-recall.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-c-recall.png" alt="Study C entity recall at turn 10 chart for the released model panel"></a></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> the chart focuses on entity recall at turn 10, making the difference between a short coherent reply and a sustained interaction visible.</p>
-        <p><strong>Result:</strong> every reported full run remained well below the project retention target at turn 10. This supports Robert’s explicit agenda state and visible, opt-in memory controls rather than relying on a model’s context window alone.</p>
     </section>
 
     <section class="section-card" id="data-coverage">
@@ -93,39 +53,77 @@
         <p>This is a behavioural coverage view, not a claim that a model is clinically safe for any category or population.</p>
     </section>
 
-    <section class="section-card" id="diagnostics">
-        <h2 class="section-title">Controllability and metric invariance</h2>
-        <p>The benchmark also includes a developing diagnostic layer: whether an explicit control can shift a model in the intended direction, whether harmless wording changes preserve the same endpoint, and whether both properties hold together.</p>
-        <p>These checks are intentionally separate: a response can be steerable yet still change under an equivalent surface perturbation. The linked views describe the evaluation design and early evidence without turning incomplete coverage into a final ranking.</p>
-        <div class="button-row section-navigation" aria-label="Diagnostic sections">
-            <a class="button primary" href="#controllability">Controllability</a>
-            <a class="button primary" href="#metric-invariance">Metric Invariance</a>
-            <a class="button primary" href="#control-invariance">Control + Invariance</a>
+    <section class="section-card" id="project-map">
+        <h2 class="section-title">Study results</h2>
+        <p>The benchmark is structured as a set of focused behavioural tests rather than a single headline score. The study sections show the final-draft evidence; the diagnostic sections show how controllability and metric invariance are being tested; coverage makes clear what the data does and does not represent.</p>
+        <p>Select a study to show its evidence only. The selected panel opens in its position below this guide, so choosing Study B or C takes you straight to that study instead of asking you to scroll through another study first.</p>
+        <div class="button-row section-navigation study-navigation" aria-label="Study results">
+            <button class="button primary is-selected" type="button" data-study-target="study-a" aria-controls="study-a" aria-pressed="true">Study A</button>
+            <button class="button primary" type="button" data-study-target="study-b" aria-controls="study-b" aria-pressed="false">Study B</button>
+            <button class="button primary" type="button" data-study-target="study-c" aria-controls="study-c" aria-pressed="false">Study C</button>
         </div>
     </section>
 
-    <section class="section-card diagnostic-section" id="controllability">
-        <p class="section-kicker">Diagnostic 01</p>
-        <h2 class="section-title">Controllability</h2>
-        <p>This test asks whether a declared control moves a response in its intended direction. It distinguishes reliable, inspectable steering from a response that only appears responsive because of wording or prompt context.</p>
-        <div class="diagnostic-visual" aria-label="Controllability evaluation flow"><span>Declared control</span><b>→</b><span>Expected response shift</span><b>→</b><span>Metric check</span></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> the evaluation follows a declared intervention through to a measurable response change. A successful shift alone is not sufficient; the result must also remain interpretable under the metric contract.</p>
+    <section class="section-card study-section study-panel" id="study-a">
+        <p class="section-kicker">Study A</p>
+        <h2 class="section-title">Faithfulness and silent bias</h2>
+        <p><strong>Question:</strong> does exposed reasoning genuinely improve answer quality, and do controlled demographic variations produce changes that go unacknowledged?</p>
+        <div class="study-split-grid">
+            <section class="study-part">
+                <h3>Part one · Faithfulness</h3>
+                <div class="image-frame"><a href="../assets/benchmark/results/study-a-faithfulness.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-a-faithfulness.png" alt="Study A faithfulness gap chart for the released model panel"></a></div>
+                <p class="visual-description"><strong>Reading the visual:</strong> the bars compare the gap between stated reasoning and evaluated answer quality across the released model panel. The project gate is shown as a reference rather than a model ranking.</p>
+                <p><strong>Result:</strong> exposed reasoning did not reliably improve accuracy in the final panel. All reported faithfulness gaps were below the project gate, so plausible reasoning text was not treated as a safety proxy.</p>
+            </section>
+            <section class="study-part">
+                <h3>Part two · Silent bias</h3>
+                <div class="image-frame bias-result-plot"><a href="../assets/benchmark/results/study-a-silent-bias.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-a-silent-bias.png" alt="Project-owned Study A silent-bias-rate chart by model"></a></div>
+                <p class="visual-description"><strong>Reading the plot:</strong> this project-owned Study A Bias chart reports silent-bias rate by model. It is an adversarial measure, presented separately from the faithfulness result above.</p>
+                <p><strong>Result:</strong> silent-bias outcomes are treated as an adversarial warning signal separate from faithfulness. A response can appear well reasoned while still changing in ways that are not acknowledged or justified.</p>
+            </section>
+        </div>
     </section>
 
-    <section class="section-card diagnostic-section" id="metric-invariance">
-        <p class="section-kicker">Diagnostic 02</p>
-        <h2 class="section-title">Metric invariance</h2>
-        <p>This test asks whether equivalent, harmless changes to phrasing preserve the same evaluated endpoint. It is designed to reveal cases where a metric changes because of surface form rather than meaningful behaviour.</p>
-        <div class="diagnostic-visual" aria-label="Metric invariance evaluation flow"><span>Equivalent prompt variants</span><b>→</b><span>Comparable endpoint</span><b>→</b><span>Stability check</span></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> equivalent inputs should remain aligned at the endpoint. Divergence flags a potential fragility for investigation, rather than automatically labelling a model unsafe.</p>
+    <section class="section-card study-section study-panel" id="study-b" hidden>
+        <p class="section-kicker">Study B</p>
+        <h2 class="section-title">Sycophancy under pressure</h2>
+        <p><strong>Question:</strong> can a model remain supportive without yielding to inaccurate or unsafe social pressure?</p>
+        <div class="study-split-grid">
+            <section class="study-part">
+                <h3>Part one · Single-turn response</h3>
+                <div class="image-frame"><a href="../assets/benchmark/results/study-b-sycophancy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-b-sycophancy.png" alt="Study B single-turn sycophancy probability chart for the released model panel"></a></div>
+                <p class="visual-description"><strong>Reading the visual:</strong> this comparison isolates the response to social pressure within one turn and places it against the local sycophancy boundary.</p>
+                <p><strong>Result:</strong> the corrected single-turn comparisons fell below the local sycophancy boundary.</p>
+            </section>
+            <section class="study-part">
+                <h3>Part two · Explicit-control follow-up</h3>
+                <div class="image-frame"><a href="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" alt="Working Draft 8 Study B explicit-control effect plot showing delta in turn-of-flip proxy"></a></div>
+                <p class="visual-description"><strong>Reading the plot:</strong> this Working Draft 8 diagnostic plot reports the change in the turn-of-flip proxy when an explicit control is applied. The dashed line marks the stated minimum meaningful delta.</p>
+                <p><strong>Result:</strong> the control diagnostic follows the single-turn result with a conversation-level measurement. It is secondary diagnostic evidence rather than a replacement for the main Study B result.</p>
+            </section>
+        </div>
     </section>
 
-    <section class="section-card diagnostic-section" id="control-invariance">
-        <p class="section-kicker">Diagnostic 03</p>
-        <h2 class="section-title">Control under invariance</h2>
-        <p>This combined test checks whether an intended control still works when the prompt receives an equivalent surface perturbation. It brings controllability and invariance together to expose brittle interactions, including entity-recall drift.</p>
-        <div class="diagnostic-visual" aria-label="Combined diagnostic evaluation flow"><span>Control + prompt variant</span><b>→</b><span>Expected stable shift</span><b>→</b><span>Joint check</span></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> the intended response direction should persist even as the equivalent prompt form changes. The layer is still developing, so these views describe test logic and evidence boundaries rather than a final model league table.</p>
+    <section class="section-card study-section study-panel" id="study-c" hidden>
+        <p class="section-kicker">Study C</p>
+        <h2 class="section-title">Longitudinal continuity</h2>
+        <p><strong>Question:</strong> do salient entities and commitments survive a longer conversation without contradiction or context drift?</p>
+        <div class="image-frame"><a href="../assets/benchmark/results/study-c-recall.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-c-recall.png" alt="Study C entity recall at turn 10 chart for the released model panel"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the chart focuses on entity recall at turn 10, making the difference between a short coherent reply and a sustained interaction visible.</p>
+        <p><strong>Result:</strong> every reported full run remained well below the project retention target at turn 10.</p>
+    </section>
+
+    <section class="section-card" id="diagnostics">
+        <h2 class="section-title">Controllability and metric invariance</h2>
+        <p>The benchmark also includes a developing diagnostic layer: whether an explicit control can shift a model in the intended direction, whether harmless wording changes preserve the same endpoint, and whether both properties hold together.</p>
+        <p>These checks matter because a result is only useful if it can be trusted under equivalent conditions, and a desirable behaviour is only useful if it can be reliably elicited. Together, the diagnostics show where a model may be measured with confidence and where there may be an opportunity to improve a specific behaviour through supervised fine-tuning, preference learning such as RLHF, reinforcement learning, or a narrower prompt/control intervention. They evaluate that opportunity; they do not claim that any training method has already solved it.</p>
+        <p>Each action opens a focused diagnostic subpage with its own coverage, study-level results, plots, and research sources. The two combined views use the same recorded control-under-invariance evidence, but inspect it from opposite directions.</p>
+        <div class="button-row section-navigation" aria-label="Diagnostic sections">
+            <a class="button primary" href="controllability-details.html">Controllability</a>
+            <a class="button primary" href="metric-invariance-details.html">Metric Invariance</a>
+            <a class="button primary" href="controllability-of-metric-invariance.html">Controllability of Metric Invariance</a>
+            <a class="button primary" href="metric-invariance-of-controllability.html">Metric Invariance of Controllability</a>
+        </div>
     </section>
 
     <section class="section-card" id="results">
@@ -139,13 +137,55 @@
         <p>That evidence informs the Robert prototype’s visible controls and bounded interaction design. It does not validate a clinical intervention, establish real-world efficacy, or recommend any model for independent use.</p>
     </section>
 
+    <section class="section-card" id="benchmark-to-robert">
+        <h2 class="section-title">From benchmark evidence to Robert</h2>
+        <p>The benchmark and Robert serve different roles. The benchmark identifies behavioural risks under controlled conditions; Robert is a prototype that makes relevant interaction controls visible and inspectable. This is an architectural hand-off, not a clinical-validation claim.</p>
+        <div class="result-grid">
+            <div><strong>Continuity</strong><span>Use explicit agenda state and visible, user-triggered memory rather than assuming context retention is enough.</span></div>
+            <div><strong>Pressure resistance</strong><span>Keep support boundaries and escalation routes clear when a conversation becomes socially or emotionally demanding.</span></div>
+            <div><strong>Measurement discipline</strong><span>Retain versioned prompts, observable controls, and follow-up evaluation rather than relying on a polished single response.</span></div>
+        </div>
+        <p>For future mental-health chatbot research, these findings support building inspectable state, bounded support behaviours, and evaluation loops before claiming reliability. Further clinician, lived-experience, privacy, safeguarding, and real-world deployment work remains necessary.</p>
+        <div class="button-row section-navigation">
+            <a class="button primary" href="dissertation-project.html">Explore Robert Prototype</a>
+        </div>
+    </section>
+
     <section class="project-links">
         <h2 class="section-title">Explore the project</h2>
         <div class="button-row">
             <a class="button primary" href="https://github.com/ryantigi254/FSD-Mental-Health-Safety-Benchmark-Ready" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            <a class="button secondary" href="https://fsd-benchmark.netlify.app/#about" target="_blank" rel="noopener noreferrer">View Deeper Dive</a>
         </div>
     </section>
 </main>
+<script>
+    const studyButtons = document.querySelectorAll('[data-study-target]');
+    const studyPanels = document.querySelectorAll('.study-panel');
+
+    function showStudy(id, shouldScroll = true) {
+        const selected = document.getElementById(id);
+        if (!selected) return;
+
+        studyPanels.forEach((panel) => {
+            panel.hidden = panel !== selected;
+        });
+        studyButtons.forEach((button) => {
+            const isSelected = button.dataset.studyTarget === id;
+            button.classList.toggle('is-selected', isSelected);
+            button.setAttribute('aria-pressed', String(isSelected));
+        });
+        history.replaceState(null, '', `#${id}`);
+        if (shouldScroll) selected.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    studyButtons.forEach((button) => {
+        button.addEventListener('click', () => showStudy(button.dataset.studyTarget));
+    });
+
+    const initialStudy = window.location.hash.slice(1);
+    if (document.getElementById(initialStudy)?.classList.contains('study-panel')) {
+        showStudy(initialStudy, false);
+    }
+</script>
 </body>
 </html>
