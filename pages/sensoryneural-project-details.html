@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SensoryNeural | Ryan Gichuru</title>
+    <link rel="stylesheet" href="page-styles.css">
+</head>
+<body>
+<main>
+    <header class="page-header">
+        <a href="../index.html#projects" class="return-link">← Back to Portfolio</a>
+        <p class="eyebrow">AI Engineering · Concept Prototype</p>
+        <h1>SensoryNeural</h1>
+        <p class="page-lede">A prototype exploring how a wearable-style heartbeat stream can be translated into a transparent support signal and then made available to a machine-learning decision-support layer.</p>
+        <div class="button-row quick-links">
+            <a class="button primary" href="https://sensoryneural.netlify.app/" target="_blank" rel="noopener noreferrer">Visit Live Concept</a>
+            <a class="button secondary" href="https://github.com/ryantigi254/Sensory_Neural" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
+        <div class="meta-grid">
+            <div class="meta-card"><p class="meta-label">Input</p><p class="meta-value">Synthetic wearable-style heartbeat and variability data</p></div>
+            <div class="meta-card"><p class="meta-label">Engineering focus</p><p class="meta-value">Signal calibration, feature context, and real-time presentation</p></div>
+            <div class="meta-card"><p class="meta-label">Output</p><p class="meta-value">Interpretable prototype-level support signal</p></div>
+            <div class="meta-card"><p class="meta-label">Boundary</p><p class="meta-value">Concept exploration, not clinical monitoring or diagnosis</p></div>
+        </div>
+    </header>
+
+    <section class="section-card">
+        <h2 class="section-title">Project focus</h2>
+        <p>SensoryNeural was built as an engineering concept for making an incoming physiological-style stream useful without presenting a raw reading as an answer. The work focused on the translation layer: calibrating the stream against a baseline, expressing changes as understandable features, and presenting an inspectable signal that a model or person can use as one input to a support decision.</p>
+        <p>The prototype uses synthetic calibration data. It does not diagnose a child, infer a medical condition, or make autonomous support decisions.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">From heartbeat stream to usable signal</h2>
+        <p>A raw heartbeat value is noisy and context-dependent. The pipeline therefore treats the stream as input for comparison and transformation, rather than as a direct label.</p>
+        <div class="signal-flow" aria-label="Heartbeat data processing pipeline">
+            <div class="signal-step"><h3>1. Synthetic stream</h3><p>Wearable-style heart-rate and variability readings arrive through the prototype’s real-time connection.</p></div>
+            <div class="signal-step"><h3>2. Baseline context</h3><p>The current reading is considered alongside a synthetic calibration range and recent movement in the stream.</p></div>
+            <div class="signal-step"><h3>3. Signal engineering</h3><p>The pipeline converts those changes into interpretable features and a bounded prototype-level support signal.</p></div>
+            <div class="signal-step"><h3>4. Model input</h3><p>That signal can be supplied to model-guided logic with its context retained, instead of asking a model to interpret a raw heartbeat value.</p></div>
+            <div class="signal-step"><h3>5. Visible support surface</h3><p>The dashboard shows the status and can present a human-reviewed support option.</p></div>
+        </div>
+        <p class="visual-description"><strong>Reading the visual:</strong> each stage narrows an ambiguous input into a bounded, inspectable representation. The engineering value is in preserving context from the stream through to the support surface.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">The engineering translation layer</h2>
+        <div class="concept-grid">
+            <div class="concept-box"><h4>Ingest</h4><p>A real-time connection receives the synthetic wearable-style values used by the demonstration.</p></div>
+            <div class="concept-box"><h4>Contextualise</h4><p>Age-sensitive calibration ranges and recent change provide a reference frame, so the system is not driven by one isolated reading.</p></div>
+            <div class="concept-box"><h4>Represent</h4><p>The transformed signal is kept interpretable: the dashboard can show the current support state rather than hiding it behind a raw score.</p></div>
+            <div class="concept-box"><h4>Use carefully</h4><p>Model-guided heuristics map the signal to a small set of possible support options; they are not an autonomous authority.</p></div>
+        </div>
+        <p>This separation makes the prototype easier to inspect and improve: data handling, signal construction, model logic, and interface behaviour are distinct engineering concerns.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Prototype implementation</h2>
+        <p>The technical work was organised so the stream, signal logic, and support interface could be developed and inspected separately. That made it possible to demonstrate a complete flow without treating the synthetic input as a clinical measurement.</p>
+        <div class="concept-grid">
+            <div class="concept-box"><h4>Backend prototype</h4><p>A Python service hosted the synthetic calibration data and stress-detection loop, keeping the signal-generation logic separate from the interface.</p></div>
+            <div class="concept-box"><h4>Real-time transport</h4><p>A WebSocket-driven connection carried the changing prototype values to the dashboard, allowing the support state to update as the stream changed.</p></div>
+            <div class="concept-box"><h4>Support interface</h4><p>A TypeScript and React interface, scaffolded with Vite and Tailwind, presented the current state and bounded support options in a readable form.</p></div>
+        </div>
+        <p>The engineering outcome is a traceable chain: synthetic heartbeat-style input → calibrated context → prototype support signal → visible option for human review.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Machine-learning role</h2>
+        <p>The machine-learning layer is downstream of signal engineering. Its job in the prototype is to use the contextualised signal as one bounded feature when selecting or prioritising understandable support options. The dashboard remains responsible for making the current status visible rather than hiding it behind an opaque score.</p>
+        <div class="diagnostic-visual" aria-label="Decision support flow"><span>Contextualised signal</span><b>→</b><span>Model-guided support logic</span><b>→</b><span>Visible, human-reviewed option</span></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> the model does not sit directly on the incoming heartbeat stream. It receives a contextualised signal and returns a bounded suggestion for review in the interface.</p>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Prototype boundaries</h2>
+        <p>All physiological-style inputs in this demo are synthetic. The work is a concept prototype for exploring data flow, interface legibility, and responsible decision-support design. It is not a medical device, clinical-monitoring system, diagnostic model, or substitute for professional judgement.</p>
+    </section>
+
+    <section class="project-links">
+        <h2 class="section-title">Explore more</h2>
+        <p>For the fuller project story, competition context, and concept background, the separate blog remains available after the engineering detail.</p>
+        <div class="button-row">
+            <a class="button primary" href="https://sensoryneural.netlify.app/" target="_blank" rel="noopener noreferrer">Visit Live Concept</a>
+            <a class="button secondary" href="sensoryneural-project.html">Read Project Blog</a>
+        </div>
+    </section>
+</main>
+</body>
+</html>

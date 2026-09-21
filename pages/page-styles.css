@@ -241,7 +241,7 @@ a:hover {
 .button-row {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 18px;
     flex-wrap: wrap;
     margin-top: 24px;
 }

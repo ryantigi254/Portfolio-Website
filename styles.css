@@ -398,13 +398,17 @@ a:hover {
 
 .project-details-button {
     display: inline-block;
-    margin-top: 15px;
+    margin: 15px 8px 0 0;
     padding: 10px 15px;
     background-color: #c54844;
     color: white;
     text-decoration: none;
     border-radius: 45px;
     transition: background-color 0.3s ease;
+}
+
+.cta-button + .cta-button {
+    margin-left: 10px;
 }
 
 .project-details-button:hover {
