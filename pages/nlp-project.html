@@ -42,8 +42,8 @@
     <section class="section-card" id="data-coverage">
         <h2 class="section-title">Data coverage</h2>
         <p>Coverage is shown separately from outcomes so that the breadth of the test material is not mistaken for a result. The benchmark samples the behavioural conditions required by the three studies, while retaining clear limits around diagnosis, deployment, and clinical validity.</p>
-        <div class="image-frame"><a href="../assets/benchmark/benchmark-composition-radar.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/benchmark-composition-radar.png" alt="Radar chart comparing the benchmark's category composition across study slices"></a></div>
-        <p class="visual-description"><strong>Reading the visual:</strong> this radar chart compares how the study slices are distributed across the benchmark’s category composition. It communicates balance and gaps in the material, not model performance.</p>
+        <div class="image-frame"><a href="../assets/benchmark/benchmark-v6-1-composition-radar.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/benchmark-v6-1-composition-radar.png" alt="v6.1 clinical benchmark overview radar comparing category composition across the main study slices"></a></div>
+        <p class="visual-description"><strong>Reading the visual:</strong> this is the generated v6.1 main benchmark overview. It compares how the primary study slices are distributed across diagnostic categories, communicating balance and gaps in the material rather than model performance.</p>
         <div class="coverage-grid" aria-label="Coverage dimensions">
             <div><strong>Reasoning</strong><span>Faithfulness probes</span></div>
             <div><strong>Social pressure</strong><span>Single- and multi-turn tests</span></div>
@@ -73,7 +73,7 @@
                 <h3>Part one · Faithfulness</h3>
                 <div class="image-frame"><a href="../assets/benchmark/results/study-a-faithfulness.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-a-faithfulness.png" alt="Study A faithfulness gap chart for the released model panel"></a></div>
                 <p class="visual-description"><strong>Reading the visual:</strong> the bars compare the gap between stated reasoning and evaluated answer quality across the released model panel. The project gate is shown as a reference rather than a model ranking.</p>
-                <p><strong>Result:</strong> exposed reasoning did not reliably improve accuracy in the final panel. All reported faithfulness gaps were below the project gate, so plausible reasoning text was not treated as a safety proxy.</p>
+                <p><strong>Result:</strong> every evaluated model had a negative faithfulness gap: exposing reasoning reduced diagnosis accuracy rather than improving it. Plausible reasoning text was therefore not treated as a safety proxy.</p>
             </section>
             <section class="study-part">
                 <h3>Part two · Silent bias</h3>
@@ -93,7 +93,7 @@
                 <h3>Part one · Single-turn response</h3>
                 <div class="image-frame"><a href="../assets/benchmark/results/study-b-sycophancy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-b-sycophancy.png" alt="Study B single-turn sycophancy probability chart for the released model panel"></a></div>
                 <p class="visual-description"><strong>Reading the visual:</strong> this comparison isolates the response to social pressure within one turn and places it against the local sycophancy boundary.</p>
-                <p><strong>Result:</strong> the corrected single-turn comparisons fell below the local sycophancy boundary.</p>
+                <p><strong>Result:</strong> the single-turn endpoint differentiated the model panel, but did not settle pressure resistance on its own. The multi-turn turn-of-flip measure is the stricter test.</p>
             </section>
             <section class="study-part">
                 <h3>Part two · Explicit-control follow-up</h3>
@@ -110,14 +110,14 @@
         <p><strong>Question:</strong> do salient entities and commitments survive a longer conversation without contradiction or context drift?</p>
         <div class="image-frame"><a href="../assets/benchmark/results/study-c-recall.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/results/study-c-recall.png" alt="Study C entity recall at turn 10 chart for the released model panel"></a></div>
         <p class="visual-description"><strong>Reading the visual:</strong> the chart focuses on entity recall at turn 10, making the difference between a short coherent reply and a sustained interaction visible.</p>
-        <p><strong>Result:</strong> every reported full run remained well below the project retention target at turn 10.</p>
+        <p><strong>Result:</strong> full-run entity recall at turn 10 remained low across the reported panel. The result supports explicit agenda and memory controls rather than relying on the context window alone.</p>
     </section>
 
     <section class="section-card" id="diagnostics">
         <h2 class="section-title">Controllability and metric invariance</h2>
         <p>The benchmark also includes a developing diagnostic layer: whether an explicit control can shift a model in the intended direction, whether harmless wording changes preserve the same endpoint, and whether both properties hold together.</p>
         <p>These checks matter because a result is only useful if it can be trusted under equivalent conditions, and a desirable behaviour is only useful if it can be reliably elicited. Together, the diagnostics show where a model may be measured with confidence and where there may be an opportunity to improve a specific behaviour through supervised fine-tuning, preference learning such as RLHF, reinforcement learning, or a narrower prompt/control intervention. They evaluate that opportunity; they do not claim that any training method has already solved it.</p>
-        <p>Each action opens a focused diagnostic subpage with its own coverage, study-level results, plots, and research sources. The two combined views use the same recorded control-under-invariance evidence, but inspect it from opposite directions.</p>
+        <p>Each action opens a focused diagnostic subpage with its own coverage, study-level results, plots, and research sources. Working Draft 8 records the shared overlap as <em>control under invariance</em>; the two combined views inspect that evidence from opposite directions rather than claiming separate experimental runs.</p>
         <div class="button-row section-navigation" aria-label="Diagnostic sections">
             <a class="button primary" href="controllability-details.html">Controllability</a>
             <a class="button primary" href="metric-invariance-details.html">Metric Invariance</a>
