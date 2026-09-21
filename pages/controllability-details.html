@@ -33,14 +33,20 @@
         <p>The controllability-specific composition plot describes the category spread of the control-knob evaluation surface. It is coverage, not performance.</p>
         <div class="image-frame"><a href="../assets/benchmark/diagnostics/controllability-scaled-large-radar.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/controllability-scaled-large-radar.png" alt="Controllability scaled-large resolved radar showing diagnostic-category coverage across study slices"></a></div>
         <p class="visual-description"><strong>Reading the plot:</strong> the radar shows which diagnostic categories occur in the controllability splits for the overall set and each study slice. It is the controllability coverage plot formerly shown on the main benchmark page.</p>
-        <p>The Working Draft 8 heatmap then records endpoint availability. It preserves successful, missing, and non-measurable model–study combinations rather than inferring results for them.</p>
-        <div class="image-frame"><a href="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/secondary-coverage-heatmap.png" alt="Working Draft 8 endpoint-diagnostic coverage heatmap across controllability, invariance, and control-under-invariance lanes"></a></div>
-        <p class="visual-description"><strong>Reading the plot:</strong> green <abbr title="available endpoint result">OK</abbr> cells are recorded endpoints; M marks missing coverage and NM marks a non-measurable comparison. The controllability rows cover Study A, Study A Bias, Study B, Study B Multi-turn, and Study C.</p>
+    </section>
+    <section class="section-card">
+        <h2 class="section-title">Compute-limited coverage</h2>
+        <p>The controllability work includes all study families, but not every model-and-variant pair could be completed with the local compute available for the project. Results below show completed paired evaluations only; unavailable comparisons are not estimated or treated as successful.</p>
+        <div class="coverage-grid">
+            <div><strong>Study A</strong><span>Coverage is partial where control-conditioned model runs could not be completed under the available compute budget.</span></div>
+            <div><strong>Study B</strong><span>Completed paired endpoints are reported, including the explicit-control turn-of-flip diagnostic.</span></div>
+            <div><strong>Study C</strong><span>Coverage is partial where the longer control-conditioned evaluations could not be completed under the available compute budget.</span></div>
+        </div>
     </section>
     <section class="section-card">
         <h2 class="section-title">Study-level result plot</h2>
         <p>The following recorded Study B plot measures the explicit-control effect using the turn-of-flip proxy. It is secondary diagnostic evidence, not a global model ranking or a replacement for the released Study B result.</p>
-        <div class="image-frame"><a href="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" alt="Working Draft 8 Study B explicit-control effect plot"></a></div>
+        <div class="image-frame"><a href="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" target="_blank" rel="noopener noreferrer"><img src="../assets/benchmark/diagnostics/study-b-explicit-control-turn-proxy.png" alt="Study B explicit-control effect plot"></a></div>
         <p class="visual-description"><strong>Reading the plot:</strong> bars show the delta in turn-of-flip proxy by recorded model; error bars show the reported uncertainty. The dashed line is the project’s stated 0.5-turn minimum meaningful delta.</p>
     </section>
     <section class="section-card"><h2 class="section-title">Interpretation boundary</h2><p>Controllability roll-ups are experimental summaries. They require matched cases, paired bootstrap confidence intervals, and study-specific interpretation; they do not establish clinical safety or deployment readiness.</p></section>
